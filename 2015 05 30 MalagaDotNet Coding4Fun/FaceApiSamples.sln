@@ -6,6 +6,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientLibrary", "ClientLibr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{75429DC6-4C46-4809-8B18-271BD7840290}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTest01", "WpfTest01\WpfTest01.csproj", "{7E5BFC34-1CD3-4B0E-8001-37AFA485C48D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 Client Libs", "0 Client Libs", "{136453C8-9E76-4A32-92A9-E7AAFB2AFC76}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Sample App", "1 Sample App", "{3F2FDB09-61FE-4C78-8019-39F8F66B31B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Event", "2 Event", "{5A4DC54F-18D4-4D39-82DC-74E20275CC0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,9 +28,18 @@ Global
 		{75429DC6-4C46-4809-8B18-271BD7840290}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75429DC6-4C46-4809-8B18-271BD7840290}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75429DC6-4C46-4809-8B18-271BD7840290}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E5BFC34-1CD3-4B0E-8001-37AFA485C48D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E5BFC34-1CD3-4B0E-8001-37AFA485C48D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E5BFC34-1CD3-4B0E-8001-37AFA485C48D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E5BFC34-1CD3-4B0E-8001-37AFA485C48D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{25D58BA5-660F-407B-803C-22B4547C09DC} = {136453C8-9E76-4A32-92A9-E7AAFB2AFC76}
+		{75429DC6-4C46-4809-8B18-271BD7840290} = {3F2FDB09-61FE-4C78-8019-39F8F66B31B7}
+		{7E5BFC34-1CD3-4B0E-8001-37AFA485C48D} = {3F2FDB09-61FE-4C78-8019-39F8F66B31B7}
 	EndGlobalSection
 	GlobalSection( ) = preSolution
 	EndGlobalSection
