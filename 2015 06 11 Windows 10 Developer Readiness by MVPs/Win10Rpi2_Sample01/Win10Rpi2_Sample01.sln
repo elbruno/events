@@ -7,6 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Win10Rpi2_Sample01", "Win10
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "W10Rpi2Blinky", "W10Rpi2Blinky\W10Rpi2Blinky.csproj", "{2285EE51-6AAA-4CBB-98E7-47B62EC1C6D4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Hello World", "01 Hello World", "{D378A9F9-D163-488A-9572-0995648D4686}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 GPIO", "02 GPIO", "{7ABCA8B0-EE26-4F07-9361-5D63A5BCFE06}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 Friki Demo", "03 Friki Demo", "{29B3954F-FA44-4553-BB29-08662AAECCA4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 Live Event", "04 Live Event", "{19C3AA94-C9BC-4806-BFFF-39CDB9B63310}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -56,5 +64,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E0054F6C-2FF6-498D-9C2E-D7E050D0ABB8} = {D378A9F9-D163-488A-9572-0995648D4686}
+		{2285EE51-6AAA-4CBB-98E7-47B62EC1C6D4} = {7ABCA8B0-EE26-4F07-9361-5D63A5BCFE06}
 	EndGlobalSection
 EndGlobal
