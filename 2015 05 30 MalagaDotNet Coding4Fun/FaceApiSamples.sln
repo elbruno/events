@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Sample App", "1 Sample Ap
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Event", "2 Event", "{5A4DC54F-18D4-4D39-82DC-74E20275CC0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication2", "ConsoleApplication2\ConsoleApplication2.csproj", "{10ECA166-4667-4AB7-BCB2-6E8A58EC59EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,6 +34,10 @@ Global
 		{7E5BFC34-1CD3-4B0E-8001-37AFA485C48D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E5BFC34-1CD3-4B0E-8001-37AFA485C48D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E5BFC34-1CD3-4B0E-8001-37AFA485C48D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10ECA166-4667-4AB7-BCB2-6E8A58EC59EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10ECA166-4667-4AB7-BCB2-6E8A58EC59EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10ECA166-4667-4AB7-BCB2-6E8A58EC59EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10ECA166-4667-4AB7-BCB2-6E8A58EC59EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -40,6 +46,7 @@ Global
 		{25D58BA5-660F-407B-803C-22B4547C09DC} = {136453C8-9E76-4A32-92A9-E7AAFB2AFC76}
 		{75429DC6-4C46-4809-8B18-271BD7840290} = {3F2FDB09-61FE-4C78-8019-39F8F66B31B7}
 		{7E5BFC34-1CD3-4B0E-8001-37AFA485C48D} = {3F2FDB09-61FE-4C78-8019-39F8F66B31B7}
+		{10ECA166-4667-4AB7-BCB2-6E8A58EC59EE} = {5A4DC54F-18D4-4D39-82DC-74E20275CC0E}
 	EndGlobalSection
 	GlobalSection( ) = preSolution
 	EndGlobalSection

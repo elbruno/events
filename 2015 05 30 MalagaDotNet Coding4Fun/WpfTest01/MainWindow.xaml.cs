@@ -48,7 +48,7 @@ namespace WpfTest01
             if (!result.HasValue || !result.Value) return;
             SelectedFile = dlg.FileName;
             var faceApi = new FaceApiHelper();
-            var returnData = await faceApi.StartFaceDetection(SelectedFile, "Key goes here");
+            var returnData = await faceApi.StartFaceDetection(SelectedFile, "4c138b4d82b947beb2e2926c92d1e514");
             DetectedFaces = returnData.Item1;
             FacesRect = returnData.Item2;
         }
