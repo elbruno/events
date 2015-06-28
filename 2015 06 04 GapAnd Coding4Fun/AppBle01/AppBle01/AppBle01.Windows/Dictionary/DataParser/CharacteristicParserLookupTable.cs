@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Windows.Devices.Bluetooth.GenericAttributeProfile;
 using Windows.Storage.Streams;
+using AppBle01.Dictionary.DataParser.BLE_Specification;
+using DayOfWeek = AppBle01.Dictionary.DataParser.BLE_Specification.DayOfWeek;
 
 namespace AppBle01.Dictionary.DataParser
 {
@@ -11,22 +13,22 @@ namespace AppBle01.Dictionary.DataParser
         public CharacteristicParserLookupTable()
         {
             /* WinRT implemented BTLE specification characteristics */
-            this.Add(GattCharacteristicUuids.AlertCategoryId, BLE_Specification.AlertCategoryId.ParseBuffer);
-            this.Add(GattCharacteristicUuids.AlertCategoryIdBitMask, BLE_Specification.AlertCategoryIdBitMask.ParseBuffer);
-            this.Add(GattCharacteristicUuids.AlertLevel, BLE_Specification.AlertLevel.ParseBuffer);
-            this.Add(GattCharacteristicUuids.AlertNotificationControlPoint, BLE_Specification.AlertNotificationControlPoint.ParseBuffer);
-            this.Add(GattCharacteristicUuids.AlertStatus, BLE_Specification.AlertStatus.ParseBuffer);
+            this.Add(GattCharacteristicUuids.AlertCategoryId, AlertCategoryId.ParseBuffer);
+            this.Add(GattCharacteristicUuids.AlertCategoryIdBitMask, AlertCategoryIdBitMask.ParseBuffer);
+            this.Add(GattCharacteristicUuids.AlertLevel, AlertLevel.ParseBuffer);
+            this.Add(GattCharacteristicUuids.AlertNotificationControlPoint, AlertNotificationControlPoint.ParseBuffer);
+            this.Add(GattCharacteristicUuids.AlertStatus, AlertStatus.ParseBuffer);
             this.Add(GattCharacteristicUuids.BatteryLevel, BasicParsers.ParseUInt8);
-            this.Add(GattCharacteristicUuids.BloodPressureFeature, BLE_Specification.BloodPressureFeature.ParseBuffer);
-            this.Add(GattCharacteristicUuids.BodySensorLocation, BLE_Specification.BodySensorLocation.ParseBuffer);
+            this.Add(GattCharacteristicUuids.BloodPressureFeature, BloodPressureFeature.ParseBuffer);
+            this.Add(GattCharacteristicUuids.BodySensorLocation, BodySensorLocation.ParseBuffer);
             this.Add(GattCharacteristicUuids.BootKeyboardInputReport, BasicParsers.ParseUInt8Multi);
             this.Add(GattCharacteristicUuids.BootKeyboardOutputReport, BasicParsers.ParseUInt8Multi);
             this.Add(GattCharacteristicUuids.BootMouseInputReport, BasicParsers.ParseUInt8Multi);
-            this.Add(GattCharacteristicUuids.CscFeature, BLE_Specification.CscFeature.ParseBuffer);
-            this.Add(GattCharacteristicUuids.DayOfWeek, BLE_Specification.DayOfWeek.ParseBuffer);
+            this.Add(GattCharacteristicUuids.CscFeature, CscFeature.ParseBuffer);
+            this.Add(GattCharacteristicUuids.DayOfWeek, DayOfWeek.ParseBuffer);
             this.Add(GattCharacteristicUuids.GapDeviceName, BasicParsers.ParseString);
             this.Add(GattCharacteristicUuids.HardwareRevisionString, BasicParsers.ParseString);
-            this.Add(GattCharacteristicUuids.HeartRateMeasurement, BLE_Specification.HeartRateMeasurement.ParseBuffer);
+            this.Add(GattCharacteristicUuids.HeartRateMeasurement, HeartRateMeasurement.ParseBuffer);
             this.Add(GattCharacteristicUuids.ManufacturerNameString, BasicParsers.ParseString);
             this.Add(GattCharacteristicUuids.ModelNumberString, BasicParsers.ParseString);
             this.Add(GattCharacteristicUuids.SerialNumberString, BasicParsers.ParseString);
