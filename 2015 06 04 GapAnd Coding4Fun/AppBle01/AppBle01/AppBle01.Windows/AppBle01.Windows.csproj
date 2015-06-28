@@ -132,6 +132,7 @@
     <Compile Include="Models\BEGattModelBase.cs" />
     <Compile Include="Models\BEServiceModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities.cs" />
     <Compile Include="ViewModels\IndividualObjects\BEAboutVM.cs" />
     <Compile Include="ViewModels\IndividualObjects\BECharacteristicVM.cs" />
     <Compile Include="ViewModels\IndividualObjects\BEDeviceVM.cs" />
