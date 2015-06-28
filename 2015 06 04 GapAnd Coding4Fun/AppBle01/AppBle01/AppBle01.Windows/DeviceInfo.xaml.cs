@@ -73,10 +73,5 @@ namespace AppBle01
             }
             //Frame.Navigate(typeof(ServiceInfo));
         }
-
-        public void Connect(int connectionId, object target)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

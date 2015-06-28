@@ -51,12 +51,12 @@ namespace AppBle01
             _firstEntry = false;
             SetValue(BackgroundAccessProblemProperty, Visibility.Collapsed);
 
-            await GlobalSettings.RequestBackgroundAccessAsync();
-            if (!GlobalSettings.BackgroundAccessRequested)
-            {
-                backgroundAccessProblemVisibility = Visibility.Visible;
-            }
-            SetValue(BackgroundAccessProblemProperty, backgroundAccessProblemVisibility);
+            //await GlobalSettings.RequestBackgroundAccessAsync();
+            //if (!GlobalSettings.BackgroundAccessRequested)
+            //{
+            //    backgroundAccessProblemVisibility = Visibility.Visible;
+            //}
+            //SetValue(BackgroundAccessProblemProperty, backgroundAccessProblemVisibility);
             Utilities.RunFuncAsTask(PopulateLeDeviceListAsync);
         }
 
@@ -149,9 +149,5 @@ namespace AppBle01
             //Frame.Navigate(typeof(AboutPage));
         }
 
-        public void Connect(int connectionId, object target)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
