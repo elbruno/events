@@ -13,7 +13,7 @@ namespace AppBle01.ViewModels.Lists
         public void Initialize(ICollection<BeCharacteristicModel> characteristicModels)
         {
             Clear();
-            foreach (BeCharacteristicModel characteristicM in characteristicModels)
+            foreach (var characteristicM in characteristicModels)
             {
                 var characteristicVm = new BECharacteristicVM();
                 characteristicVm.Initialize(characteristicM);

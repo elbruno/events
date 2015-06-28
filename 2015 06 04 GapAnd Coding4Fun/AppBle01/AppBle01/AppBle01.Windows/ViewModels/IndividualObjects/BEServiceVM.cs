@@ -12,7 +12,7 @@ namespace AppBle01.ViewModels.IndividualObjects
     {
 
         #region ---------------------- Properties -------------------
-        public BEServiceModel ServiceM { get; private set; }
+        public BeServiceModel ServiceM { get; private set; }
 
         public string Name
         {
@@ -104,7 +104,7 @@ namespace AppBle01.ViewModels.IndividualObjects
             return Name;
         }
 
-        public void Initialize(BEServiceModel serviceM)
+        public void Initialize(BeServiceModel serviceM)
         {
             if (serviceM == null)
             {

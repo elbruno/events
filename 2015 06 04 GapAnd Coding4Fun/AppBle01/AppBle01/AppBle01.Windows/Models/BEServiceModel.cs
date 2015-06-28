@@ -3,48 +3,35 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Windows.Devices.Bluetooth.GenericAttributeProfile;
 using AppBle01.Dictionary;
+using AppBle01.ViewModels.IndividualObjects;
 
 namespace AppBle01.Models
 {
-    /// <summary>
-    /// A model class to handle data manipulations. Manipulations to this class will push
-    /// changes to the corresponding view model instances, which is bound to the UI.
-    /// 
-    /// This model is a wrapper around the GattDeviceService class.
-    /// </summary>
-    public class BEServiceModel : BeGattModelBase<GattDeviceService>
+    public class BeServiceModel : BeGattModelBase<GattDeviceService>
     {
         #region ---------------------------- Properties ----------------------------
-        private GattDeviceService _service { get; set; }
+        private GattDeviceService Service { get; set; }
         public BeDeviceModel DeviceM { get; private set; }
         public List<BeCharacteristicModel> CharacteristicModels { get; }
         #region name
-        
-        private string _name;
-        public string Name
-        {
-            get { return _name; }
-            private set
-            {
-                _name = value;
 
-            }
-        }
+        public string Name { get; private set; }
+
         #endregion
         
         public Guid Uuid { get; private set; }
-        public bool Mandatory { get; private set; }
-        public bool Default { get; private set; }
-        public bool Toastable { get; private set; }
-        public bool Writable { get; private set; }
+        public bool Mandatory { get; set; }
+        public bool Default { get; set; }
+        public bool Toastable { get; set; }
+        public bool Writable { get; set; }
         #endregion
 
         #region ---------------------------- Constructor/Initialize ----------------------------
-        public BEServiceModel()
+        public BeServiceModel()
         {
             Name = ServiceDictionaryEntry.SERVICE_MISSING_STRING;
             CharacteristicModels = new List<BeCharacteristicModel>();
-            ViewModelInstances = new List<BEGattVMBase<GattDeviceService>>(); 
+            ViewModelInstances = new List<BeGattVmBase<GattDeviceService>>(); 
         }
         
         public override string ToString()
@@ -70,8 +57,8 @@ namespace AppBle01.Models
             }
             
             // Initialize basics
-            _service = service;
-            Uuid = _service.Uuid;
+            Service = service;
+            Uuid = Service.Uuid;
             DeviceM = deviceM; 
             GetDictionaryAndUpdateProperties();
             DetermineProperties();
@@ -94,7 +81,7 @@ namespace AppBle01.Models
             // Get characteristics. 
             try
             {
-                IReadOnlyList<GattCharacteristic> characteristics = _service.GetAllCharacteristics();
+                IReadOnlyList<GattCharacteristic> characteristics = Service.GetCharacteristics(Service.Uuid);
                 foreach (var characteristic in characteristics)
                 {
                     var characteristicM = new BeCharacteristicModel();
@@ -130,7 +117,7 @@ namespace AppBle01.Models
         {
             try
             {
-                IReadOnlyList<GattCharacteristic> characteristics = _service.GetAllCharacteristics();
+                IReadOnlyList<GattCharacteristic> characteristics = Service.GetCharacteristics(Service.Uuid);
                 foreach (var characteristic in characteristics)
                 {
                     Toastable |= ((characteristic.CharacteristicProperties & GattCharacteristicProperties.Notify) != 0);

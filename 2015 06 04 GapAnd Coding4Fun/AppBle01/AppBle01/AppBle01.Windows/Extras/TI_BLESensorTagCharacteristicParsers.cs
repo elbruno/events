@@ -20,9 +20,9 @@ namespace AppBle01.Extras
         private static long readInt16TI(DataReader reader)
         {
             uint ObjLSB = reader.ReadByte();
-            int ObjMSB = (int)((sbyte)reader.ReadByte());
+            var ObjMSB = (int)((sbyte)reader.ReadByte());
 
-            long result = (ObjMSB << 8) + ObjLSB;
+            var result = (ObjMSB << 8) + ObjLSB;
             return result; 
         }
 
@@ -34,16 +34,16 @@ namespace AppBle01.Extras
         private static long readUint16TI(DataReader reader)
         {
             uint ObjLSB = reader.ReadByte();
-            int ObjMSB = (int)reader.ReadByte();
+            var ObjMSB = (int)reader.ReadByte();
 
-            long result = (ObjMSB << 8) + ObjLSB;
+            var result = (ObjMSB << 8) + ObjLSB;
             return result;
         }
 
         #region -------------------------- Temperature --------------------------
         public static string Parse_Temperature_Configuration(IBuffer buffer)
         {
-            byte value = DataReader.FromBuffer(buffer).ReadByte();
+            var value = DataReader.FromBuffer(buffer).ReadByte();
             if (value == 1)
             {
                 return "1 -- Enabled";
@@ -60,21 +60,21 @@ namespace AppBle01.Extras
 
         public static string Parse_Temperature_Period(IBuffer buffer)
         {
-            byte value = DataReader.FromBuffer(buffer).ReadByte();
+            var value = DataReader.FromBuffer(buffer).ReadByte();
             return value + "0 ms"; 
         }
 
         public static string Parse_Temperature_Data(IBuffer buffer)
         {
-            DataReader reader = DataReader.FromBuffer(buffer);
+            var reader = DataReader.FromBuffer(buffer);
 
             // Parse in correct endianness
-            long objectTemp_int = readInt16TI(reader);
-            long ambientTemp_int = readUint16TI(reader); 
+            var objectTemp_int = readInt16TI(reader);
+            var ambientTemp_int = readUint16TI(reader); 
 
             // Do the math that the TI website tells us to
-            double ambientTemp_dbl = calcTmpLocal(ambientTemp_int);
-            double objectTemp_dbl = calcTmpTarget(objectTemp_int, ambientTemp_dbl);
+            var ambientTemp_dbl = calcTmpLocal(ambientTemp_int);
+            var objectTemp_dbl = calcTmpTarget(objectTemp_int, ambientTemp_dbl);
 
             // Print out the string
             return "\nAmb: " + ambientTemp_dbl.ToString("F2") + "°C\nObj: " + objectTemp_dbl.ToString("F2") + "°C"; 
@@ -93,10 +93,10 @@ namespace AppBle01.Extras
         private static double calcTmpTarget(long rawT, double tAmb)
         {
             //-- calculate target temperature [°C] -
-            double Vobj2 = (double)rawT;
+            var Vobj2 = (double)rawT;
             Vobj2 *= 0.00000015625;
 
-            double Tdie2 = tAmb + 273.15;
+            var Tdie2 = tAmb + 273.15;
             const double S0 = 6.4E-14;            // Calibration factor (C factor; might not be right for C#)
             const double a1 = 1.75E-3;
             const double a2 = -1.678E-5;
@@ -105,10 +105,10 @@ namespace AppBle01.Extras
             const double b2 = 4.63E-9;
             const double c2 = 13.4;
             const double Tref = 298.15;
-            double S = S0 * (1 + a1 * (Tdie2 - Tref) + a2 * Math.Pow((Tdie2 - Tref), 2));
-            double Vos = b0 + b1 * (Tdie2 - Tref) + b2 * Math.Pow((Tdie2 - Tref), 2);
-            double fObj = (Vobj2 - Vos) + c2 * Math.Pow((Vobj2 - Vos), 2);
-            double tObj = Math.Pow(Math.Pow(Tdie2, 4) + (fObj / S), 0.25);
+            var S = S0 * (1 + a1 * (Tdie2 - Tref) + a2 * Math.Pow((Tdie2 - Tref), 2));
+            var Vos = b0 + b1 * (Tdie2 - Tref) + b2 * Math.Pow((Tdie2 - Tref), 2);
+            var fObj = (Vobj2 - Vos) + c2 * Math.Pow((Vobj2 - Vos), 2);
+            var tObj = Math.Pow(Math.Pow(Tdie2, 4) + (fObj / S), 0.25);
             tObj = (tObj - 273.15);
 
             return tObj;
@@ -118,7 +118,7 @@ namespace AppBle01.Extras
         #region -------------------------- Accelerometer --------------------------
         public static string Parse_Accelerometer_Configuration(IBuffer buffer)
         {
-            byte value = DataReader.FromBuffer(buffer).ReadByte();
+            var value = DataReader.FromBuffer(buffer).ReadByte();
             if (value == 1)
             {
                 return "1 -- Enabled";
@@ -135,24 +135,24 @@ namespace AppBle01.Extras
 
         public static string Parse_Accelerometer_Period(IBuffer buffer)
         {
-            byte value = DataReader.FromBuffer(buffer).ReadByte();
+            var value = DataReader.FromBuffer(buffer).ReadByte();
             return value + "0 ms";
         }
 
         // From http://processors.wiki.ti.com/index.php/SensorTag_User_Guide#Accelerometer_2
         public static string Parse_Accelerometer_Data(IBuffer buffer)
         {
-            DataReader reader = DataReader.FromBuffer(buffer);
+            var reader = DataReader.FromBuffer(buffer);
 
             // Parse in correct endianness
-            sbyte x = (sbyte) reader.ReadByte();
-            sbyte y = (sbyte) reader.ReadByte();
-            sbyte z = (sbyte) reader.ReadByte();
+            var x = (sbyte) reader.ReadByte();
+            var y = (sbyte) reader.ReadByte();
+            var z = (sbyte) reader.ReadByte();
 
 
-            double scaledX = ((double)x) / 64.0;
-            double scaledY = ((double)y) / 64.0;
-            double scaledZ = ((double)z) / 64.0;
+            var scaledX = ((double)x) / 64.0;
+            var scaledY = ((double)y) / 64.0;
+            var scaledZ = ((double)z) / 64.0;
 
             // Print out the string
             return "\ng = 9.81 m/s^2\nX: " + scaledX.ToString("F2") + "g\nY: " + scaledY.ToString("F2") + "g\nZ: " + scaledZ.ToString("F2") + "g";
@@ -162,7 +162,7 @@ namespace AppBle01.Extras
         #region -------------------------- Humidity --------------------------
         public static string Parse_Humidity_Configuration(IBuffer buffer)
         {
-            byte value = DataReader.FromBuffer(buffer).ReadByte();
+            var value = DataReader.FromBuffer(buffer).ReadByte();
             if (value == 1)
             {
                 return "1 -- Enabled";
@@ -179,21 +179,21 @@ namespace AppBle01.Extras
 
         public static string Parse_Humidity_Period(IBuffer buffer)
         {
-            byte value = DataReader.FromBuffer(buffer).ReadByte();
+            var value = DataReader.FromBuffer(buffer).ReadByte();
             return value + "0 ms";
         }
 
         public static string Parse_Humidity_Data(IBuffer buffer)
         {
-            DataReader reader = DataReader.FromBuffer(buffer);
+            var reader = DataReader.FromBuffer(buffer);
 
             // Parse in correct endianness
-            long ambientTemp_int = readUint16TI(reader);
-            long humidity_int = readUint16TI(reader); 
+            var ambientTemp_int = readUint16TI(reader);
+            var humidity_int = readUint16TI(reader); 
 
             // Do the math that the TI website tells us to
-            double ambientTemp_dbl = calcHumTmp(ambientTemp_int);
-            double relHum_dbl = calcHumRel(humidity_int);
+            var ambientTemp_dbl = calcHumTmp(ambientTemp_int);
+            var relHum_dbl = calcHumRel(humidity_int);
 
             // Print out the string
             return "\nAmbTemp: " + ambientTemp_dbl.ToString("F2") + "°C\nHum: " + relHum_dbl.ToString("F2") + "%RH";
@@ -216,7 +216,7 @@ namespace AppBle01.Extras
         #region -------------------------- Magnetometer --------------------------
         public static string Parse_Magnetometer_Configuration(IBuffer buffer)
         {
-            byte value = DataReader.FromBuffer(buffer).ReadByte();
+            var value = DataReader.FromBuffer(buffer).ReadByte();
             if (value == 1)
             {
                 return "1 -- Enabled";
@@ -233,26 +233,26 @@ namespace AppBle01.Extras
 
         public static string Parse_Magnetometer_Period(IBuffer buffer)
         {
-            byte value = DataReader.FromBuffer(buffer).ReadByte();
+            var value = DataReader.FromBuffer(buffer).ReadByte();
             return value + "0 ms";
         }
 
         public static string Parse_Magnetometer_Data(IBuffer buffer)
         {
-            DataReader reader = DataReader.FromBuffer(buffer);
+            var reader = DataReader.FromBuffer(buffer);
 
             // Parse in correct endianness
-            long X_long = readInt16TI(reader);
-            long Y_long = readInt16TI(reader);
-            long Z_long = readInt16TI(reader); 
+            var X_long = readInt16TI(reader);
+            var Y_long = readInt16TI(reader);
+            var Z_long = readInt16TI(reader); 
 
             // Do the math that the TI website tells us to
             /* NOTE: There is a comment on the TI website that says 
              * "// Multiply x and y with -1 so that the values correspond with our pretty pictures in the app."
              * You might want to do that if the values look off. */
-            double X_dbl = calcMagn(X_long);  
-            double Y_dbl = calcMagn(Y_long);
-            double Z_dbl = calcMagn(Z_long);
+            var X_dbl = calcMagn(X_long);  
+            var Y_dbl = calcMagn(Y_long);
+            var Z_dbl = calcMagn(Z_long);
 
             // Print out the string
             return "\nX: " + X_dbl.ToString("F2") + "uT\nY: " + Y_dbl.ToString("F2") + "uT\nZ: " + Z_dbl.ToString("F2") + "uT";
@@ -277,7 +277,7 @@ namespace AppBle01.Extras
 
         public static string Parse_Barometer_Configuration(IBuffer buffer)
         {
-            byte value = DataReader.FromBuffer(buffer).ReadByte();
+            var value = DataReader.FromBuffer(buffer).ReadByte();
             if (value == 1)
             {
                 return "1 -- Enabled";
@@ -298,7 +298,7 @@ namespace AppBle01.Extras
 
         public static string Parse_Barometer_Period(IBuffer buffer)
         {
-            byte value = DataReader.FromBuffer(buffer).ReadByte();
+            var value = DataReader.FromBuffer(buffer).ReadByte();
             return value + "0 ms";
         }
 
@@ -309,25 +309,25 @@ namespace AppBle01.Extras
                 return "Calibration not requested"; 
             }
 
-            DataReader reader = DataReader.FromBuffer(buffer);
+            var reader = DataReader.FromBuffer(buffer);
 
             // Parse in correct endianness
-            for (int i = 0; i < 4; i++)
+            for (var i = 0; i < 4; i++)
             {
                 BarCalibUnsigned[i] = (UInt16)readUint16TI(reader); 
             }
-            for (int i = 0; i < 4; i++)
+            for (var i = 0; i < 4; i++)
             {
                 BarCalibSigned[i] = (Int16)readInt16TI(reader);
             }
 
             // Build the calibration string.
-            string result = "";
-            for (int i = 0; i < 4; i++)
+            var result = "";
+            for (var i = 0; i < 4; i++)
             {
                 result += ("\n" + BarCalibUnsigned[i]);
             }
-            for (int i = 0; i < 4; i++)
+            for (var i = 0; i < 4; i++)
             {
                 result += ("\n" + BarCalibSigned[i]);
             }
@@ -338,15 +338,15 @@ namespace AppBle01.Extras
 
         public static string Parse_Barometer_Data(IBuffer buffer)
         {
-            DataReader reader = DataReader.FromBuffer(buffer);
+            var reader = DataReader.FromBuffer(buffer);
 
             // Parse in correct endianness
-            long ambientTemp_int = readInt16TI(reader);
-            long pressure_int = readUint16TI(reader);
+            var ambientTemp_int = readInt16TI(reader);
+            var pressure_int = readUint16TI(reader);
 
             // Do the math that the TI website tells us to
-            double ambientTemp_dbl = calcBarTmp(ambientTemp_int);
-            double pressure_dbl = calBarPress(ambientTemp_int, pressure_int);
+            var ambientTemp_dbl = calcBarTmp(ambientTemp_int);
+            var pressure_dbl = calBarPress(ambientTemp_int, pressure_int);
 
             // Print out the string
             return "\nAmbTemp: " + ambientTemp_dbl.ToString("F2") + "°C\nPressure: " + pressure_dbl.ToString("F2") + " hP";
@@ -364,8 +364,8 @@ namespace AppBle01.Extras
         // From http://processors.wiki.ti.com/index.php/SensorTag_User_Guide#Barometric_Pressure_Sensor_2
         private static double calBarPress(long rawTemp, long rawPres)
         {
-            Int64 sensitivity = (Int64)BarCalibUnsigned[2] + (((Int64)BarCalibUnsigned[3] * rawTemp) >> 17) + (((Int64)BarCalibSigned[0] * rawTemp * rawTemp) >> 34);
-            Int64 offset = ((Int64)BarCalibSigned[1] << 14) + (((Int64)BarCalibSigned[2] * rawTemp) >> 3) + (((Int64)BarCalibSigned[3] * rawTemp * rawTemp) >> 19);
+            var sensitivity = (Int64)BarCalibUnsigned[2] + (((Int64)BarCalibUnsigned[3] * rawTemp) >> 17) + (((Int64)BarCalibSigned[0] * rawTemp * rawTemp) >> 34);
+            var offset = ((Int64)BarCalibSigned[1] << 14) + (((Int64)BarCalibSigned[2] * rawTemp) >> 3) + (((Int64)BarCalibSigned[3] * rawTemp * rawTemp) >> 19);
             return (double)(((Int64)(sensitivity * rawPres) + offset) >> 14) / 100;
         }
         #endregion // Barometer
@@ -373,7 +373,7 @@ namespace AppBle01.Extras
         #region -------------------------- Gyroscope --------------------------
         public static string Parse_Gyroscope_Configuration(IBuffer buffer)
         {
-            byte value = DataReader.FromBuffer(buffer).ReadByte();
+            var value = DataReader.FromBuffer(buffer).ReadByte();
             switch (value)
             {
                 case 0:
@@ -407,23 +407,23 @@ namespace AppBle01.Extras
 
         public static string Parse_Gyroscope_Period(IBuffer buffer)
         {
-            byte value = DataReader.FromBuffer(buffer).ReadByte();
+            var value = DataReader.FromBuffer(buffer).ReadByte();
             return value + "0 ms";
         }
 
         public static string Parse_Gyroscope_Data(IBuffer buffer)
         {
-            DataReader reader = DataReader.FromBuffer(buffer);
+            var reader = DataReader.FromBuffer(buffer);
 
             // Parse in correct endianness
-            long x_int = readInt16TI(reader);
-            long y_int = readInt16TI(reader);
-            long z_int = readInt16TI(reader);
+            var x_int = readInt16TI(reader);
+            var y_int = readInt16TI(reader);
+            var z_int = readInt16TI(reader);
 
             // Do the math that the TI website tells us to
-            float x = (float)x_int * 500 / 65536;
-            float y = (float)y_int * 500 / 65536 * -1;
-            float z = (float)z_int * 500 / 65536;
+            var x = (float)x_int * 500 / 65536;
+            var y = (float)y_int * 500 / 65536 * -1;
+            var z = (float)z_int * 500 / 65536;
 
             // Print out the string
             return "\nX: " + x.ToString("F2") + " dps\nY: " + y.ToString("F2") + " dps\nZ: " + z.ToString("F2") + " dps";

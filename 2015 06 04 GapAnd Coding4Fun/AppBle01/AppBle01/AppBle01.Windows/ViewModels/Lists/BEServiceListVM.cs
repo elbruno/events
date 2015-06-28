@@ -10,7 +10,7 @@ namespace AppBle01.ViewModels.Lists
     /// </summary>
     public class BEServiceListVM : ObservableCollection<BEServiceVM>
     {
-        public void Initialize(List<BEServiceModel> serviceModels)
+        public void Initialize(List<BeServiceModel> serviceModels)
         {
             Clear();
             foreach (var serviceM in serviceModels)

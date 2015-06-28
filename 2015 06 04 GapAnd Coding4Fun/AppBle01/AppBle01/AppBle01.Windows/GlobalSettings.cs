@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Windows.ApplicationModel.Background;
 using Windows.Devices.Enumeration;
 using Windows.Storage;
+using AppBle01.Devices;
 using AppBle01.Dictionary;
 using AppBle01.Dictionary.DataParser;
 using AppBle01.Models;
@@ -25,7 +26,7 @@ namespace AppBle01
         #region ----------------------------- Variables --------------------------
         // For navigation through pages
         public static BeDeviceModel SelectedDevice;
-        public static BEServiceModel SelectedService;
+        public static BeServiceModel SelectedService;
         public static BeCharacteristicModel SelectedCharacteristic;
 
         // Dictionaries for keeping track of objects
@@ -108,16 +109,16 @@ namespace AppBle01
             var infoCollection = await DeviceInformation.FindAllAsync(BluetoothLeDevice.GetDeviceSelector());
 
             // Re-add devices
-            foreach (DeviceInformation info in infoCollection)
+            foreach (var info in infoCollection)
             {
                 // Make sure we don't initialize duplicates
                 if (PairedDevices.FindIndex(device => device.DeviceId == info.Id) >= 0)
                 {
                     continue;
                 }
-                BluetoothLeDevice WRTDevice = await BluetoothLeDevice.FromIdAsync(info.Id);
+                var wrtDevice = await BluetoothLeDevice.FromIdAsync(info.Id);
                 var deviceM = new BeDeviceModel();
-                deviceM.Initialize(WRTDevice, info);
+                deviceM.Initialize(wrtDevice, info);
                 PairedDevices.Add(deviceM);
             }
 

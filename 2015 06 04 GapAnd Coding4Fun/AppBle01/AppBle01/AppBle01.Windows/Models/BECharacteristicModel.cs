@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Background;
 using Windows.Devices.Bluetooth;
@@ -75,7 +76,7 @@ namespace AppBle01.Models
         }
 
         public bool Default { get; private set; }
-        public BEServiceModel ServiceM { get; private set; }
+        public BeServiceModel ServiceM { get; private set; }
         public bool Toastable { get; private set; }
         public bool Writable { get; private set; }
         public bool Readable { get; private set; }
@@ -98,7 +99,7 @@ namespace AppBle01.Models
         /// </summary>
         /// <param name="serviceM"></param>
         /// <param name="characteristic"></param>
-        public void Initialize(BEServiceModel serviceM, GattCharacteristic characteristic)
+        public void Initialize(BeServiceModel serviceM, GattCharacteristic characteristic)
         {
             if (serviceM == null)
             {
@@ -278,10 +279,13 @@ namespace AppBle01.Models
         /// <param name="obj"></param>
         private void CharacteristicValueChanged_Handler(GattCharacteristic sender, GattValueChangedEventArgs obj)
         {
-            if (_characteristic.Service.Device.ConnectionStatus != BluetoothLeDevice.BluetoothConnectionStatus.Connected)
-            {
-                return;
-            }
+            //if (_characteristic.Service.Device.ConnectionStatus != BluetoothLeDevice.BluetoothConnectionStatus.Connected)
+            //{
+            //    return;
+            //}
+
+            Debug.WriteLine(_characteristic.CharacteristicProperties.ToString());
+
             CharacteristicValue = _dictionaryEntry.ParseReadValue(obj.CharacteristicValue);
         }
         #endregion // Notification Utilities
@@ -327,7 +331,8 @@ namespace AppBle01.Models
         /// </summary>
         private void ToastInit()
         {
-            _toastName = string.Format("{0}{1}{2}", TOAST_STRING_PREFIX, _characteristic.Service.Device.DeviceId.GetHashCode(), Uuid.GetHashCode());
+            //_toastName = string.Format("{0}{1}{2}", TOAST_STRING_PREFIX, _characteristic.Service.Device.DeviceId.GetHashCode(), Uuid.GetHashCode());
+            _toastName = string.Format("{0}{1}{2}", TOAST_STRING_PREFIX, _characteristic.UserDescription, Uuid.GetHashCode());
             Toastable = ((_characteristic.CharacteristicProperties & GattCharacteristicProperties.Notify) != 0);
             ToastRegistered = ApplicationData.Current.LocalSettings.Values.ContainsKey(_toastName);
             ToastButtonActive = true;
@@ -398,25 +403,24 @@ namespace AppBle01.Models
             if (taskRegistered == false)
             {
                 var displayString = string.Format("{0}{1}{2}{3}{4}", 
-                    ServiceM.DeviceM.Name, 
-                    BTLE_BackgroundTasksForToasts.ToastBackgroundTask.ToastSplit, 
+                    ServiceM.DeviceM.Name, "split", 
                     ServiceM.Name,
-                    BTLE_BackgroundTasksForToasts.ToastBackgroundTask.ToastSplit,
+                    "split 2",
                     Name);
                 ApplicationData.Current.LocalSettings.Values[_toastName] = displayString;
                 GlobalSettings.AddToast(this);
 
-                var builder = new BackgroundTaskBuilder();
-                var trigger = new GattCharacteristicNotificationTrigger(_characteristic);
+                //var builder = new BackgroundTaskBuilder();
+                //var trigger = new Windows.ApplicationModel.Background.(_characteristic);
 
-                builder.Name = _toastName;
-                builder.TaskEntryPoint = typeof(ToastBackgroundTask).FullName;
-                builder.SetTrigger(trigger);
+                //builder.Name = _toastName;
+                //builder.TaskEntryPoint = typeof(ToastBackgroundTask).FullName;
+                //builder.SetTrigger(trigger);
 
-                var taskRegistration = builder.Register();
+                //var taskRegistration = builder.Register();
 
-                // hook up completion handlers
-                taskRegistration.Completed += OnTaskRegistrationCompleted;
+                //// hook up completion handlers
+                //taskRegistration.Completed += OnTaskRegistrationCompleted;
 
                 // update state
                 ToastRegistered = true;
@@ -560,7 +564,8 @@ namespace AppBle01.Models
             }
 
             // Write buffer to device
-            if (_characteristic.Service.Device.ConnectionStatus == BluetoothLeDevice.BluetoothConnectionStatus.Connected)
+            //if (_characteristic.Service.Device.ConnectionStatus == BluetoothLeDevice.BluetoothConnectionStatus.Connected)
+            if (1 == 1)
             {
                 try
                 {

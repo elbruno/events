@@ -1,6 +1,7 @@
 ﻿using System;
 using Windows.Devices.Bluetooth.GenericAttributeProfile;
 using Windows.UI.Xaml;
+using AppBle01.Dictionary;
 using AppBle01.Models;
 
 namespace AppBle01.ViewModels.IndividualObjects

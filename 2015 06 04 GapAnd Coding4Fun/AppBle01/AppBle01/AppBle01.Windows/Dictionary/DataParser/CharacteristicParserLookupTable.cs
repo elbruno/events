@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using Windows.Devices.Bluetooth.GenericAttributeProfile;
 using Windows.Storage.Streams;
 using AppBle01.Dictionary.DataParser.BLE_Specification;
-using DayOfWeek = AppBle01.Dictionary.DataParser.BLE_Specification.DayOfWeek;
+using TIUuids = AppBle01.Extras.TI_BLESensorTagGattUuids.TISensorTagCharacteristicUUIDs;
+using TIParsers = AppBle01.Extras.TI_BLESensorTagCharacteristicParsers;
 
 namespace AppBle01.Dictionary.DataParser
 {
@@ -13,29 +14,29 @@ namespace AppBle01.Dictionary.DataParser
         public CharacteristicParserLookupTable()
         {
             /* WinRT implemented BTLE specification characteristics */
-            Add(GattCharacteristicUuids.AlertCategoryId, AlertCategoryId.ParseBuffer);
-            Add(GattCharacteristicUuids.AlertCategoryIdBitMask, AlertCategoryIdBitMask.ParseBuffer);
-            Add(GattCharacteristicUuids.AlertLevel, AlertLevel.ParseBuffer);
-            Add(GattCharacteristicUuids.AlertNotificationControlPoint, AlertNotificationControlPoint.ParseBuffer);
-            Add(GattCharacteristicUuids.AlertStatus, AlertStatus.ParseBuffer);
+            //Add(GattCharacteristicUuids.AlertCategoryId, AlertCategoryId.ParseBuffer);
+            //Add(GattCharacteristicUuids.AlertCategoryIdBitMask, AlertCategoryIdBitMask.ParseBuffer);
+            //Add(GattCharacteristicUuids.AlertLevel, AlertLevel.ParseBuffer);
+            //Add(GattCharacteristicUuids.AlertNotificationControlPoint, AlertNotificationControlPoint.ParseBuffer);
+            //Add(GattCharacteristicUuids.AlertStatus, AlertStatus.ParseBuffer);
             Add(GattCharacteristicUuids.BatteryLevel, BasicParsers.ParseUInt8);
             Add(GattCharacteristicUuids.BloodPressureFeature, BloodPressureFeature.ParseBuffer);
             Add(GattCharacteristicUuids.BodySensorLocation, BodySensorLocation.ParseBuffer);
-            Add(GattCharacteristicUuids.BootKeyboardInputReport, BasicParsers.ParseUInt8Multi);
-            Add(GattCharacteristicUuids.BootKeyboardOutputReport, BasicParsers.ParseUInt8Multi);
-            Add(GattCharacteristicUuids.BootMouseInputReport, BasicParsers.ParseUInt8Multi);
+            //Add(GattCharacteristicUuids.BootKeyboardInputReport, BasicParsers.ParseUInt8Multi);
+            //Add(GattCharacteristicUuids.BootKeyboardOutputReport, BasicParsers.ParseUInt8Multi);
+            //Add(GattCharacteristicUuids.BootMouseInputReport, BasicParsers.ParseUInt8Multi);
             Add(GattCharacteristicUuids.CscFeature, CscFeature.ParseBuffer);
-            Add(GattCharacteristicUuids.DayOfWeek, DayOfWeek.ParseBuffer);
-            Add(GattCharacteristicUuids.GapDeviceName, BasicParsers.ParseString);
-            Add(GattCharacteristicUuids.HardwareRevisionString, BasicParsers.ParseString);
+            //Add(GattCharacteristicUuids.DayOfWeek, DayOfWeek.ParseBuffer);
+            //Add(GattCharacteristicUuids.GapDeviceName, BasicParsers.ParseString);
+            //Add(GattCharacteristicUuids.HardwareRevisionString, BasicParsers.ParseString);
             Add(GattCharacteristicUuids.HeartRateMeasurement, HeartRateMeasurement.ParseBuffer);
-            Add(GattCharacteristicUuids.ManufacturerNameString, BasicParsers.ParseString);
-            Add(GattCharacteristicUuids.ModelNumberString, BasicParsers.ParseString);
-            Add(GattCharacteristicUuids.SerialNumberString, BasicParsers.ParseString);
-            Add(GattCharacteristicUuids.SoftwareRevisionString, BasicParsers.ParseString);
-            Add(GattCharacteristicUuids.FirmwareRevisionString, BasicParsers.ParseString);
+            //Add(GattCharacteristicUuids.ManufacturerNameString, BasicParsers.ParseString);
+            //Add(GattCharacteristicUuids.ModelNumberString, BasicParsers.ParseString);
+            //Add(GattCharacteristicUuids.SerialNumberString, BasicParsers.ParseString);
+            //Add(GattCharacteristicUuids.SoftwareRevisionString, BasicParsers.ParseString);
+            //Add(GattCharacteristicUuids.FirmwareRevisionString, BasicParsers.ParseString);
 
-            
+
             /* TI Characteristics */
             Add(TIUuids.IRTemperature_Data, TIParsers.Parse_Temperature_Data);
             Add(TIUuids.IRTemperature_Config, TIParsers.Parse_Temperature_Configuration);
