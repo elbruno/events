@@ -65,7 +65,7 @@ namespace AppBle01.Dictionary
 
         public bool HasChanged()
         {
-            bool result = _changed;
+            var result = _changed;
             _changed = false;
             return result;
         }

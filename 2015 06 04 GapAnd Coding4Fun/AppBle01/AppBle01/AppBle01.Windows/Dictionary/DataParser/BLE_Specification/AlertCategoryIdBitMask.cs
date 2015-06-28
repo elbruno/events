@@ -26,10 +26,10 @@ namespace AppBle01.Dictionary.DataParser.BLE_Specification
 
         public static string ParseBuffer(IBuffer buffer)
         {
-            string result = ""; 
+            var result = ""; 
 
-            DataReader reader = DataReader.FromBuffer(buffer);
-            byte current = reader.ReadByte();
+            var reader = DataReader.FromBuffer(buffer);
+            var current = reader.ReadByte();
             result += BasicParsers.FlagsSetInByte(typeof(CategoryIdBitMask0), current);
             if (reader.UnconsumedBufferLength > 0)
             {

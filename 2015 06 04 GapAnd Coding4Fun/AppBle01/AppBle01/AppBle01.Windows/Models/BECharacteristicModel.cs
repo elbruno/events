@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Background;
 using Windows.Devices.Bluetooth;
@@ -7,7 +8,9 @@ using Windows.Devices.Bluetooth.GenericAttributeProfile;
 using Windows.Foundation;
 using Windows.Storage;
 using Windows.Storage.Streams;
+using AppBle01.Devices;
 using AppBle01.Dictionary;
+using AppBle01.ViewModels.IndividualObjects;
 
 namespace AppBle01.Models
 {
@@ -17,7 +20,7 @@ namespace AppBle01.Models
     ///
     /// This model is a wrapper around a single Gatt Characteristic.
     /// </summary>
-    public class BECharacteristicModel : BEGattModelBase<GattCharacteristic>
+    public class BeCharacteristicModel : BeGattModelBase<GattCharacteristic>
     {
         #region ----------------------------- Properties -----------------------------
         private GattCharacteristic _characteristic { get; set; }
@@ -73,22 +76,22 @@ namespace AppBle01.Models
         }
 
         public bool Default { get; private set; }
-        public BEServiceModel ServiceM { get; private set; }
+        public BeServiceModel ServiceM { get; private set; }
         public bool Toastable { get; private set; }
         public bool Writable { get; private set; }
         public bool Readable { get; private set; }
         #endregion Properties
 
         #region ----------------------------- Constructor/Initialization -----------------------------
-        public BECharacteristicModel(bool isMandatory = false)
+        public BeCharacteristicModel(bool isMandatory = false)
         {
-            this._viewModelInstances = new List<BEGattVMBase<GattCharacteristic>>();
-            this.Name = CharacteristicDictionaryEntry.CHARACTERISTIC_MISSING_STRING;
+            ViewModelInstances = new List<BeGattVmBase<GattCharacteristic>>();
+            Name = CharacteristicDictionaryEntry.CHARACTERISTIC_MISSING_STRING;
         }
 
         public override string ToString()
         {
-            return this.Name;
+            return Name;
         }
 
         /// <summary>
@@ -96,7 +99,7 @@ namespace AppBle01.Models
         /// </summary>
         /// <param name="serviceM"></param>
         /// <param name="characteristic"></param>
-        public void Initialize(BEServiceModel serviceM, GattCharacteristic characteristic)
+        public void Initialize(BeServiceModel serviceM, GattCharacteristic characteristic)
         {
             if (serviceM == null)
             {
@@ -160,9 +163,9 @@ namespace AppBle01.Models
         /// </summary>
         private void UpdatePropertiesFromDictionaryEntry()
         {
-            this.Name = _dictionaryEntry.Name;
-            this.Default = _dictionaryEntry.IsDefault;
-            this.DisplayType = _dictionaryEntry.ReadUnknownAs;
+            Name = _dictionaryEntry.Name;
+            Default = _dictionaryEntry.IsDefault;
+            DisplayType = _dictionaryEntry.ReadUnknownAs;
         }
         #endregion // Dictionary
 
@@ -276,10 +279,13 @@ namespace AppBle01.Models
         /// <param name="obj"></param>
         private void CharacteristicValueChanged_Handler(GattCharacteristic sender, GattValueChangedEventArgs obj)
         {
-            if (_characteristic.Service.Device.ConnectionStatus != BluetoothConnectionStatus.Connected)
-            {
-                return;
-            }
+            //if (_characteristic.Service.Device.ConnectionStatus != BluetoothLeDevice.BluetoothConnectionStatus.Connected)
+            //{
+            //    return;
+            //}
+
+            Debug.WriteLine(_characteristic.CharacteristicProperties.ToString());
+
             CharacteristicValue = _dictionaryEntry.ParseReadValue(obj.CharacteristicValue);
         }
         #endregion // Notification Utilities
@@ -325,7 +331,8 @@ namespace AppBle01.Models
         /// </summary>
         private void ToastInit()
         {
-            _toastName = string.Format("{0}{1}{2}", TOAST_STRING_PREFIX, this._characteristic.Service.Device.DeviceId.GetHashCode(), this.Uuid.GetHashCode());
+            //_toastName = string.Format("{0}{1}{2}", TOAST_STRING_PREFIX, _characteristic.Service.Device.DeviceId.GetHashCode(), Uuid.GetHashCode());
+            _toastName = string.Format("{0}{1}{2}", TOAST_STRING_PREFIX, _characteristic.UserDescription, Uuid.GetHashCode());
             Toastable = ((_characteristic.CharacteristicProperties & GattCharacteristicProperties.Notify) != 0);
             ToastRegistered = ApplicationData.Current.LocalSettings.Values.ContainsKey(_toastName);
             ToastButtonActive = true;
@@ -342,7 +349,7 @@ namespace AppBle01.Models
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public bool ToastEquals(BECharacteristicModel model)
+        public bool ToastEquals(BeCharacteristicModel model)
         {
             return _toastName.Equals(model._toastName);
         }
@@ -395,26 +402,25 @@ namespace AppBle01.Models
             // If not registered, register it
             if (taskRegistered == false)
             {
-                string displayString = string.Format("{0}{1}{2}{3}{4}", 
-                    ServiceM.DeviceM.Name, 
-                    BTLE_BackgroundTasksForToasts.ToastBackgroundTask.ToastSplit, 
+                var displayString = string.Format("{0}{1}{2}{3}{4}", 
+                    ServiceM.DeviceM.Name, "split", 
                     ServiceM.Name,
-                    BTLE_BackgroundTasksForToasts.ToastBackgroundTask.ToastSplit,
-                    this.Name);
+                    "split 2",
+                    Name);
                 ApplicationData.Current.LocalSettings.Values[_toastName] = displayString;
                 GlobalSettings.AddToast(this);
 
-                var builder = new BackgroundTaskBuilder();
-                var trigger = new GattCharacteristicNotificationTrigger(_characteristic);
+                //var builder = new BackgroundTaskBuilder();
+                //var trigger = new Windows.ApplicationModel.Background.(_characteristic);
 
-                builder.Name = _toastName;
-                builder.TaskEntryPoint = typeof(ToastBackgroundTask).FullName;
-                builder.SetTrigger(trigger);
+                //builder.Name = _toastName;
+                //builder.TaskEntryPoint = typeof(ToastBackgroundTask).FullName;
+                //builder.SetTrigger(trigger);
 
-                var taskRegistration = builder.Register();
+                //var taskRegistration = builder.Register();
 
-                // hook up completion handlers
-                taskRegistration.Completed += OnTaskRegistrationCompleted;
+                //// hook up completion handlers
+                //taskRegistration.Completed += OnTaskRegistrationCompleted;
 
                 // update state
                 ToastRegistered = true;
@@ -428,7 +434,7 @@ namespace AppBle01.Models
         /// <param name="args"></param>
         private async void OnTaskRegistrationCompleted(BackgroundTaskRegistration sender, BackgroundTaskCompletedEventArgs args)
         {
-            bool unregister = false;
+            var unregister = false;
 
             // check for exceptions in registration
             try
@@ -548,28 +554,29 @@ namespace AppBle01.Models
                 throw new InvalidOperationException("Should not be able to write to this characteristic");
             }
 
-            DataWriter writer = new DataWriter();
+            var writer = new DataWriter();
 
             // This currently only writes as byte. (Therefore, the entire system can only write a byte at once...)
-            bool parseSuccess = FillDatawriterWithByte(message, writer);
+            var parseSuccess = FillDatawriterWithByte(message, writer);
             if (!parseSuccess)
             {
                 return;
             }
 
             // Write buffer to device
-            if (_characteristic.Service.Device.ConnectionStatus == BluetoothConnectionStatus.Connected)
+            //if (_characteristic.Service.Device.ConnectionStatus == BluetoothLeDevice.BluetoothConnectionStatus.Connected)
+            if (1 == 1)
             {
                 try
                 {
                     if ((_characteristic.CharacteristicProperties & GattCharacteristicProperties.WriteWithoutResponse) != 0)
                     {
-                        GattCommunicationStatus status = await _characteristic.WriteValueAsync(
+                        var status = await _characteristic.WriteValueAsync(
                             writer.DetachBuffer(), GattWriteOption.WriteWithoutResponse);
                     }
                     else
                     {
-                        GattCommunicationStatus status = await _characteristic.WriteValueAsync(
+                        var status = await _characteristic.WriteValueAsync(
                             writer.DetachBuffer(), GattWriteOption.WriteWithResponse);
                         await ReadValueAsync();
                     }
@@ -587,9 +594,9 @@ namespace AppBle01.Models
                      * http://msdn.microsoft.com/en-us/library/windows/hardware/hh450806(v=vs.85).aspx
                      */
 
-                    uint hr = (uint)e.HResult;
-                    uint highBytes = hr >> 16;
-                    uint lowBytes = hr & 0xFFFF;
+                    var hr = (uint)e.HResult;
+                    var highBytes = hr >> 16;
+                    var lowBytes = hr & 0xFFFF;
 
                     if (hr == 0x80651000 && hr == 0xE0420000)
                     {

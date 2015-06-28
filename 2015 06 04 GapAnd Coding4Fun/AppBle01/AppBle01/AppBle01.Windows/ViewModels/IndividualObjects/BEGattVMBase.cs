@@ -1,26 +1,19 @@
 ﻿using System.ComponentModel;
+using AppBle01.Models;
 
 namespace AppBle01.ViewModels.IndividualObjects
 {
     // A class that implements INotifyPropertyChanged so that XAML elements can be updated. 
-    public abstract class BEGattVMBase<GattObjectType> : INotifyPropertyChanged
+    public abstract class BeGattVmBase<TGattObjectType> : INotifyPropertyChanged
     {
-        public BEGattModelBase<GattObjectType> Model { get; protected set; }
+        public BeGattModelBase<TGattObjectType> Model { get; protected set; }
 
-        #region ----------- Interface with the model (register/unregister) -----------
-        public void UnregisterVMFromModel()
+        public void UnregisterVmFromModel()
         {
-            Model.UnregisterVMFromModel(this);
+            Model.UnregisterVmFromModel(this);
         }
-        #endregion 
-
-        #region ----------- Interface with the view (PropertyChanged signaling) ---------
         public event PropertyChangedEventHandler PropertyChanged;
 
-        /// <summary>
-        /// Fires a property change notification to the UI thread
-        /// </summary>
-        /// <param name="name"></param>
         public void SignalChanged(string name)
         {
             if (PropertyChanged != null)
@@ -38,6 +31,5 @@ namespace AppBle01.ViewModels.IndividualObjects
                     });
             }
         }
-        #endregion
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using AppBle01.Models;
 using AppBle01.ViewModels.IndividualObjects;
 
 namespace AppBle01.ViewModels.Lists
@@ -7,16 +8,16 @@ namespace AppBle01.ViewModels.Lists
     /// <summary>
     /// A list containing Bluetooth Devices with wrappers to the XAML UI. 
     /// </summary>
-    public class BEDeviceListVM : ObservableCollection<BEDeviceVM> 
+    public class BEDeviceListVM : ObservableCollection<BeDeviceVm> 
     {
-        public void Initialize(ICollection<BEDeviceModel> deviceModels) 
+        public void Initialize(ICollection<BeDeviceModel> deviceModels) 
         {
-            this.Clear();
-            foreach (BEDeviceModel deviceM in deviceModels) 
+            Clear();
+            foreach (var deviceM in deviceModels) 
             {
-                BEDeviceVM deviceVM = new BEDeviceVM();
+                var deviceVM = new BeDeviceVm();
                 deviceVM.Initialize(deviceM); 
-                this.Add(deviceVM);
+                Add(deviceVM);
             }
         }
 
@@ -27,7 +28,7 @@ namespace AppBle01.ViewModels.Lists
         {
             foreach (var VMinstance in this)
             {
-                VMinstance.UnregisterVMFromModel();
+                VMinstance.UnregisterVmFromModel();
             }
         }
     }

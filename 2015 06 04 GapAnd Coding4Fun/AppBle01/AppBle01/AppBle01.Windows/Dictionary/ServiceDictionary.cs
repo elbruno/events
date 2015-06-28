@@ -2,6 +2,7 @@
 using System.Reflection;
 using System.Threading.Tasks;
 using Windows.Devices.Bluetooth.GenericAttributeProfile;
+using AppBle01.Extras;
 
 namespace AppBle01.Dictionary
 {
@@ -12,16 +13,16 @@ namespace AppBle01.Dictionary
         private void AddAndCreateNewEntry(Guid uuid, String name, bool isDefault = false)
         {
             // Error handle duplicates
-            if (this.ContainsKey(uuid))
+            if (ContainsKey(uuid))
             {
                 Utilities.OnException(new ArgumentException("In ServiceDictionary.AddAndCreateNewEntry: Attempted to add Uuid which exists."));
                 return; 
             }
 
             // Add in new value. 
-            ServiceDictionaryEntry entry = new ServiceDictionaryEntry();
+            var entry = new ServiceDictionaryEntry();
             entry.Initialize(uuid, name, isDefault);
-            this.Add(uuid, entry);
+            Add(uuid, entry);
         }
 
         // Initialize the dictionary with values for which names will not be changing. 
@@ -31,14 +32,14 @@ namespace AppBle01.Dictionary
 
             // MSDN defined services of the Bluetooth specification
             var properties = typeof(GattServiceUuids).GetRuntimeProperties();
-            foreach (PropertyInfo prop in properties)
+            foreach (var prop in properties)
             {
                 AddAndCreateNewEntry((Guid)prop.GetValue(null), prop.Name, true);
             }
 
             // TI Sensor tag services
-            properties = typeof(BTLE_Explorer.Extras.TI_BLESensorTagGattUuids.TISensorTagServiceUUIDs).GetRuntimeProperties();
-            foreach (PropertyInfo prop in properties)
+            properties = typeof(TI_BLESensorTagGattUuids.TISensorTagServiceUUIDs).GetRuntimeProperties();
+            foreach (var prop in properties)
             {
                 AddAndCreateNewEntry((Guid)prop.GetValue(null), prop.Name, true);
             }
@@ -56,7 +57,7 @@ namespace AppBle01.Dictionary
 
         public override void AddLoadedEntry(ServiceDictionaryEntry input)
         {
-            this.Add(input.Uuid, input);
+            Add(input.Uuid, input);
         }
     }
 }

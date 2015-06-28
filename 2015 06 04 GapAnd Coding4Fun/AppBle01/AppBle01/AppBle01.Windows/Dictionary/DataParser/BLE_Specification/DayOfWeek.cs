@@ -21,8 +21,8 @@ namespace AppBle01.Dictionary.DataParser.BLE_Specification
 
         public static string ParseBuffer(IBuffer buffer)
         {
-            DataReader reader = DataReader.FromBuffer(buffer);
-            byte result = reader.ReadByte();
+            var reader = DataReader.FromBuffer(buffer);
+            var result = reader.ReadByte();
             string categoryName;
             if (result < Enum.GetNames(typeof(Status)).Length)
             {

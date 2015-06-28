@@ -1,17 +1,18 @@
 ﻿using System;
 using Windows.Devices.Bluetooth.GenericAttributeProfile;
 using Windows.UI.Xaml;
+using AppBle01.Models;
 
 namespace AppBle01.ViewModels.IndividualObjects
 {
     /// <summary>
     /// Glue between the serivce view and model.
     /// </summary>
-    public class BEServiceVM : BEGattVMBase<GattDeviceService>
+    public class BEServiceVM : BeGattVmBase<GattDeviceService>
     {
 
         #region ---------------------- Properties -------------------
-        public BEServiceModel ServiceM { get; private set; }
+        public BeServiceModel ServiceM { get; private set; }
 
         public string Name
         {
@@ -100,10 +101,10 @@ namespace AppBle01.ViewModels.IndividualObjects
 
         public override string ToString()
         {
-            return this.Name;
+            return Name;
         }
 
-        public void Initialize(BEServiceModel serviceM)
+        public void Initialize(BeServiceModel serviceM)
         {
             if (serviceM == null)
             {

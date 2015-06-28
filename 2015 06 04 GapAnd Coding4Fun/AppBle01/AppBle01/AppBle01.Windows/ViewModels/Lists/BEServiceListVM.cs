@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using AppBle01.Models;
 using AppBle01.ViewModels.IndividualObjects;
 
 namespace AppBle01.ViewModels.Lists
@@ -9,14 +10,14 @@ namespace AppBle01.ViewModels.Lists
     /// </summary>
     public class BEServiceListVM : ObservableCollection<BEServiceVM>
     {
-        public void Initialize(ICollection<BEServiceModel> serviceModels)
+        public void Initialize(List<BeServiceModel> serviceModels)
         {
-            this.Clear();
-            foreach (BEServiceModel serviceM in serviceModels)
+            Clear();
+            foreach (var serviceM in serviceModels)
             {
-                BEServiceVM serviceVM = new BEServiceVM();
+                var serviceVM = new BEServiceVM();
                 serviceVM.Initialize(serviceM);
-                this.Add(serviceVM);
+                Add(serviceVM);
             }
         }
 
@@ -27,7 +28,7 @@ namespace AppBle01.ViewModels.Lists
         {
             foreach (var VMinstance in this)
             {
-                VMinstance.UnregisterVMFromModel();
+                VMinstance.UnregisterVmFromModel();
             }
         }
     }
