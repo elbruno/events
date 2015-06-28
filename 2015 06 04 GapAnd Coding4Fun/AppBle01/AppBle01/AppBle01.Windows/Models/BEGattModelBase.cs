@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using AppBle01.ViewModels.IndividualObjects;
 
 namespace AppBle01.Models
 {
@@ -13,25 +14,25 @@ namespace AppBle01.Models
     /// BEDeviceModel inherits from BEGattModelBase<BluetoothGattDevice>
     /// BEDeviceVM would be in the ViewModelInstances list. 
     /// </summary>
-    /// <typeparam name="GattObjectType"></typeparam>
-    public class BEGattModelBase<GattObjectType>
+    /// <typeparam name="TGattObjectType"></typeparam>
+    public class BeGattModelBase<TGattObjectType>
     {
         #region --------------------- Manipulate view-models dependent on this model ---------------------
-        protected List<BEGattVMBase<GattObjectType>> _viewModelInstances;
+        protected List<BeGattVmBase<TGattObjectType>> ViewModelInstances;
 
         /// <summary>
         /// Registers the view model with the model, so that the model can fire change notifications
         /// </summary>
         /// <param name="vm"></param>
-        public void Register(BEGattVMBase<GattObjectType> vm)
+        public void Register(BeGattVmBase<TGattObjectType> vm)
         {
-            lock (_viewModelInstances)
+            lock (ViewModelInstances)
             {
                 if (vm == null)
                 {
                     throw new ArgumentNullException("Tried to register a null-valued view-model to a model.");
                 }
-                _viewModelInstances.Add(vm);
+                ViewModelInstances.Add(vm);
             }
         }
 
@@ -39,17 +40,17 @@ namespace AppBle01.Models
         /// Unregisters the view model from the model
         /// </summary>
         /// <param name="vm"></param>
-        public void UnregisterVMFromModel(BEGattVMBase<GattObjectType> vm)
+        public void UnregisterVmFromModel(BeGattVmBase<TGattObjectType> vm)
         {
-            lock (_viewModelInstances)
+            lock (ViewModelInstances)
             {
                 if (vm == null)
                 {
                     throw new ArgumentNullException("Tried to remove a null-valued view-model from a model");
                 }
-                if (_viewModelInstances.Contains(vm))
+                if (ViewModelInstances.Contains(vm))
                 {
-                    _viewModelInstances.Remove(vm);
+                    ViewModelInstances.Remove(vm);
                 }
             }
         }
@@ -61,16 +62,16 @@ namespace AppBle01.Models
         /// <param name="property"></param>
         protected void SignalChanged(string property)
         {
-            BEGattVMBase<GattObjectType>[] viewModels;
-            lock (_viewModelInstances)
+            BeGattVmBase<TGattObjectType>[] viewModels;
+            lock (ViewModelInstances)
             {
-                viewModels = _viewModelInstances.ToArray();
+                viewModels = ViewModelInstances.ToArray();
             }
 
             // Call each VM outside the lock, as they can signal a change to the UI, resulting
             // in a deadlock if the UI thread callback is trying to Register or Unregister a
             // VM above
-            foreach (BEGattVMBase<GattObjectType> vm in viewModels)
+            foreach (var vm in viewModels)
             {
                 vm.SignalChanged(property);
             }

@@ -12,12 +12,12 @@ namespace AppBle01.Models
     /// 
     /// This model is a wrapper around the GattDeviceService class.
     /// </summary>
-    public class BEServiceModel : BEGattModelBase<GattDeviceService>
+    public class BEServiceModel : BeGattModelBase<GattDeviceService>
     {
         #region ---------------------------- Properties ----------------------------
         private GattDeviceService _service { get; set; }
-        public BEDeviceModel DeviceM { get; private set; }
-        public List<BECharacteristicModel> CharacteristicModels { get; }
+        public BeDeviceModel DeviceM { get; private set; }
+        public List<BeCharacteristicModel> CharacteristicModels { get; }
         #region name
         
         private string _name;
@@ -43,8 +43,8 @@ namespace AppBle01.Models
         public BEServiceModel()
         {
             Name = ServiceDictionaryEntry.SERVICE_MISSING_STRING;
-            CharacteristicModels = new List<BECharacteristicModel>();
-            _viewModelInstances = new List<BEGattVMBase<GattDeviceService>>(); 
+            CharacteristicModels = new List<BeCharacteristicModel>();
+            ViewModelInstances = new List<BEGattVMBase<GattDeviceService>>(); 
         }
         
         public override string ToString()
@@ -57,7 +57,7 @@ namespace AppBle01.Models
         /// </summary>
         /// <param name="service"></param>
         /// <param name="deviceM"></param>
-        public void Initialize(GattDeviceService service, BEDeviceModel deviceM)
+        public void Initialize(GattDeviceService service, BeDeviceModel deviceM)
         {
             // Check for valid input
             if (service == null)
@@ -97,7 +97,7 @@ namespace AppBle01.Models
                 IReadOnlyList<GattCharacteristic> characteristics = _service.GetAllCharacteristics();
                 foreach (var characteristic in characteristics)
                 {
-                    var characteristicM = new BECharacteristicModel();
+                    var characteristicM = new BeCharacteristicModel();
                     characteristicM.Initialize(this, characteristic);
                     CharacteristicModels.Add(characteristicM);
                 }

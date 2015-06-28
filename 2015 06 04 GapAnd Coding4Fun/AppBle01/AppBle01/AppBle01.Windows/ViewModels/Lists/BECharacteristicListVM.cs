@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using AppBle01.Models;
 using AppBle01.ViewModels.IndividualObjects;
 
 namespace AppBle01.ViewModels.Lists
@@ -9,14 +10,14 @@ namespace AppBle01.ViewModels.Lists
     /// </summary>
     public class BECharacteristicListVM : ObservableCollection<BECharacteristicVM>
     {
-        public void Initialize(ICollection<BECharacteristicModel> characteristicModels)
+        public void Initialize(ICollection<BeCharacteristicModel> characteristicModels)
         {
             Clear();
-            foreach (BECharacteristicModel characteristicM in characteristicModels)
+            foreach (BeCharacteristicModel characteristicM in characteristicModels)
             {
-                var characteristicVM = new BECharacteristicVM();
-                characteristicVM.Initialize(characteristicM);
-                Add(characteristicVM);
+                var characteristicVm = new BECharacteristicVM();
+                characteristicVm.Initialize(characteristicM);
+                Add(characteristicVm);
             }
         }
 
@@ -27,7 +28,7 @@ namespace AppBle01.ViewModels.Lists
         {
             foreach (var VMinstance in this)
             {
-                VMinstance.UnregisterVMFromModel();
+                VMinstance.UnregisterVmFromModel();
             }
         }
     }

@@ -1,43 +1,21 @@
 ﻿using System;
 using Windows.UI;
 using Windows.UI.Xaml.Media;
+using AppBle01.Devices;
+using AppBle01.Models;
 
 namespace AppBle01.ViewModels.IndividualObjects
 {
-    /// <summary>
-    /// Glue between the Device View and Model
-    /// </summary>
-    public class BEDeviceVM : BEGattVMBase<BluetoothLEDevice>
+    public class BeDeviceVm : BeGattVmBase<BluetoothLeDevice>
     {
-        #region Properties
-        // Funnels the model's properties to the XAML UI.
-        public BEDeviceModel DeviceM { get; private set; }
+        public BeDeviceModel DeviceM { get; private set; }
         
-        public string Name
-        {
-            get
-            {
-                return DeviceM.Name.Trim();
-            }
-        }
+        public string Name => DeviceM.Name.Trim();
 
-        public UInt64 BluetoothAddress
-        {
-            get
-            {
-                return DeviceM.BluetoothAddress;
-            }
-        }
+        public UInt64 BluetoothAddress => DeviceM.BluetoothAddress;
 
-        public String DeviceId
-        {
-            get
-            {
-                return DeviceM.DeviceId;
-            }
-        }
-        #region Connectivity 
-        
+        public String DeviceId => DeviceM.DeviceId;
+       
         public string ConnectString
         {
             get
@@ -67,10 +45,8 @@ namespace AppBle01.ViewModels.IndividualObjects
                 }
             }
         }
-        #endregion
-        #endregion
 
-        public void Initialize(BEDeviceModel deviceM)
+        public void Initialize(BeDeviceModel deviceM)
         {
             Model = deviceM; 
             DeviceM = deviceM;

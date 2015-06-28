@@ -7,7 +7,9 @@ using Windows.Devices.Bluetooth.GenericAttributeProfile;
 using Windows.Foundation;
 using Windows.Storage;
 using Windows.Storage.Streams;
+using AppBle01.Devices;
 using AppBle01.Dictionary;
+using AppBle01.ViewModels.IndividualObjects;
 
 namespace AppBle01.Models
 {
@@ -17,7 +19,7 @@ namespace AppBle01.Models
     ///
     /// This model is a wrapper around a single Gatt Characteristic.
     /// </summary>
-    public class BECharacteristicModel : BEGattModelBase<GattCharacteristic>
+    public class BeCharacteristicModel : BeGattModelBase<GattCharacteristic>
     {
         #region ----------------------------- Properties -----------------------------
         private GattCharacteristic _characteristic { get; set; }
@@ -80,9 +82,9 @@ namespace AppBle01.Models
         #endregion Properties
 
         #region ----------------------------- Constructor/Initialization -----------------------------
-        public BECharacteristicModel(bool isMandatory = false)
+        public BeCharacteristicModel(bool isMandatory = false)
         {
-            _viewModelInstances = new List<BEGattVMBase<GattCharacteristic>>();
+            ViewModelInstances = new List<BeGattVmBase<GattCharacteristic>>();
             Name = CharacteristicDictionaryEntry.CHARACTERISTIC_MISSING_STRING;
         }
 
@@ -276,7 +278,7 @@ namespace AppBle01.Models
         /// <param name="obj"></param>
         private void CharacteristicValueChanged_Handler(GattCharacteristic sender, GattValueChangedEventArgs obj)
         {
-            if (_characteristic.Service.Device.ConnectionStatus != BluetoothConnectionStatus.Connected)
+            if (_characteristic.Service.Device.ConnectionStatus != BluetoothLeDevice.BluetoothConnectionStatus.Connected)
             {
                 return;
             }
@@ -342,7 +344,7 @@ namespace AppBle01.Models
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public bool ToastEquals(BECharacteristicModel model)
+        public bool ToastEquals(BeCharacteristicModel model)
         {
             return _toastName.Equals(model._toastName);
         }
@@ -558,7 +560,7 @@ namespace AppBle01.Models
             }
 
             // Write buffer to device
-            if (_characteristic.Service.Device.ConnectionStatus == BluetoothConnectionStatus.Connected)
+            if (_characteristic.Service.Device.ConnectionStatus == BluetoothLeDevice.BluetoothConnectionStatus.Connected)
             {
                 try
                 {

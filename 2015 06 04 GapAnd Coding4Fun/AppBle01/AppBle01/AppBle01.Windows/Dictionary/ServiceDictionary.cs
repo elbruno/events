@@ -2,6 +2,7 @@
 using System.Reflection;
 using System.Threading.Tasks;
 using Windows.Devices.Bluetooth.GenericAttributeProfile;
+using AppBle01.Extras;
 
 namespace AppBle01.Dictionary
 {
@@ -37,7 +38,7 @@ namespace AppBle01.Dictionary
             }
 
             // TI Sensor tag services
-            properties = typeof(BTLE_Explorer.Extras.TI_BLESensorTagGattUuids.TISensorTagServiceUUIDs).GetRuntimeProperties();
+            properties = typeof(TI_BLESensorTagGattUuids.TISensorTagServiceUUIDs).GetRuntimeProperties();
             foreach (var prop in properties)
             {
                 AddAndCreateNewEntry((Guid)prop.GetValue(null), prop.Name, true);

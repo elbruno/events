@@ -9,11 +9,10 @@ using AppBle01.ViewModels.Lists;
 
 namespace AppBle01
 {
-    public sealed partial class MainPage : Page
+    public sealed partial class MainPage
     {
-        #region ---------------------- Variables ----------------------
         private ListBox _deviceListBox;
-        public BEDeviceListVM DevicesVM { get; }
+        public BEDeviceListVM DevicesVm { get; }
 
         public Visibility BackgroundAccessProblem
         {
@@ -29,17 +28,13 @@ namespace AppBle01
                 }
             }
         }
-        #endregion // Variables
 
-        #region ---------------------- Page Navigation Functions ----------------------
         private bool _firstEntry;
         public MainPage()
         {
             InitializeComponent();
-
             // var appView = Windows.UI.ViewManagement.ApplicationView.GetForCurrentView();
-
-            DevicesVM = new BEDeviceListVM();
+            DevicesVm = new BEDeviceListVM();
             _firstEntry = true;
         }
 
@@ -51,37 +46,26 @@ namespace AppBle01
                 _deviceListBox.SelectedIndex = -1;
             }
 
-            if (_firstEntry)
+            if (!_firstEntry) return;
+            var backgroundAccessProblemVisibility = Visibility.Collapsed;
+            _firstEntry = false;
+            SetValue(BackgroundAccessProblemProperty, Visibility.Collapsed);
+
+            await GlobalSettings.RequestBackgroundAccessAsync();
+            if (!GlobalSettings.BackgroundAccessRequested)
             {
-                var backgroundAccessProblemVisibility = Visibility.Collapsed;
-                _firstEntry = false;
-
-                // Don't show the background access error for now
-                SetValue(BackgroundAccessProblemProperty, Visibility.Collapsed);
-
-                // Request for background access
-                // Make sure this is done at the end of this function, as it returns
-                // once the first blocking call is encountered
-                await GlobalSettings.RequestBackgroundAccessAsync();
-                if (!GlobalSettings.BackgroundAccessRequested)
-                {
-                    backgroundAccessProblemVisibility = Visibility.Visible;
-                }
-                SetValue(BackgroundAccessProblemProperty, backgroundAccessProblemVisibility);
-
-                // Populate the Device List off the UI thread, but don't block on it
-                Utilities.RunFuncAsTask(PopulateLEDeviceListAsync);
+                backgroundAccessProblemVisibility = Visibility.Visible;
             }
+            SetValue(BackgroundAccessProblemProperty, backgroundAccessProblemVisibility);
+            Utilities.RunFuncAsTask(PopulateLeDeviceListAsync);
         }
-        #endregion
 
-        #region ---------------------- Device List Manipulation ---------------------
         /// <summary>
         /// Retrieves the list of Bluetooth LE devices from the OS, initializes our internal
         /// data structures, and attempt to connect to them, if they are advertising.
         /// </summary>
         /// <returns></returns>
-        private async Task PopulateLEDeviceListAsync()
+        private async Task PopulateLeDeviceListAsync()
         {
             await Utilities.RunActionOnUiThreadAsync(() => IsUserInteractionEnabled = false);
 
@@ -90,12 +74,11 @@ namespace AppBle01
             await Utilities.RunActionOnUiThreadAsync(
                 () =>
                 {
-                    DevicesVM.Initialize(GlobalSettings.PairedDevices);
+                    DevicesVm.Initialize(GlobalSettings.PairedDevices);
                     IsUserInteractionEnabled = true;
                 });
         }
 
-        #region disabling user interaction on device loading
         public static readonly DependencyProperty IsUserInteractionEnabledProperty =
             DependencyProperty.Register("IsUserInteractionEnabled", typeof(bool), typeof(MainPage), new PropertyMetadata(false));
         public static readonly DependencyProperty IsUpdatingDeviceListProperty =
@@ -125,12 +108,9 @@ namespace AppBle01
                 }
             }
         }
-        #endregion // Disable user interaction on device loading
 
         private void OnDeviceListLoaded(object sender, RoutedEventArgs e)
         {
-            // XAML elements are template-based and cannot be directly access
-            // hook the ListBox instance here
             if (sender != null)
             {
                 _deviceListBox = (ListBox)sender;
@@ -148,17 +128,15 @@ namespace AppBle01
 
             foreach (var listBoxItem in listBox.SelectedItems)
             {
-                var device = listBoxItem as BEDeviceVM;
-                GlobalSettings.SelectedDevice = device.DeviceM;
+                var device = listBoxItem as BeDeviceVm;
+                if (device != null) GlobalSettings.SelectedDevice = device.DeviceM;
             }
             Frame.Navigate(typeof(DeviceInfo));
         }
-        #endregion // Device List Manipulation
 
-        #region ---------------------- Bottom Buttons ----------------------
         private void deviceListRefreshButton_Click(object sender, RoutedEventArgs e)
         {
-            Utilities.RunFuncAsTask(PopulateLEDeviceListAsync);
+            Utilities.RunFuncAsTask(PopulateLeDeviceListAsync);
         }
 
         private async void settingsButton_Click(object sender, RoutedEventArgs e)
@@ -168,8 +146,12 @@ namespace AppBle01
 
         private void goToAbout_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(AboutPage));
+            //Frame.Navigate(typeof(AboutPage));
         }
-        #endregion  // Bottom Buttons
+
+        public void Connect(int connectionId, object target)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

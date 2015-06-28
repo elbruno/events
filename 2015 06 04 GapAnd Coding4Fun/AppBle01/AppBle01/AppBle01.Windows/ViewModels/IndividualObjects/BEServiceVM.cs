@@ -1,13 +1,14 @@
 ﻿using System;
 using Windows.Devices.Bluetooth.GenericAttributeProfile;
 using Windows.UI.Xaml;
+using AppBle01.Models;
 
 namespace AppBle01.ViewModels.IndividualObjects
 {
     /// <summary>
     /// Glue between the serivce view and model.
     /// </summary>
-    public class BEServiceVM : BEGattVMBase<GattDeviceService>
+    public class BEServiceVM : BeGattVmBase<GattDeviceService>
     {
 
         #region ---------------------- Properties -------------------

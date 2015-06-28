@@ -1,17 +1,18 @@
 ﻿using System;
 using Windows.Devices.Bluetooth.GenericAttributeProfile;
 using Windows.UI.Xaml;
+using AppBle01.Models;
 
 namespace AppBle01.ViewModels.IndividualObjects
 {
     /// <summary>
     /// Glue between the Characteristics View and Model.
     /// </summary>
-    public class BECharacteristicVM : BEGattVMBase<GattCharacteristic>
+    public class BECharacteristicVM : BeGattVmBase<GattCharacteristic>
     {
         #region ----------------- Properties -----------------
         // Funnels the model's properties to the XAML UI.
-        public BECharacteristicModel CharacteristicM { get; private set; }
+        public BeCharacteristicModel CharacteristicM { get; private set; }
         
         public string Name
         {
@@ -158,7 +159,7 @@ namespace AppBle01.ViewModels.IndividualObjects
         }
         #endregion // Properties
 
-        public void Initialize(BECharacteristicModel characteristicM)
+        public void Initialize(BeCharacteristicModel characteristicM)
         {
             Model = characteristicM; 
             CharacteristicM = characteristicM;

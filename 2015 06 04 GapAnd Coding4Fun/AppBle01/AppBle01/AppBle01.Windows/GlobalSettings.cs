@@ -24,9 +24,9 @@ namespace AppBle01
     {
         #region ----------------------------- Variables --------------------------
         // For navigation through pages
-        public static BEDeviceModel SelectedDevice;
+        public static BeDeviceModel SelectedDevice;
         public static BEServiceModel SelectedService;
-        public static BECharacteristicModel SelectedCharacteristic;
+        public static BeCharacteristicModel SelectedCharacteristic;
 
         // Dictionaries for keeping track of objects
         public static ServiceDictionary ServiceDictionaryConstant;
@@ -37,11 +37,11 @@ namespace AppBle01
         public static bool DictionariesCleared { get; private set; }
 
         // List of active devices
-        public static List<BEDeviceModel> PairedDevices;
+        public static List<BeDeviceModel> PairedDevices;
 
         // Toast and background related objects
         public static bool BackgroundAccessRequested;
-        public static List<BECharacteristicModel> CharacteristicsWithActiveToast;
+        public static List<BeCharacteristicModel> CharacteristicsWithActiveToast;
 
         // List of settings
         private const string USE_CACHED_MODE = "UseCachedMode";
@@ -66,7 +66,7 @@ namespace AppBle01
         public static void Initialize()
         {
             // Create objects for the objects that we need. 
-            PairedDevices = new List<BEDeviceModel>();
+            PairedDevices = new List<BeDeviceModel>();
 
             ParserLookupTable = new CharacteristicParserLookupTable();
             ServiceDictionaryUnknown = new ServiceDictionary();
@@ -76,7 +76,7 @@ namespace AppBle01
             ServiceDictionaryConstant.InitAsConstant();
             CharacteristicDictionaryConstant.InitAsConstant();
             DictionariesCleared = false;
-            CharacteristicsWithActiveToast = new List<BECharacteristicModel>();
+            CharacteristicsWithActiveToast = new List<BeCharacteristicModel>();
 
             _useCachedMode = ApplicationData.Current.LocalSettings.Values.ContainsKey(USE_CACHED_MODE);
         }
@@ -105,7 +105,7 @@ namespace AppBle01
             PairedDevices.Clear();
 
             // Asynchronously get all paired/connected bluetooth devices. 
-            var infoCollection = await DeviceInformation.FindAllAsync(BluetoothLEDevice.GetDeviceSelector());
+            var infoCollection = await DeviceInformation.FindAllAsync(BluetoothLeDevice.GetDeviceSelector());
 
             // Re-add devices
             foreach (DeviceInformation info in infoCollection)
@@ -115,8 +115,8 @@ namespace AppBle01
                 {
                     continue;
                 }
-                BluetoothLEDevice WRTDevice = await BluetoothLEDevice.FromIdAsync(info.Id);
-                var deviceM = new BEDeviceModel();
+                BluetoothLeDevice WRTDevice = await BluetoothLeDevice.FromIdAsync(info.Id);
+                var deviceM = new BeDeviceModel();
                 deviceM.Initialize(WRTDevice, info);
                 PairedDevices.Add(deviceM);
             }
@@ -221,7 +221,7 @@ namespace AppBle01
             // Unregister all toasts from the past. 
             foreach (var key in ApplicationData.Current.LocalSettings.Containers.Keys)
             {
-                if (key.StartsWith(BECharacteristicModel.TOAST_STRING_PREFIX))
+                if (key.StartsWith(BeCharacteristicModel.TOAST_STRING_PREFIX))
                 {
                     ApplicationData.Current.LocalSettings.Values.Remove(key);
                 }
@@ -234,7 +234,7 @@ namespace AppBle01
         /// with a GattCharacteristicNotificationTrigger
         /// </summary>
         /// <param name="cm">Model representing the characteristic</param>
-        public static void AddToast(BECharacteristicModel cm)
+        public static void AddToast(BeCharacteristicModel cm)
         {
             foreach (var model in CharacteristicsWithActiveToast)
             {
@@ -250,7 +250,7 @@ namespace AppBle01
         /// Removes a characteristic from our list of characteristics with active toasts
         /// </summary>
         /// <param name="cm">Model representing the characteristic</param>
-        public static void RemoveToast(BECharacteristicModel cm)
+        public static void RemoveToast(BeCharacteristicModel cm)
         {
             CharacteristicsWithActiveToast.Remove(cm);
         }

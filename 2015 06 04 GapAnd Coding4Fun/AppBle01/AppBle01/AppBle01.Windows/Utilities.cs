@@ -18,7 +18,7 @@ namespace AppBle01
         /// <param name="message">Message to be displayed</param>
         public static void MakeAlertBox(string message)
         {
-            MessageDialog box = new MessageDialog(message);
+            var box = new MessageDialog(message);
             box.Title = "BTLE Explorer has a message!";
 
             ShowMessageDialog(box);
@@ -57,10 +57,10 @@ namespace AppBle01
         /// <param name="ex"></param>
         public static void OnException(Exception ex)
         {
-            string message = "";
+            var message = "";
 
             message = BuildErrorMessage(ex, message);
-            MessageDialog errorBox = new MessageDialog(message);
+            var errorBox = new MessageDialog(message);
             errorBox.Title = "Unexpected exception!";
 
             ShowMessageDialog(errorBox);
@@ -73,10 +73,10 @@ namespace AppBle01
         /// <param name="msg"></param>
         public static void OnExceptionWithMessage(Exception ex, string msg)
         {
-            string message = "Message: " + msg + "\n\n";
+            var message = "Message: " + msg + "\n\n";
 
             message = BuildErrorMessage(ex, message);
-            MessageDialog errorBox = new MessageDialog(message);
+            var errorBox = new MessageDialog(message);
             errorBox.Title = "Known exception!";
 
             ShowMessageDialog(errorBox);

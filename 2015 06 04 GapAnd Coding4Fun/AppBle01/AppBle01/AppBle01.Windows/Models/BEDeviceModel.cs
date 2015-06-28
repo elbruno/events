@@ -1,23 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Windows.Devices.Bluetooth.GenericAttributeProfile;
 using Windows.Devices.Enumeration;
+using AppBle01.Devices;
+using AppBle01.ViewModels.IndividualObjects;
 
 namespace AppBle01.Models
 {
-    /// <summary>
-    /// A model class to handle data manipulations. Manipulations to this class will push
-    /// changes to the corresponding view model instances, which is bound to the UI. 
-    ///
-    /// This model is a wrapper around the BluetoothLEDevice class.
-    /// </summary>
-    public class BEDeviceModel : BEGattModelBase<BluetoothLEDevice>
+    public class BeDeviceModel : BeGattModelBase<BluetoothLeDevice>
     {
-        #region ------------------------------ Properties ------------------------------
         private DeviceInformation _deviceInfo;
         public List<BEServiceModel> ServiceModels { get; }
-        private BluetoothLEDevice _device { get; set; }
+        private BluetoothLeDevice _device { get; set; }
         
         public String Name
         {
@@ -44,26 +38,19 @@ namespace AppBle01.Models
         }
         
         public bool Connected;
-        #endregion // Properties
 
-        #region ------------------------------ Constructor/Initialize ------------------------------
-        public BEDeviceModel()
+        public BeDeviceModel()
         {
             ServiceModels = new List<BEServiceModel>();
-            _viewModelInstances = new List<BEGattVMBase<BluetoothLEDevice>>();
+            ViewModelInstances = new List<BeGattVmBase<BluetoothLeDevice>>();
         }
 
-        /// <summary>
-        /// Initialization
-        /// </summary>
-        /// <param name="device"></param>
-        /// <param name="deviceInfo"></param>
-        public void Initialize(BluetoothLEDevice device, DeviceInformation deviceInfo)
+        public void Initialize(BluetoothLeDevice device, DeviceInformation deviceInfo)
         {
             // Check for valid input
             if (device == null)
             {
-                throw new ArgumentNullException("In BEDeviceVM, BluetoothLEDevice cannot be null.");
+                throw new ArgumentNullException(@"In BEDeviceVM, BluetoothLeDevice cannot be null.");
             }
             if (deviceInfo == null)
             {
@@ -73,12 +60,12 @@ namespace AppBle01.Models
             // Initialize variables
             _device = device;
             _deviceInfo = deviceInfo;
-            if (_device.ConnectionStatus == BluetoothConnectionStatus.Connected)
+            if (_device.ConnectionStatus == BluetoothLeDevice.BluetoothConnectionStatus.Connected)
             {
                 Connected = true;
             }
 
-            foreach (GattDeviceService service in _device.GattServices)
+            foreach (var service in _device.GattServices)
             {
                 var serviceM = new BEServiceModel();
                 serviceM.Initialize(service, this);
@@ -98,25 +85,13 @@ namespace AppBle01.Models
             // they are advertising.
             Utilities.RunFuncAsTask(RegisterNotificationsAsync);
         }
-        #endregion
 
-        #region ---------------------------- Event Handlers ----------------------------
-        /// <summary>
-        /// NameChanged event handler
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="obj"></param>
-        private void OnNameChanged(BluetoothLEDevice sender, Object obj)
+        private void OnNameChanged(BluetoothLeDevice sender, Object obj)
         {
             SignalChanged("Name");
         }
 
-        /// <summary>
-        /// GattServicesChanged event handler
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="obj"></param>
-        private void OnGattervicesChanged(BluetoothLEDevice sender, Object obj)
+        private void OnGattervicesChanged(BluetoothLeDevice sender, Object obj)
         {
             Utilities.MakeAlertBox("Services on '" + Name + "' has changed! Please navigate back to the main page and refresh devices if you would like to update the device.");
 
@@ -128,18 +103,9 @@ namespace AppBle01.Models
             }
         }
 
-        /// <summary>
-        /// ConnectionStatusChanged event handler
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="obj"></param>
-        private void OnConnectionStatusChanged(BluetoothLEDevice sender, Object obj)
+        private void OnConnectionStatusChanged(BluetoothLeDevice sender, Object obj)
         {
-            var value = false; 
-            if (_device.ConnectionStatus == BluetoothConnectionStatus.Connected)
-            {
-                value = true;
-            }
+            bool value = _device.ConnectionStatus == BluetoothLeDevice.BluetoothConnectionStatus.Connected;
             if (value != Connected)
             {
                 // Change internal boolean and signal UI
@@ -148,12 +114,7 @@ namespace AppBle01.Models
                 SignalChanged("ConnectColor");
             }
         }
-        #endregion // event handlers
 
-        #region ---------------------------- Registering Notifications ----------------------------
-        /// <summary>
-        /// Registers notifications for all characteristics in all services in this device
-        /// </summary>
         private bool _notificationsRegistered;
         public async Task RegisterNotificationsAsync()
         {
@@ -172,10 +133,6 @@ namespace AppBle01.Models
             _notificationsRegistered = true; 
         }
 
-        /// <summary>
-        /// Unregisters notifications for all characteristics in all services in this devices
-        /// </summary>
-        /// <returns></returns>
         public async Task UnregisterNotificationsAsync()
         {
             try 
@@ -193,6 +150,5 @@ namespace AppBle01.Models
 
             _notificationsRegistered = false; 
         }
-        #endregion // registering notifications
     }
 }
