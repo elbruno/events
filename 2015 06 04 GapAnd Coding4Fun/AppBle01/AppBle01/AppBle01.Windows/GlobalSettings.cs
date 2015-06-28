@@ -116,7 +116,7 @@ namespace AppBle01
                     continue;
                 }
                 BluetoothLEDevice WRTDevice = await BluetoothLEDevice.FromIdAsync(info.Id);
-                BEDeviceModel deviceM = new BEDeviceModel();
+                var deviceM = new BEDeviceModel();
                 deviceM.Initialize(WRTDevice, info);
                 PairedDevices.Add(deviceM);
             }
@@ -213,13 +213,13 @@ namespace AppBle01
         public static async Task UnregisterAllToastsAsync()
         {
             // Unregister all toasts from current session
-            foreach (BECharacteristicModel cm in CharacteristicsWithActiveToast)
+            foreach (var cm in CharacteristicsWithActiveToast)
             {
                 await cm.TaskUnregisterInsideListAsync();
             }
 
             // Unregister all toasts from the past. 
-            foreach (string key in ApplicationData.Current.LocalSettings.Containers.Keys)
+            foreach (var key in ApplicationData.Current.LocalSettings.Containers.Keys)
             {
                 if (key.StartsWith(BECharacteristicModel.TOAST_STRING_PREFIX))
                 {

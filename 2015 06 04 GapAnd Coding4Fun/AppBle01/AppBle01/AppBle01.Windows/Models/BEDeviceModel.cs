@@ -16,7 +16,7 @@ namespace AppBle01.Models
     {
         #region ------------------------------ Properties ------------------------------
         private DeviceInformation _deviceInfo;
-        public List<BEServiceModel> ServiceModels { get; private set; }
+        public List<BEServiceModel> ServiceModels { get; }
         private BluetoothLEDevice _device { get; set; }
         
         public String Name
@@ -50,7 +50,7 @@ namespace AppBle01.Models
         public BEDeviceModel()
         {
             ServiceModels = new List<BEServiceModel>();
-            this._viewModelInstances = new List<BEGattVMBase<BluetoothLEDevice>>();
+            _viewModelInstances = new List<BEGattVMBase<BluetoothLEDevice>>();
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace AppBle01.Models
 
             foreach (GattDeviceService service in _device.GattServices)
             {
-                BEServiceModel serviceM = new BEServiceModel();
+                var serviceM = new BEServiceModel();
                 serviceM.Initialize(service, this);
                 ServiceModels.Add(serviceM); 
             }
@@ -135,7 +135,7 @@ namespace AppBle01.Models
         /// <param name="obj"></param>
         private void OnConnectionStatusChanged(BluetoothLEDevice sender, Object obj)
         {
-            bool value = false; 
+            var value = false; 
             if (_device.ConnectionStatus == BluetoothConnectionStatus.Connected)
             {
                 value = true;

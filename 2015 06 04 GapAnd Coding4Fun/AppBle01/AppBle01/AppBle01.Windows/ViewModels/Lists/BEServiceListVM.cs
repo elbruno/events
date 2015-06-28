@@ -11,12 +11,12 @@ namespace AppBle01.ViewModels.Lists
     {
         public void Initialize(ICollection<BEServiceModel> serviceModels)
         {
-            this.Clear();
+            Clear();
             foreach (BEServiceModel serviceM in serviceModels)
             {
-                BEServiceVM serviceVM = new BEServiceVM();
+                var serviceVM = new BEServiceVM();
                 serviceVM.Initialize(serviceM);
-                this.Add(serviceVM);
+                Add(serviceVM);
             }
         }
 

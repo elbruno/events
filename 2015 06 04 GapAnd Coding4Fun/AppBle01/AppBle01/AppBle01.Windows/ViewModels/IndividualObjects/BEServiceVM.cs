@@ -100,7 +100,7 @@ namespace AppBle01.ViewModels.IndividualObjects
 
         public override string ToString()
         {
-            return this.Name;
+            return Name;
         }
 
         public void Initialize(BEServiceModel serviceM)

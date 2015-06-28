@@ -12,16 +12,16 @@ namespace AppBle01.Dictionary
         private void AddAndCreateNewEntry(Guid uuid, String name, bool isDefault = false)
         {
             // Error handle duplicates
-            if (this.ContainsKey(uuid))
+            if (ContainsKey(uuid))
             {
                 Utilities.OnException(new ArgumentException("In ServiceDictionary.AddAndCreateNewEntry: Attempted to add Uuid which exists."));
                 return; 
             } 
             
             // add in new entry
-            CharacteristicDictionaryEntry entry = new CharacteristicDictionaryEntry(); 
+            var entry = new CharacteristicDictionaryEntry(); 
             entry.Initialize(uuid, name, isDefault);
-            this.Add(uuid, entry); 
+            Add(uuid, entry); 
         }
 
         // Initializes a dictionary as the constant (ie, unchangable; only contains final, default value)
@@ -35,14 +35,14 @@ namespace AppBle01.Dictionary
 
             // MSDN defined characteristics of the Bluetooth specification
             var properties = typeof(GattCharacteristicUuids).GetRuntimeProperties();
-            foreach (PropertyInfo prop in properties)
+            foreach (var prop in properties)
             {
                 AddAndCreateNewEntry((Guid)prop.GetValue(null), prop.Name, true);
             }
 
             // TI Sensor tag characteristics
             properties = typeof(BTLE_Explorer.Extras.TI_BLESensorTagGattUuids.TISensorTagCharacteristicUUIDs).GetRuntimeProperties();
-            foreach (PropertyInfo prop in properties)
+            foreach (var prop in properties)
             {
                 AddAndCreateNewEntry((Guid)prop.GetValue(null), prop.Name, true);
             }
@@ -61,7 +61,7 @@ namespace AppBle01.Dictionary
 
         public override void AddLoadedEntry(CharacteristicDictionaryEntry input)
         {
-            this.Add(input.Uuid, input); 
+            Add(input.Uuid, input); 
         }
     }
 }

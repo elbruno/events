@@ -82,13 +82,13 @@ namespace AppBle01.Models
         #region ----------------------------- Constructor/Initialization -----------------------------
         public BECharacteristicModel(bool isMandatory = false)
         {
-            this._viewModelInstances = new List<BEGattVMBase<GattCharacteristic>>();
-            this.Name = CharacteristicDictionaryEntry.CHARACTERISTIC_MISSING_STRING;
+            _viewModelInstances = new List<BEGattVMBase<GattCharacteristic>>();
+            Name = CharacteristicDictionaryEntry.CHARACTERISTIC_MISSING_STRING;
         }
 
         public override string ToString()
         {
-            return this.Name;
+            return Name;
         }
 
         /// <summary>
@@ -160,9 +160,9 @@ namespace AppBle01.Models
         /// </summary>
         private void UpdatePropertiesFromDictionaryEntry()
         {
-            this.Name = _dictionaryEntry.Name;
-            this.Default = _dictionaryEntry.IsDefault;
-            this.DisplayType = _dictionaryEntry.ReadUnknownAs;
+            Name = _dictionaryEntry.Name;
+            Default = _dictionaryEntry.IsDefault;
+            DisplayType = _dictionaryEntry.ReadUnknownAs;
         }
         #endregion // Dictionary
 
@@ -325,7 +325,7 @@ namespace AppBle01.Models
         /// </summary>
         private void ToastInit()
         {
-            _toastName = string.Format("{0}{1}{2}", TOAST_STRING_PREFIX, this._characteristic.Service.Device.DeviceId.GetHashCode(), this.Uuid.GetHashCode());
+            _toastName = string.Format("{0}{1}{2}", TOAST_STRING_PREFIX, _characteristic.Service.Device.DeviceId.GetHashCode(), Uuid.GetHashCode());
             Toastable = ((_characteristic.CharacteristicProperties & GattCharacteristicProperties.Notify) != 0);
             ToastRegistered = ApplicationData.Current.LocalSettings.Values.ContainsKey(_toastName);
             ToastButtonActive = true;
@@ -395,12 +395,12 @@ namespace AppBle01.Models
             // If not registered, register it
             if (taskRegistered == false)
             {
-                string displayString = string.Format("{0}{1}{2}{3}{4}", 
+                var displayString = string.Format("{0}{1}{2}{3}{4}", 
                     ServiceM.DeviceM.Name, 
                     BTLE_BackgroundTasksForToasts.ToastBackgroundTask.ToastSplit, 
                     ServiceM.Name,
                     BTLE_BackgroundTasksForToasts.ToastBackgroundTask.ToastSplit,
-                    this.Name);
+                    Name);
                 ApplicationData.Current.LocalSettings.Values[_toastName] = displayString;
                 GlobalSettings.AddToast(this);
 
@@ -428,7 +428,7 @@ namespace AppBle01.Models
         /// <param name="args"></param>
         private async void OnTaskRegistrationCompleted(BackgroundTaskRegistration sender, BackgroundTaskCompletedEventArgs args)
         {
-            bool unregister = false;
+            var unregister = false;
 
             // check for exceptions in registration
             try
@@ -548,10 +548,10 @@ namespace AppBle01.Models
                 throw new InvalidOperationException("Should not be able to write to this characteristic");
             }
 
-            DataWriter writer = new DataWriter();
+            var writer = new DataWriter();
 
             // This currently only writes as byte. (Therefore, the entire system can only write a byte at once...)
-            bool parseSuccess = FillDatawriterWithByte(message, writer);
+            var parseSuccess = FillDatawriterWithByte(message, writer);
             if (!parseSuccess)
             {
                 return;
@@ -564,12 +564,12 @@ namespace AppBle01.Models
                 {
                     if ((_characteristic.CharacteristicProperties & GattCharacteristicProperties.WriteWithoutResponse) != 0)
                     {
-                        GattCommunicationStatus status = await _characteristic.WriteValueAsync(
+                        var status = await _characteristic.WriteValueAsync(
                             writer.DetachBuffer(), GattWriteOption.WriteWithoutResponse);
                     }
                     else
                     {
-                        GattCommunicationStatus status = await _characteristic.WriteValueAsync(
+                        var status = await _characteristic.WriteValueAsync(
                             writer.DetachBuffer(), GattWriteOption.WriteWithResponse);
                         await ReadValueAsync();
                     }
@@ -587,9 +587,9 @@ namespace AppBle01.Models
                      * http://msdn.microsoft.com/en-us/library/windows/hardware/hh450806(v=vs.85).aspx
                      */
 
-                    uint hr = (uint)e.HResult;
-                    uint highBytes = hr >> 16;
-                    uint lowBytes = hr & 0xFFFF;
+                    var hr = (uint)e.HResult;
+                    var highBytes = hr >> 16;
+                    var lowBytes = hr & 0xFFFF;
 
                     if (hr == 0x80651000 && hr == 0xE0420000)
                     {

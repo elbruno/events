@@ -11,12 +11,12 @@ namespace AppBle01.ViewModels.Lists
     {
         public void Initialize(ICollection<BEDeviceModel> deviceModels) 
         {
-            this.Clear();
+            Clear();
             foreach (BEDeviceModel deviceM in deviceModels) 
             {
-                BEDeviceVM deviceVM = new BEDeviceVM();
+                var deviceVM = new BEDeviceVM();
                 deviceVM.Initialize(deviceM); 
-                this.Add(deviceVM);
+                Add(deviceVM);
             }
         }
 

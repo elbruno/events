@@ -28,7 +28,7 @@ namespace AppBle01.Dictionary.DataParser.BLE_Specification
             EnergyExpended = 0;
             Flags = 0;
 
-            DataReader reader = DataReader.FromBuffer(input);
+            var reader = DataReader.FromBuffer(input);
             Flags = reader.ReadByte();
 
             // Get heart rate measurement
@@ -53,7 +53,7 @@ namespace AppBle01.Dictionary.DataParser.BLE_Specification
                 RRInterval = reader.ReadUInt16();
             }
 
-            string result = "";
+            var result = "";
             result += string.Format("\nHeart Rate [{0}]\nSkinContactSupported [{1}]",
                 HeartRate,
                 SensorContactSupported.ToString());

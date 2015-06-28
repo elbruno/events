@@ -17,7 +17,7 @@ namespace AppBle01.Models
         #region ---------------------------- Properties ----------------------------
         private GattDeviceService _service { get; set; }
         public BEDeviceModel DeviceM { get; private set; }
-        public List<BECharacteristicModel> CharacteristicModels { get; private set; }
+        public List<BECharacteristicModel> CharacteristicModels { get; }
         #region name
         
         private string _name;
@@ -42,14 +42,14 @@ namespace AppBle01.Models
         #region ---------------------------- Constructor/Initialize ----------------------------
         public BEServiceModel()
         {
-            this.Name = ServiceDictionaryEntry.SERVICE_MISSING_STRING;
+            Name = ServiceDictionaryEntry.SERVICE_MISSING_STRING;
             CharacteristicModels = new List<BECharacteristicModel>();
-            this._viewModelInstances = new List<BEGattVMBase<GattDeviceService>>(); 
+            _viewModelInstances = new List<BEGattVMBase<GattDeviceService>>(); 
         }
         
         public override string ToString()
         {
-            return this.Name;
+            return Name;
         }
         
         /// <summary>
@@ -71,7 +71,7 @@ namespace AppBle01.Models
             
             // Initialize basics
             _service = service;
-            this.Uuid = _service.Uuid;
+            Uuid = _service.Uuid;
             DeviceM = deviceM; 
             GetDictionaryAndUpdateProperties();
             DetermineProperties();
@@ -95,9 +95,9 @@ namespace AppBle01.Models
             try
             {
                 IReadOnlyList<GattCharacteristic> characteristics = _service.GetAllCharacteristics();
-                foreach (GattCharacteristic characteristic in characteristics)
+                foreach (var characteristic in characteristics)
                 {
-                    BECharacteristicModel characteristicM = new BECharacteristicModel();
+                    var characteristicM = new BECharacteristicModel();
                     characteristicM.Initialize(this, characteristic);
                     CharacteristicModels.Add(characteristicM);
                 }
@@ -131,7 +131,7 @@ namespace AppBle01.Models
             try
             {
                 IReadOnlyList<GattCharacteristic> characteristics = _service.GetAllCharacteristics();
-                foreach (GattCharacteristic characteristic in characteristics)
+                foreach (var characteristic in characteristics)
                 {
                     Toastable |= ((characteristic.CharacteristicProperties & GattCharacteristicProperties.Notify) != 0);
                     Writable |= ((characteristic.CharacteristicProperties & GattCharacteristicProperties.WriteWithoutResponse) != 0);
@@ -187,8 +187,8 @@ namespace AppBle01.Models
         /// </summary>
         private void UpdatePropertiesFromDictionaryEntry()
         {
-            this.Name = _dictionaryEntry.Name;
-            this.Default = _dictionaryEntry.IsDefault; 
+            Name = _dictionaryEntry.Name;
+            Default = _dictionaryEntry.IsDefault; 
         }
         #endregion
 

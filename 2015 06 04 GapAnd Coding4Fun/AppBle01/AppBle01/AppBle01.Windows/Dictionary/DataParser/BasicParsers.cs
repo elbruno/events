@@ -12,17 +12,17 @@ namespace AppBle01.Dictionary.DataParser
         // Single
         public static string ParseUInt8(IBuffer buffer)
         {
-            DataReader reader = DataReader.FromBuffer(buffer);
-            byte result = reader.ReadByte();
+            var reader = DataReader.FromBuffer(buffer);
+            var result = reader.ReadByte();
             return Convert.ToString(result);
         }
 
         // Multiple
         public static string ParseUInt8Multi(IBuffer buffer)
         {
-            byte[] bytes = ReadBufferToBytes(buffer);
-            string result = "";
-            foreach (byte b in bytes) {
+            var bytes = ReadBufferToBytes(buffer);
+            var result = "";
+            foreach (var b in bytes) {
                 result += Convert.ToString(b); 
             }
             return result; 
@@ -32,8 +32,8 @@ namespace AppBle01.Dictionary.DataParser
         #region --------------- Parse as UInt16
         public static string ParseUInt16Multi(IBuffer buffer)
         {
-            byte[] bytes = ReadBufferToBytes(buffer);
-            string hex = BitConverter.ToString(bytes);
+            var bytes = ReadBufferToBytes(buffer);
+            var hex = BitConverter.ToString(bytes);
             return hex.Replace("-", "");
         }
         #endregion
@@ -43,7 +43,7 @@ namespace AppBle01.Dictionary.DataParser
         #region --------------- Parse as string ---------------
         public static string ParseString(IBuffer buffer)
         {
-            DataReader reader = DataReader.FromBuffer(buffer);
+            var reader = DataReader.FromBuffer(buffer);
             return reader.ReadString(buffer.Length);
         }
         #endregion // Parse as string
@@ -53,9 +53,9 @@ namespace AppBle01.Dictionary.DataParser
         // Gets a byte array from a buffer
         public static byte[] ReadBufferToBytes(IBuffer buffer)
         {
-            uint dataLength = buffer.Length;
-            byte[] data = new byte[dataLength];
-            DataReader reader = DataReader.FromBuffer(buffer);
+            var dataLength = buffer.Length;
+            var data = new byte[dataLength];
+            var reader = DataReader.FromBuffer(buffer);
             reader.ReadBytes(data);
             return data;
         }
@@ -66,12 +66,12 @@ namespace AppBle01.Dictionary.DataParser
         // This function assumes that the first set of values are contiguous. 
         public static string FlagsSetInByte(Type type, byte b)
         {
-            string result = ""; 
+            var result = ""; 
             
-            foreach (string categoryName in Enum.GetNames(type))
+            foreach (var categoryName in Enum.GetNames(type))
             {
-                byte categoryValue = (byte)Enum.Parse(type, categoryName);
-                bool present = ((b & categoryValue) > 0);
+                var categoryValue = (byte)Enum.Parse(type, categoryName);
+                var present = ((b & categoryValue) > 0);
                 result += String.Format("\n{0} [{1}]", categoryName, present.ToString());
             }
             return result; 

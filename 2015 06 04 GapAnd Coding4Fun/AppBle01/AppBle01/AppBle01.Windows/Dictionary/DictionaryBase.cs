@@ -29,12 +29,12 @@ namespace AppBle01.Dictionary
 
         protected async Task SerializeAndWriteFileAsync(string filename)
         {
-            StorageFile file = await ApplicationData.Current.LocalFolder.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
-            using (Stream fileStream = await file.OpenStreamForWriteAsync())
+            var file = await ApplicationData.Current.LocalFolder.CreateFileAsync(filename, CreationCollisionOption.ReplaceExisting);
+            using (var fileStream = await file.OpenStreamForWriteAsync())
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(List<TValue>));
+                var serializer = new XmlSerializer(typeof(List<TValue>));
 
-                serializer.Serialize(fileStream, this.Values.ToList());
+                serializer.Serialize(fileStream, Values.ToList());
             }
         }
 
@@ -45,10 +45,10 @@ namespace AppBle01.Dictionary
             // Try to open up our file, if it exists. 
             try
             {
-                using (Stream fileStream = await ApplicationData.Current.LocalFolder.OpenStreamForReadAsync(filename))
+                using (var fileStream = await ApplicationData.Current.LocalFolder.OpenStreamForReadAsync(filename))
                 {
                     // Serialize the info from the file.
-                    XmlSerializer serializer = new XmlSerializer(typeof(List<TValue>));
+                    var serializer = new XmlSerializer(typeof(List<TValue>));
                     list = (List<TValue>)serializer.Deserialize(fileStream);
                 }
             }
@@ -60,7 +60,7 @@ namespace AppBle01.Dictionary
             }
 
             // Load the entry. 
-            foreach (TValue item in list)
+            foreach (var item in list)
             {
                 AddLoadedEntry(item);
             }
