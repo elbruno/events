@@ -1,0 +1,32 @@
+﻿<Window x:Class="ElBruno.Rocket.Ui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:WpfViewers="clr-namespace:Microsoft.Samples.Kinect.WpfViewers;assembly=Microsoft.Samples.Kinect.WpfViewers" 
+        Title="MainWindow" Height="768" Width="1024">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="245"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="640"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Canvas x:Name="canvasHeader" Grid.Row="0" >
+            <Canvas.Background>
+                <ImageBrush ImageSource="Images/ElBrunoKinect.png" Stretch="Uniform"/>
+            </Canvas.Background>
+        </Canvas>
+
+        <WpfViewers:KinectColorViewer HorizontalAlignment="Left" 
+                                          Grid.Row="1" Grid.Column="0"
+                                          Margin="0" VerticalAlignment="Top" Height="480" Width="640" 
+                                          x:Name="colorViewer">
+        </WpfViewers:KinectColorViewer>
+        <WpfViewers:KinectSkeletonViewer HorizontalAlignment="Left" 
+                                             Grid.Row="1" Grid.Column="0"
+                                             VerticalAlignment="Top" Height="480" Width="640" x:Name="skeletonViewer" />
+        <TextBlock x:Name="textBlockInformation" Grid.Row="1" Grid.Column="1" Text="NOT DEFINED" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36"></TextBlock>
+    </Grid>
+</Window>
