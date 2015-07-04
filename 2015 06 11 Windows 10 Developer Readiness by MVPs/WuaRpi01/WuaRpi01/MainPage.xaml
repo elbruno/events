@@ -1,0 +1,101 @@
+﻿<Page x:Class="WuaRpi01.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:WuaRpi01"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      d:DesignWidth="1024"
+      d:DesignHeight="768"
+      mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Header -->
+        <StackPanel Orientation="Horizontal"
+                    Grid.ColumnSpan="2"
+                    Background="BlueViolet">
+            <Image Source="Assets/Conference-Speaker.png"
+                   Margin="20" />
+            <TextBlock x:Name="TextBlockTitle"
+                       VerticalAlignment="Center"
+                       Foreground="White"
+                       FontSize="37.333">El Bruno - Windows 10 Raspberry Pi 2</TextBlock>
+        </StackPanel>
+
+        <!-- Content -->
+        <Grid Grid.Row="1"
+              Grid.Column="0"
+              Grid.ColumnSpan="2">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="ButtonHelloWorld"
+                    HorizontalAlignment="Center"
+                    Click="ButtonHelloWorld_Click">Hello World</Button>
+
+            <TextBlock x:Name="TextBlockHelloWorld"
+                       Grid.Column="0"
+                       Grid.Row="1"
+                       FontSize="22"
+                       TextWrapping="Wrap"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Text="{Binding HelloWorld}" />
+
+            <Button x:Name="ButtonGetDeviceInformation"
+                    HorizontalAlignment="Center"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Click="ButtonGetDeviceInformation_Click">GetDevice Information</Button>
+
+            <ScrollViewer                        Grid.Column="1"
+                                                 Grid.Row="1">
+                <TextBlock x:Name="TextBlockDeviceInformation"
+                           FontSize="12"
+                           TextWrapping="Wrap"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Text="{Binding LocalDevicesInformation}" />
+            </ScrollViewer>
+        </Grid>
+
+        <!-- Status -->
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    Grid.Column="0"
+                    Background="BlueViolet"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Bottom">
+            <TextBlock x:Name="TextBlockStatus"
+                       Foreground="White"
+                       Text="{Binding StatusInformation}" />
+            <TextBlock x:Name="TextBlockStatusSeparator"
+                       Foreground="White"
+                       Text=" -||- " />
+            <TextBlock x:Name="TextBlockStatus2"
+                       Foreground="White"
+                       Text="{Binding StatusInformation2}" />
+        </StackPanel>
+    </Grid>
+
+</Page>
