@@ -4,6 +4,10 @@
       xmlns:local="using:WuaBleHr01"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:chart="using:Sparrow.Chart"
+      xmlns:charting="using:WinRTXamlToolkit.Controls.DataVisualization.Charting"
+      d:DesignHeight="768"
+      d:DesignWidth="1024"
       mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -30,20 +34,74 @@
                        FontSize="37.333">El Bruno - BLE HeartRate Monitor</TextBlock>
         </StackPanel>
 
+        <!-- Content -->
         <Grid Grid.Row="1"
+              Background="BlueViolet"
               Grid.Column="0">
+
             <Grid.RowDefinitions>
                 <RowDefinition Height="200" />
+                <RowDefinition Height="200" />
+                <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-            <TextBlock x:Name="TextBlockHr"
-                       Grid.Row="1"
-                       Text="{Binding HeartRateValue}"
-                       FontSize="29.333" />
+            <StackPanel Grid.Row="0"
+                        Background="BlueViolet"
+                        Orientation="Horizontal">
+                <Image Source="Assets/Heart-ECG.png"
+                       Margin="30"></Image>
+                <TextBlock x:Name="TextBlockHr"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Text="{Binding HeartRateValue}"
+                           FontSize="29.333" />
+            </StackPanel>
 
+            <StackPanel Grid.Row="1"
+                        Background="BlueViolet"
+                        Orientation="Horizontal">
+                <Image Source="Assets/Battery-Charging.png"
+                       Margin="30"></Image>
+                <TextBlock x:Name="TextBlockBattery"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Text="{Binding BatteryValue}"
+                           FontSize="29.333" />
+            </StackPanel>
+
+            <TextBlock x:Name="TextBlockDeviceFound"
+                       Grid.Row="2"
+                       VerticalAlignment="Center"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       Text="{Binding DeviceFoundMessage}"
+                       FontSize="22" />
+            <Button x:Name="ButtonLoad"
+                    Grid.Row="3"
+                    Margin="10"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Background="LightGray"
+                    Content="Connect ..."
+                    Click="ButtonBase_OnClick"/>
 
         </Grid>
+
+        <charting:Chart x:Name="LineChart"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="10"
+                        
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        LegendTitle="Heart Rate">
+            <charting:LineSeries Margin="0"
+                                 IndependentValuePath="Time"
+                                 DependentValuePath="HeartRate"/>
+        </charting:Chart>
 
         <!-- Status -->
         <StackPanel Orientation="Horizontal"

@@ -14,7 +14,7 @@
   <mp:PhoneIdentity PhoneProductId="48d04472-5009-4205-9654-a7d7547d52a0" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>El Bruno - BLE HearRate Monitor</DisplayName>
+    <DisplayName>El Bruno - BLE HeartRate Monitor</DisplayName>
     <PublisherDisplayName>El Bruno</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -32,10 +32,10 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="WuaTemplate.App">
       <uap:VisualElements
-        DisplayName="WuaTemplate"
+        DisplayName="El Bruno - BLE HeartRate Monitor Test"
         Square150x150Logo="Assets\Logo.png"
         Square44x44Logo="Assets\SmallLogo.png"
-        Description="WuaTemplate"
+        Description="El Bruno - BLE HeartRate Monitor"
         BackgroundColor="#464646">
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
@@ -47,6 +47,7 @@
     <DeviceCapability Name="bluetooth.genericAttributeProfile">
       <Device Id="any">
         <Function Type="name:heartRate"/>
+        <Function Type="name:battery"/>
       </Device>
     </DeviceCapability>
   </Capabilities>
