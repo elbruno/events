@@ -41,7 +41,7 @@ namespace WuaBleHr01
 
         private async void ButtonBase_OnClick(object sender, RoutedEventArgs e)
         {
-            if (DeviceFound())
+            if (ButtonLoad.Content.ToString() == "Connect ...")
             {
                 await SuscribeToHrValues();
                 await DisplayBatteryLevel();
@@ -52,6 +52,8 @@ Connected";
             else
             {
                 ButtonLoad.Content = "Connect ...";
+                BatteryValue = "";
+                DeviceFoundMessage = "";
                 _devicePolarHr = null;
                 _devicePolarBattery = null;
             }
@@ -125,7 +127,7 @@ Connected";
             if (_lineSeries != null)
                 _lineSeries.ItemsSource = myList;
         }
-        
+
         private async Task DisplayBatteryLevel()
         {
             var service = await GattDeviceService.FromIdAsync(_devicePolarBattery.Id);
@@ -157,19 +159,17 @@ Connected";
 
             var characteristics = service.GetAllCharacteristics();
             if (null == characteristics || characteristics.Count <= 0) return;
-            foreach (var characteristic in characteristics)
+            var characteristic = characteristics[0];
+            try
             {
-                try
-                {
-                    characteristic.ValueChanged += GattCharacteristic_ValueChanged;
-                    await
-                        characteristic.WriteClientCharacteristicConfigurationDescriptorAsync(
-                            GattClientCharacteristicConfigurationDescriptorValue.Notify);
-                }
-                catch (Exception exception)
-                {
-                    Debug.WriteLine(exception);
-                }
+                characteristic.ValueChanged += GattCharacteristic_ValueChanged;
+                await
+                    characteristic.WriteClientCharacteristicConfigurationDescriptorAsync(
+                        GattClientCharacteristicConfigurationDescriptorValue.Notify);
+            }
+            catch (Exception exception)
+            {
+                Debug.WriteLine(exception);
             }
         }
 
@@ -245,7 +245,7 @@ Connected";
 
             return heartRateMeasurementValue;
         }
-        
+
         #region Properties and Property Changed
         public event PropertyChangedEventHandler PropertyChanged;
 
