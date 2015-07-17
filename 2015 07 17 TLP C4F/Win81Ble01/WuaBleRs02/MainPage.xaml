@@ -1,0 +1,122 @@
+﻿<Page x:Class="WuaBleRs02.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:WuaBleRs02"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      d:DesignWidth="1024"
+      d:DesignHeight="768"
+      mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Header -->
+        <StackPanel Orientation="Horizontal"
+                    Grid.ColumnSpan="2"
+                    Background="BlueViolet">
+            <Image Source="Assets/Conference-Speaker.png"
+                   Margin="20" />
+            <TextBlock x:Name="TextBlockTitle"
+                       VerticalAlignment="Center"
+                       Foreground="White"
+                       FontSize="37.333">El Bruno - Parrot Rolling Spider 02</TextBlock>
+        </StackPanel>
+
+        <!-- Content -->
+        <Grid Grid.Row="1"
+              Grid.Column="0"
+              Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+            <Button x:Name="ButtonLoadData"
+                    Content="Load Devices"
+                    Margin="10"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Click="ButtonLoadData_Click" />
+            <Button x:Name="ButtonLoadChars"
+                    Content="Load Chars"
+                    Margin="10"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Click="ButtonSendLoadCharsClick" />
+            <Button x:Name="ButtonSendTestData"
+                    Content="Send Test Data"
+                    Margin="10"
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Click="ButtonSendTestDataClick" />
+            <ListView x:Name="listViewLog"
+                      Background="LightGray"
+                      Grid.Column="0"
+                      Grid.Row="1"
+                      Grid.ColumnSpan="3"
+                      HorizontalAlignment="Left"
+                      Margin="10"
+                      ItemsSource="{Binding LogData}"
+                      VerticalAlignment="Stretch"
+                      HorizontalContentAlignment="Stretch">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Log: " />
+                            <TextBlock Text="{Binding ActionData}"
+                                       FontWeight="Bold" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+
+        <!-- Status -->
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    Grid.Column="0"
+                    Background="BlueViolet"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Bottom">
+            <TextBlock x:Name="TextBlockStatus"
+                       Foreground="White"
+                       Text="{Binding StatusInformation}" />
+            <TextBlock x:Name="TextBlockStatusSeparator"
+                       Foreground="White"
+                       Text=" -||- " />
+            <TextBlock x:Name="TextBlockStatus2"
+                       Foreground="White"
+                       Text="{Binding StatusInformation2}" />
+            <TextBlock x:Name="TextBlockStatusSeparator2"
+                       Foreground="White"
+                       Text=" -||- " />
+            <TextBlock x:Name="TextBlockStatus3"
+                       Foreground="White"
+                       Text="{Binding StatusInformation3}" />
+        </StackPanel>
+    </Grid>
+
+</Page>

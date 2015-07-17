@@ -1,0 +1,94 @@
+﻿<Page x:Class="WuaBleRs10.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      d:DesignWidth="1024"
+      d:DesignHeight="768"
+      mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Header -->
+        <StackPanel Orientation="Horizontal"
+                    Grid.ColumnSpan="2"
+                    Background="BlueViolet">
+            <Image Source="Assets/Conference-Speaker.png"
+                   Margin="20" />
+            <TextBlock x:Name="TextBlockTitle"
+                       VerticalAlignment="Center"
+                       Foreground="White"
+                       FontSize="37.333">El Bruno - Rolling Stone Drone 10</TextBlock>
+        </StackPanel>
+
+        <!-- Content -->
+        <Grid Grid.Row="1"
+              Grid.Column="0"
+              Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Top">
+                <Button x:Name="ButtonAction1"
+                        Margin="10"
+                        Content="Load Devices"
+                        Click="ButtonAction1_Click" />
+                <Button x:Name="ButtonAction2"
+                        Margin="10"
+                        Content="Load Devices from ServiceIds"
+                        Click="ButtonAction2_Click" />
+                <Button x:Name="ButtonAction3"
+                        Margin="10"
+                        Content="Generate C# constants from ServiceIds"
+                        Click="ButtonAction3_Click" />
+                <Button x:Name="ButtonAction4"
+                        Margin="10"
+                        Content="Enable Char configuration"
+                        Click="ButtonAction4_Click" />
+            </StackPanel>
+            <TextBox x:Name="TextBlockDeviceInformation"
+                     Grid.Row="1"
+                     Text="{Binding DevicesInformation}"
+                     AcceptsReturn="True"
+                     ScrollViewer.VerticalScrollBarVisibility="Auto"
+                     ScrollViewer.HorizontalScrollBarVisibility="Auto" />
+
+        </Grid>
+
+        <!-- Footer -->
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    Grid.Column="0"
+                    Background="BlueViolet"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Bottom">
+            <TextBlock x:Name="TextBlockStatus"
+                       Foreground="White"
+                       Text="{Binding StatusInformation}" />
+            <TextBlock x:Name="TextBlockStatusSeparator"
+                       Foreground="White"
+                       Text=" -||- " />
+            <TextBlock x:Name="TextBlockStatus2"
+                       Foreground="White"
+                       Text="{Binding StatusInformation2}" />
+        </StackPanel>
+    </Grid>
+
+</Page>

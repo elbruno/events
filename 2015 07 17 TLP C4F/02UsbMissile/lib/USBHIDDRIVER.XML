@@ -1,0 +1,251 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>USBHIDDRIVER</name>
+    </assembly>
+    <members>
+        <member name="T:USBHIDDRIVER.USBInterface">
+            <summary>
+            Interface for the HID USB Driver.
+            </summary>
+        </member>
+        <member name="F:USBHIDDRIVER.USBInterface.usbBuffer">
+            <summary>
+            Buffer for incomming data.
+            </summary>
+        </member>
+        <member name="M:USBHIDDRIVER.USBInterface.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:USBHIDDRIVER.USBInterface"/> class.
+            </summary>
+            <param name="vid">The vendor id of the USB device (e.g. vid_06ba)</param>
+            <param name="pid">The product id of the USB device (e.g. pid_ffff)</param>
+        </member>
+        <member name="M:USBHIDDRIVER.USBInterface.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:USBHIDDRIVER.USBInterface"/> class.
+            </summary>
+            <param name="vid">The vendor id of the USB device (e.g. vid_06ba).</param>
+        </member>
+        <member name="M:USBHIDDRIVER.USBInterface.Connect">
+            <summary>
+            Establishes a connection to the USB device. 
+            You can only establish a connection to a device if you have used the construct with vendor AND product id. 
+            Otherwise it will connect to a device which has the same vendor id is specified, 
+            this means if more than one device with these vendor id is plugged in, 
+            you can't be determine to which one you will connect. 
+            </summary>
+            <returns>false if an error occures</returns>
+        </member>
+        <member name="M:USBHIDDRIVER.USBInterface.Disconnect">
+            <summary>
+            Disconnects the device
+            </summary>
+        </member>
+        <member name="M:USBHIDDRIVER.USBInterface.getDeviceList">
+            <summary>
+            Returns a list of devices with the vendor id (or vendor and product id) 
+            specified in the constructor.
+            This function is needed if you want to know how many (and which) devices with the specified
+            vendor id are plugged in.
+            </summary>
+            <returns>String list with device paths</returns>
+        </member>
+        <member name="M:USBHIDDRIVER.USBInterface.write(System.Byte[])">
+            <summary>
+            Writes the specified bytes to the USB device.
+            If the array length exceeds 64, the array while be divided into several 
+            arrays with each containing 64 bytes.
+            The 0-63 byte of the array is sent first, then the 64-127 byte and so on.
+            </summary>
+            <param name="bytes">The bytes to send.</param>
+            <returns>Returns true if all bytes have been written successfully</returns>
+        </member>
+        <member name="M:USBHIDDRIVER.USBInterface.startRead">
+            <summary>
+            Starts reading. 
+            If you execute this command a thread is started which listens to the USB device and waits for data.
+            </summary>
+        </member>
+        <member name="M:USBHIDDRIVER.USBInterface.stopRead">
+            <summary>
+            Stops the read thread.
+            By executing this command the read data thread is stopped and now data will be received.
+            </summary>
+        </member>
+        <member name="M:USBHIDDRIVER.USBInterface.enableUsbBufferEvent(System.EventHandler)">
+            <summary>
+            Enables the usb buffer event.
+            Whenever a dataset is added to the buffer (and so received from the usb device)
+            the event handler method will be called.
+            </summary>
+            <param name="eHandler">The event handler method.</param>
+        </member>
+        <member name="M:USBHIDDRIVER.TESTS.USBTestFixture.deviceList">
+            <summary>
+            Test if the device list works.
+            </summary>
+        </member>
+        <member name="M:USBHIDDRIVER.TESTS.USBTestFixture.sendStartCMD">
+            <summary>
+            sends a start command
+            </summary>
+        </member>
+        <member name="M:USBHIDDRIVER.TESTS.USBTestFixture.startRead">
+            <summary>
+            Starts the read.
+            </summary>
+        </member>
+        <member name="M:USBHIDDRIVER.TESTS.USBTestFixture.sendStopCMD">
+            <summary>
+            Sends the stop command.
+            </summary>
+        </member>
+        <member name="M:USBHIDDRIVER.TESTS.USBTestFixture.userDefinedeventHandling">
+            <summary>
+            Tests Users the definedevent handling.
+            </summary>
+        </member>
+        <member name="M:USBHIDDRIVER.TESTS.USBTestFixture.myEventCacher(System.Object,System.EventArgs)">
+            <summary>
+            The event cacher.
+            </summary>
+            <param name="sender">The sender.</param>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:USBHIDDRIVER.USB.HIDUSBDevice">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:USBHIDDRIVER.USB.HIDUSBDevice.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:USBHIDDRIVER.USB.HIDUSBDevice"/> class.
+            And tries to establish a connection to the device.
+            </summary>
+            <param name="vID">The vendor ID of the USB device.</param>
+            <param name="pID">The product ID of the USB device.</param>
+        </member>
+        <member name="M:USBHIDDRIVER.USB.HIDUSBDevice.connectDevice">
+            <summary>
+            Connects the device.
+            </summary>
+            <returns>true if connection is established</returns>
+        </member>
+        <member name="M:USBHIDDRIVER.USB.HIDUSBDevice.searchDevice">
+            <summary>
+            Searches the device with soecified vendor and product id an connect to it.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:USBHIDDRIVER.USB.HIDUSBDevice.getDevice">
+            <summary>
+            returns the number of devices with specified vendorID and productID 
+            </summary>
+            <returns>returns the number of devices with specified vendorID and productID</returns>
+        </member>
+        <member name="M:USBHIDDRIVER.USB.HIDUSBDevice.writeData(System.Byte[])">
+            <summary>
+            Writes the data.
+            </summary>
+            <param name="bDataToWrite">The b data to write.</param>
+            <returns></returns>
+        </member>
+        <member name="M:USBHIDDRIVER.USB.HIDUSBDevice.readDataThread">
+            <summary>
+             ThreadMethod for reading Data
+            </summary>
+        </member>
+        <member name="M:USBHIDDRIVER.USB.HIDUSBDevice.readData">
+            <summary>
+            controls the read thread
+            </summary>
+        </member>
+        <member name="M:USBHIDDRIVER.USB.HIDUSBDevice.abortreadData">
+            <summary>
+            Aborts the read thread.
+            </summary>
+        </member>
+        <member name="M:USBHIDDRIVER.USB.HIDUSBDevice.disconnectDevice">
+            <summary>
+            Disconnects the device.
+            </summary>
+        </member>
+        <member name="M:USBHIDDRIVER.USB.HIDUSBDevice.setDeviceData(System.String,System.String)">
+            <summary>
+            Sets the device data.
+            </summary>
+            <param name="vID">The vendor ID.</param>
+            <param name="pID">The product ID.</param>
+        </member>
+        <member name="M:USBHIDDRIVER.USB.HIDUSBDevice.getVendorID">
+            <summary>
+            Gets the vendor ID.
+            </summary>
+            <returns>the vendor ID</returns>
+        </member>
+        <member name="M:USBHIDDRIVER.USB.HIDUSBDevice.getProductID">
+            <summary>
+            Gets the product ID.
+            </summary>
+            <returns>the product ID</returns>
+        </member>
+        <member name="M:USBHIDDRIVER.USB.HIDUSBDevice.setConnectionState(System.Boolean)">
+            <summary>
+            Sets the state of the connection.
+            </summary>
+            <param name="state">state</param>
+        </member>
+        <member name="M:USBHIDDRIVER.USB.HIDUSBDevice.getConnectionState">
+            <summary>
+            Gets the state of the connection.
+            </summary>
+            <returns>true = connected; false = diconnected</returns>
+        </member>
+        <member name="M:USBHIDDRIVER.USB.HIDUSBDevice.getDevices">
+            <summary>
+            Gets the device count.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:USBHIDDRIVER.USB.HIDUSBDevice.getDevicePath">
+            <summary>
+            Gets the device path.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:USBHIDDRIVER.List.ListWithEvent">
+            <summary>
+            A class that works just like ArrayList, but sends event
+            notifications whenever the list changes
+            </summary>
+        </member>
+        <member name="M:USBHIDDRIVER.List.ListWithEvent.OnChanged(System.EventArgs)">
+            <summary>
+            Invoke the Changed event; called whenever list changes
+            </summary>
+            <param name="e">The <see cref="T:System.EventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="M:USBHIDDRIVER.List.ListWithEvent.Add(System.Object)">
+            <summary>
+            Fügt am Ende von <see cref="T:System.Collections.ArrayList"></see> ein Objekt hinzu.
+            </summary>
+            <param name="value">Das <see cref="T:System.Object"></see>, das am Ende der <see cref="T:System.Collections.ArrayList"></see> hinzugefügt werden soll. Der Wert kann null sein.</param>
+            <returns>
+            Der <see cref="T:System.Collections.ArrayList"></see>-Index, an dem value hinzugefügt wurde.
+            </returns>
+            <exception cref="T:System.NotSupportedException"><see cref="T:System.Collections.ArrayList"></see> ist schreibgeschützt.- oder -<see cref="T:System.Collections.ArrayList"></see> hat eine feste Größe. </exception>
+        </member>
+        <member name="E:USBHIDDRIVER.List.ListWithEvent.Changed">
+            <summary>
+            An event that clients can use to be notified whenever the
+            elements of the list change
+            </summary>
+        </member>
+        <member name="T:USBHIDDRIVER.USB.USBSharp">
+            <summary>
+            Summary description
+            </summary>
+        </member>
+    </members>
+</doc>

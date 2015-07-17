@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{54DB01D5-3C10-4E36-BC8E-0A54E7DE441B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ElBruno Rocket", "ElBruno Rocket", "{8B670D6A-0F91-423B-AB87-C76999D1F36B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElBruno.Rocket", "ElBruno.Rocket\ElBruno.Rocket.csproj", "{22988754-B935-4D37-A8AD-A62C80FFD02B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElBruno.Rocket.Test", "ElBruno.Rocket.Test\ElBruno.Rocket.Test.csproj", "{75525826-3BD9-4E22-A1C5-67CDF6AE0A25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{F64F0E5E-C070-4442-8E80-B78B1493E4BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsbMissileConsoleTest02", "UsbMissileConsoleTest02\UsbMissileConsoleTest02.csproj", "{B5E5347F-FF3C-43C5-93C2-4D224FDCF18F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2DFF4199-EAD2-446B-89CE-5A8460EE6887}"
+	ProjectSection(SolutionItems) = preProject
+		readme.txt = readme.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Apps", "Apps", "{49C45ACE-2D47-4516-B5FE-9206B0CD2076}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElBruno.Rocket.Leap.Test", "ElBruno.Rocket.Leap.Test\ElBruno.Rocket.Leap.Test.csproj", "{A5AF2109-59C3-4FA9-A2F8-F9F2F75F328B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USBHIDDRIVER", "..\UsbHID\USBHIDDRIVER\USBHIDDRIVER.csproj", "{58F64D08-1159-4A19-9EC4-DDD5ED056946}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Usb HID", "Usb HID", "{F69E9101-145C-4687-944B-99F3ACDEBBA4}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://elbruno.visualstudio.com/defaultcollection
+		SccProjectUniqueName0 = ..\\UsbHID\\USBHIDDRIVER\\USBHIDDRIVER.csproj
+		SccProjectTopLevelParentUniqueName0 = ElBruno.Rocket.sln
+		SccProjectName0 = ../UsbHID/USBHIDDRIVER
+		SccLocalPath0 = ..\\UsbHID\\USBHIDDRIVER
+		SccLocalPath1 = .
+		SccProjectUniqueName2 = ElBruno.Rocket.Leap.Test\\ElBruno.Rocket.Leap.Test.csproj
+		SccProjectTopLevelParentUniqueName2 = ElBruno.Rocket.sln
+		SccProjectName2 = ElBruno.Rocket.Leap.Test
+		SccLocalPath2 = ElBruno.Rocket.Leap.Test
+		SccProjectUniqueName3 = ElBruno.Rocket.Test\\ElBruno.Rocket.Test.csproj
+		SccProjectTopLevelParentUniqueName3 = ElBruno.Rocket.sln
+		SccProjectName3 = ElBruno.Rocket.Test
+		SccLocalPath3 = ElBruno.Rocket.Test
+		SccProjectUniqueName4 = ElBruno.Rocket\\ElBruno.Rocket.csproj
+		SccProjectTopLevelParentUniqueName4 = ElBruno.Rocket.sln
+		SccProjectName4 = ElBruno.Rocket
+		SccLocalPath4 = ElBruno.Rocket
+		SccProjectUniqueName5 = UsbMissileConsoleTest02\\UsbMissileConsoleTest02.csproj
+		SccProjectTopLevelParentUniqueName5 = ElBruno.Rocket.sln
+		SccProjectName5 = UsbMissileConsoleTest02
+		SccLocalPath5 = UsbMissileConsoleTest02
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22988754-B935-4D37-A8AD-A62C80FFD02B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22988754-B935-4D37-A8AD-A62C80FFD02B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22988754-B935-4D37-A8AD-A62C80FFD02B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22988754-B935-4D37-A8AD-A62C80FFD02B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75525826-3BD9-4E22-A1C5-67CDF6AE0A25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75525826-3BD9-4E22-A1C5-67CDF6AE0A25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75525826-3BD9-4E22-A1C5-67CDF6AE0A25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75525826-3BD9-4E22-A1C5-67CDF6AE0A25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5E5347F-FF3C-43C5-93C2-4D224FDCF18F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5E5347F-FF3C-43C5-93C2-4D224FDCF18F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5E5347F-FF3C-43C5-93C2-4D224FDCF18F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5E5347F-FF3C-43C5-93C2-4D224FDCF18F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5AF2109-59C3-4FA9-A2F8-F9F2F75F328B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5AF2109-59C3-4FA9-A2F8-F9F2F75F328B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5AF2109-59C3-4FA9-A2F8-F9F2F75F328B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5AF2109-59C3-4FA9-A2F8-F9F2F75F328B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58F64D08-1159-4A19-9EC4-DDD5ED056946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58F64D08-1159-4A19-9EC4-DDD5ED056946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58F64D08-1159-4A19-9EC4-DDD5ED056946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58F64D08-1159-4A19-9EC4-DDD5ED056946}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{22988754-B935-4D37-A8AD-A62C80FFD02B} = {8B670D6A-0F91-423B-AB87-C76999D1F36B}
+		{75525826-3BD9-4E22-A1C5-67CDF6AE0A25} = {49C45ACE-2D47-4516-B5FE-9206B0CD2076}
+		{B5E5347F-FF3C-43C5-93C2-4D224FDCF18F} = {54DB01D5-3C10-4E36-BC8E-0A54E7DE441B}
+		{A5AF2109-59C3-4FA9-A2F8-F9F2F75F328B} = {49C45ACE-2D47-4516-B5FE-9206B0CD2076}
+		{58F64D08-1159-4A19-9EC4-DDD5ED056946} = {F69E9101-145C-4687-944B-99F3ACDEBBA4}
+	EndGlobalSection
+EndGlobal

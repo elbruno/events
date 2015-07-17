@@ -1,0 +1,108 @@
+﻿<Page x:Class="WuaBleHr04.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      d:DesignWidth="1024"
+      d:DesignHeight="768"
+      mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Header -->
+        <StackPanel Orientation="Horizontal"
+                    Grid.ColumnSpan="2"
+                    Background="BlueViolet">
+            <Image Source="Assets/Conference-Speaker.png"
+                   Margin="20" />
+            <TextBlock x:Name="TextBlockTitle"
+                       VerticalAlignment="Center"
+                       Foreground="White"
+                       FontSize="37.333">El Bruno - BLE HeartRate Monitor</TextBlock>
+        </StackPanel>
+
+        <!-- Content -->
+        <Grid Grid.Row="1"
+              Grid.ColumnSpan="2">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150" />
+                <RowDefinition Height="150" />
+                <RowDefinition Height="100" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0"
+                        Background="BlueViolet"
+                        Orientation="Horizontal">
+                <Image Source="Assets/Heart-ECG.png"
+                       Margin="30" />
+                <TextBlock x:Name="TextBlockHr"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Text="{Binding HeartRateValue}"
+                           FontSize="29.333" />
+            </StackPanel>
+
+            <StackPanel Grid.Row="1"
+                        Background="BlueViolet"
+                        Orientation="Horizontal">
+                <Image Source="Assets/Battery-Charging.png"
+                       Margin="30"></Image>
+                <TextBlock x:Name="TextBlockBattery"
+                           Foreground="White"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Text="{Binding BatteryValue}"
+                           FontSize="29.333" />
+            </StackPanel>
+
+            <TextBlock x:Name="TextBlockDeviceFound"
+                       Grid.Row="2"
+                       VerticalAlignment="Center"
+                       Foreground="White"
+                       HorizontalAlignment="Center"
+                       Text="{Binding DeviceFoundMessage}"
+                       FontSize="22" />
+            <Button x:Name="ButtonLoad"
+                    Grid.Row="3"
+                    Margin="10"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    Background="LightGray"
+                    Click="ButtonBase_OnClick"
+                    Content="Connect ..." />
+        </Grid>
+
+        <!-- Footer -->
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    Grid.Column="0"
+                    Background="BlueViolet"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Bottom">
+            <TextBlock x:Name="TextBlockStatus"
+                       Foreground="White"
+                       Text="{Binding StatusInformation}" />
+            <TextBlock x:Name="TextBlockStatusSeparator"
+                       Foreground="White"
+                       Text=" -||- " />
+            <TextBlock x:Name="TextBlockStatus2"
+                       Foreground="White"
+                       Text="{Binding StatusInformation2}" />
+        </StackPanel>
+    </Grid>
+
+</Page>

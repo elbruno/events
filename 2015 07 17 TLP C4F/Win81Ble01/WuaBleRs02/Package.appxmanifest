@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Package
+  xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+  xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
+  xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+  IgnorableNamespaces="uap mp">
+
+  <Identity
+    Name="48d04472-5009-4205-9654-a7d7547d52a0"
+    Publisher="CN=bruno"
+    Version="1.0.0.0" />
+
+  <mp:PhoneIdentity PhoneProductId="48d04472-5009-4205-9654-a7d7547d52a0" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+
+  <Properties>
+    <DisplayName>WuaTemplate</DisplayName>
+    <PublisherDisplayName>bruno</PublisherDisplayName>
+    <Logo>Assets\StoreLogo.png</Logo>
+  </Properties>
+
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.10069.0" MaxVersionTested="10.0.10069.0" />
+  </Dependencies>
+
+  <Resources>
+    <Resource Language="x-generate"/>
+  </Resources>
+
+  <Applications>
+    <Application Id="App"
+      Executable="$targetnametoken$.exe"
+      EntryPoint="WuaTemplate.App">
+      <uap:VisualElements
+        DisplayName="El Bruno - Parrot Rolling Spider 02"
+        Square150x150Logo="Assets\Logo.png"
+        Square44x44Logo="Assets\SmallLogo.png"
+        Description="El Bruno - Parrot Rolling Spider 02"
+        BackgroundColor="#464646">
+        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <DeviceCapability Name="bluetooth.genericAttributeProfile">
+      <Device Id="any">
+        <!--<Function Type="name:battery"/>
+        <Function Type="name:genericAccess"/>
+        <Function Type="name:genericAttribute"/>-->
+        
+        <!-- Jessica Services -->
+        <!--<Function Type="serviceId:9a66fa00-0800-9191-11e4-012d1540cb8e"/>
+        <Function Type="serviceId:9a66fb00-0800-9191-11e4-012d1540cb8e"/>
+        <Function Type="serviceId:9a66fc00-0800-9191-11e4-012d1540cb8e"/>
+        <Function Type="serviceId:9a66fd21-0800-9191-11e4-012d1540cb8e"/>
+        <Function Type="serviceId:9a66fd51-0800-9191-11e4-012d1540cb8e"/>-->
+
+        <!-- FreeFlight devices -->
+        <Function Type="serviceId:00001800-0000-1000-8000-00805F9B34FB"/>
+        <Function Type="serviceId:00001801-0000-1000-8000-00805F9B34FB"/>
+        <Function Type="serviceId:9A66FA00-0800-9191-11E4-012D1540CB8E"/>
+        <Function Type="serviceId:9A66FB00-0800-9191-11E4-012D1540CB8E"/>
+        <Function Type="serviceId:9A66FC00-0800-9191-11E4-012D1540CB8E"/>
+        <Function Type="serviceId:9A66FD21-0800-9191-11E4-012D1540CB8E"/>
+        <Function Type="serviceId:9A66FD51-0800-9191-11E4-012D1540CB8E"/>
+        
+        <!-- Dan Aderlean stuff -->
+        <Function Type="serviceId:f000aa00-0451-4000-b000-000000000000"/>
+        <Function Type="serviceId:F000AA10-0451-4000-B000-000000000000"/>
+        <Function Type="serviceId:F000AA20-0451-4000-B000-000000000000"/>
+        <Function Type="serviceId:F000AA30-0451-4000-B000-000000000000"/>
+        <Function Type="serviceId:F000AA40-0451-4000-B000-000000000000"/>
+        <Function Type="serviceId:F000AA50-0451-4000-B000-000000000000"/>
+        <Function Type="serviceId:0000ffe0-0000-1000-8000-00805f9b34fb"/>
+        <Function Type="serviceId:00001800-0000-1000-8000-00805f9b34fb"/>
+        <Function Type="serviceId:00001801-0000-1000-8000-00805f9b34fb"/>
+        <Function Type="serviceId:0000180A-0000-1000-8000-00805f9b34fb"/>
+      </Device>
+    </DeviceCapability>
+  </Capabilities>
+</Package>

@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegoLeapWpf", "LegoLeapWpf.csproj", "{8AC502FD-4AAF-40CC-9974-8BD29EAB275A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElBruno.LegoLeapWpf.Directions", "..\ElBruno.LegoLeapWpf.Directions\ElBruno.LegoLeapWpf.Directions.csproj", "{5122F1B6-79AF-4CC1-9A24-2A86A269D7CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElBruno.LegoLeapWpf.Directions.Tests", "ElBruno.LegoLeapWpf.Directions.Tests\ElBruno.LegoLeapWpf.Directions.Tests.csproj", "{0FBF7625-F43E-4B0A-8674-C96D33627C93}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C4620C87-99C1-4872-B257-81F7296AFCC2}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://elbruno.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ..\\ElBruno.LegoLeapWpf.Directions\\ElBruno.LegoLeapWpf.Directions.csproj
+		SccProjectName1 = ../ElBruno.LegoLeapWpf.Directions
+		SccLocalPath1 = ..\\ElBruno.LegoLeapWpf.Directions
+		SccProjectUniqueName2 = ElBruno.LegoLeapWpf.Directions.Tests\\ElBruno.LegoLeapWpf.Directions.Tests.csproj
+		SccProjectTopLevelParentUniqueName2 = 03\u0020LegoLeapWpf.sln
+		SccProjectName2 = ElBruno.LegoLeapWpf.Directions.Tests
+		SccLocalPath2 = ElBruno.LegoLeapWpf.Directions.Tests
+		SccProjectUniqueName3 = LegoLeapWpf.csproj
+		SccLocalPath3 = .
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AC502FD-4AAF-40CC-9974-8BD29EAB275A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AC502FD-4AAF-40CC-9974-8BD29EAB275A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AC502FD-4AAF-40CC-9974-8BD29EAB275A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AC502FD-4AAF-40CC-9974-8BD29EAB275A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5122F1B6-79AF-4CC1-9A24-2A86A269D7CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5122F1B6-79AF-4CC1-9A24-2A86A269D7CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5122F1B6-79AF-4CC1-9A24-2A86A269D7CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5122F1B6-79AF-4CC1-9A24-2A86A269D7CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0FBF7625-F43E-4B0A-8674-C96D33627C93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FBF7625-F43E-4B0A-8674-C96D33627C93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FBF7625-F43E-4B0A-8674-C96D33627C93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FBF7625-F43E-4B0A-8674-C96D33627C93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0FBF7625-F43E-4B0A-8674-C96D33627C93} = {C4620C87-99C1-4872-B257-81F7296AFCC2}
+	EndGlobalSection
+EndGlobal

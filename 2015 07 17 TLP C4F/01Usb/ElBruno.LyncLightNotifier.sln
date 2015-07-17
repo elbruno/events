@@ -1,0 +1,86 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23103.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Tests", "02 Tests", "{54DB01D5-3C10-4E36-BC8E-0A54E7DE441B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00 USB HID Driver", "00 USB HID Driver", "{8B670D6A-0F91-423B-AB87-C76999D1F36B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2DFF4199-EAD2-446B-89CE-5A8460EE6887}"
+	ProjectSection(SolutionItems) = preProject
+		readme.txt = readme.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Light Notifier", "01 Light Notifier", "{6081BD9E-A0F5-4CB8-A251-C5211EC28971}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElBruno.LightNotifier", "ElBruno.LightNotifier\ElBruno.LightNotifier.csproj", "{B16382D9-EAE8-4D15-8725-7793DD95164A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElBruno.LyncLightNotifier", "ElBruno.LyncLightNotifier\ElBruno.LyncLightNotifier.csproj", "{B6E80581-056A-4E18-98B4-3234E09055E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1\ConsoleApplication1.csproj", "{E36C380B-350D-4630-A610-8D1C7D6589EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USBHIDDRIVER", "UsbHID\USBHIDDRIVER\USBHIDDRIVER.csproj", "{58F64D08-1159-4A19-9EC4-DDD5ED056946}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{037B4B68-0450-4798-A3B2-39C322199154}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B16382D9-EAE8-4D15-8725-7793DD95164A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B16382D9-EAE8-4D15-8725-7793DD95164A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B16382D9-EAE8-4D15-8725-7793DD95164A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B16382D9-EAE8-4D15-8725-7793DD95164A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6E80581-056A-4E18-98B4-3234E09055E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6E80581-056A-4E18-98B4-3234E09055E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6E80581-056A-4E18-98B4-3234E09055E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6E80581-056A-4E18-98B4-3234E09055E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E36C380B-350D-4630-A610-8D1C7D6589EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E36C380B-350D-4630-A610-8D1C7D6589EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E36C380B-350D-4630-A610-8D1C7D6589EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E36C380B-350D-4630-A610-8D1C7D6589EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58F64D08-1159-4A19-9EC4-DDD5ED056946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58F64D08-1159-4A19-9EC4-DDD5ED056946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58F64D08-1159-4A19-9EC4-DDD5ED056946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58F64D08-1159-4A19-9EC4-DDD5ED056946}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B16382D9-EAE8-4D15-8725-7793DD95164A} = {6081BD9E-A0F5-4CB8-A251-C5211EC28971}
+		{B6E80581-056A-4E18-98B4-3234E09055E6} = {6081BD9E-A0F5-4CB8-A251-C5211EC28971}
+		{E36C380B-350D-4630-A610-8D1C7D6589EA} = {54DB01D5-3C10-4E36-BC8E-0A54E7DE441B}
+		{58F64D08-1159-4A19-9EC4-DDD5ED056946} = {8B670D6A-0F91-423B-AB87-C76999D1F36B}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://elbruno.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ConsoleApplication1\\ConsoleApplication1\\ConsoleApplication1.csproj
+		SccProjectTopLevelParentUniqueName1 = ElBruno.LyncLightNotifier.sln
+		SccProjectName1 = ConsoleApplication1/ConsoleApplication1
+		SccLocalPath1 = ConsoleApplication1\\ConsoleApplication1
+		SccProjectUniqueName2 = ElBruno.LightNotifier\\ElBruno.LightNotifier.csproj
+		SccProjectTopLevelParentUniqueName2 = ElBruno.LyncLightNotifier.sln
+		SccProjectName2 = ElBruno.LightNotifier
+		SccLocalPath2 = ElBruno.LightNotifier
+		SccProjectUniqueName3 = ElBruno.LyncLightNotifier\\ElBruno.LyncLightNotifier.csproj
+		SccProjectTopLevelParentUniqueName3 = ElBruno.LyncLightNotifier.sln
+		SccProjectName3 = ElBruno.LyncLightNotifier
+		SccLocalPath3 = ElBruno.LyncLightNotifier
+		SccProjectUniqueName4 = UsbHID\\USBHIDDRIVER\\USBHIDDRIVER.csproj
+		SccProjectTopLevelParentUniqueName4 = ElBruno.LyncLightNotifier.sln
+		SccProjectName4 = UsbHID/USBHIDDRIVER
+		SccLocalPath4 = UsbHID\\USBHIDDRIVER
+	EndGlobalSection
+EndGlobal

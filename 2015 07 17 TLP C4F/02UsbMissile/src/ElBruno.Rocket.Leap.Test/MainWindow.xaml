@@ -1,0 +1,93 @@
+﻿<Window x:Class="ElBruno.Rocket.Leap.Test.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow"
+        Height="350"
+        Width="525">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Button x:Name="buttonUp"
+                Content="UP"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="90"
+                Margin="0"
+                Grid.Column="1"
+                Grid.Row="0"
+                Click="buttonUp_Click" />
+        <Button x:Name="buttonDown"
+                Content="DOWN"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="90"
+                Margin="0"
+                Grid.Column="1"
+                Grid.Row="2"
+                Click="buttonDown_Click" />
+        <Button x:Name="buttonLeft"
+                Content="LEFT"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="90"
+                Margin="0"
+                Grid.Column="0"
+                Grid.Row="1"
+                Click="buttonLeft_Click" />
+        <Button x:Name="buttonRight"
+                Content="RIGHT"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="90"
+                Margin="0"
+                Grid.Column="2"
+                Grid.Row="1"
+                Click="buttonRight_Click" />
+
+        <Button x:Name="buttonFire"
+                Content="FIRE"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="90"
+                Margin="0"
+                Grid.Column="1"
+                Grid.Row="1"
+                Click="buttonFire_Click" />
+        <Button x:Name="buttonStop"
+                Content="STOP"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="90"
+                Margin="0"
+                Grid.Column="2"
+                Grid.Row="2"
+                Click="buttonStop_Click" />
+        <StatusBar x:Name="StatusBarInformation"
+                   HorizontalAlignment="Stretch"
+                   Grid.Row="4"
+                   Grid.ColumnSpan="4"
+                   VerticalAlignment="Stretch">
+            <TextBlock x:Name="TextBlockPosition"
+                       Text="{Binding CurrentPosition}"></TextBlock>
+        </StatusBar>
+        <CheckBox x:Name="CheckBoxMoveMode" 
+                  Content="Continous Move"
+                  Checked="CheckBoxMoveMode_OnValueChanged"
+                  Unchecked="CheckBoxMoveMode_OnValueChanged"
+                  Grid.Column="3"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center" />
+
+    </Grid>
+</Window>

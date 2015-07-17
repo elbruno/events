@@ -1,0 +1,142 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23103.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 UI Console", "3 UI Console", "{54DB01D5-3C10-4E36-BC8E-0A54E7DE441B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 ElBruno Rocket", "1 ElBruno Rocket", "{8B670D6A-0F91-423B-AB87-C76999D1F36B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElBruno.Rocket", "ElBruno.Rocket\ElBruno.Rocket.csproj", "{22988754-B935-4D37-A8AD-A62C80FFD02B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElBruno.Rocket.Test", "ElBruno.Rocket.Test\ElBruno.Rocket.Test.csproj", "{75525826-3BD9-4E22-A1C5-67CDF6AE0A25}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 UI Kinect", "6 UI Kinect", "{F64F0E5E-C070-4442-8E80-B78B1493E4BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElBruno.Rocket.Ui", "ElBruno.Rocket.Ui\ElBruno.Rocket.Ui.csproj", "{A289E6C0-A36E-4F03-B957-AFFD2275526B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UsbMissileConsoleTest02", "UsbMissileConsoleTest02\UsbMissileConsoleTest02.csproj", "{B5E5347F-FF3C-43C5-93C2-4D224FDCF18F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2DFF4199-EAD2-446B-89CE-5A8460EE6887}"
+	ProjectSection(SolutionItems) = preProject
+		readme.txt = readme.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 Usb HID Driver", "0 Usb HID Driver", "{456AE703-20BC-4928-A5D0-5BE47CC6926D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USBHIDDRIVER", "..\..\01Usb\UsbHID\USBHIDDRIVER\USBHIDDRIVER.csproj", "{58F64D08-1159-4A19-9EC4-DDD5ED056946}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 UI WPF", "4 UI WPF", "{DAAFC662-AEDC-41C3-B601-FF25664E5270}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeapWpfMotion", "ElBruno.LeapWpfMotion\LeapWpfMotion.csproj", "{8AC502FD-4AAF-40CC-9974-8BD29EAB275A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "99 Tests", "99 Tests", "{F056E894-016D-4F3C-BF22-816DE7E411C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElBruno.Rocket.Leap.Test", "ElBruno.Rocket.Leap.Test\ElBruno.Rocket.Leap.Test.csproj", "{A5AF2109-59C3-4FA9-A2F8-F9F2F75F328B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7 Ui Leap", "7 Ui Leap", "{DC6E5EEB-05F1-40A5-97F9-C927AF882A79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElBruno.LegoLeapWpf.Directions", "ElBruno.LegoLeapWpf.Directions\ElBruno.LegoLeapWpf.Directions.csproj", "{5122F1B6-79AF-4CC1-9A24-2A86A269D7CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LegoLeapWpf", "LegoLeapWpf\LegoLeapWpf.csproj", "{0696F12A-B080-4568-9A4C-01A188D60E21}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22988754-B935-4D37-A8AD-A62C80FFD02B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22988754-B935-4D37-A8AD-A62C80FFD02B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22988754-B935-4D37-A8AD-A62C80FFD02B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22988754-B935-4D37-A8AD-A62C80FFD02B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75525826-3BD9-4E22-A1C5-67CDF6AE0A25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75525826-3BD9-4E22-A1C5-67CDF6AE0A25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75525826-3BD9-4E22-A1C5-67CDF6AE0A25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75525826-3BD9-4E22-A1C5-67CDF6AE0A25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A289E6C0-A36E-4F03-B957-AFFD2275526B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A289E6C0-A36E-4F03-B957-AFFD2275526B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A289E6C0-A36E-4F03-B957-AFFD2275526B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A289E6C0-A36E-4F03-B957-AFFD2275526B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5E5347F-FF3C-43C5-93C2-4D224FDCF18F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5E5347F-FF3C-43C5-93C2-4D224FDCF18F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5E5347F-FF3C-43C5-93C2-4D224FDCF18F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5E5347F-FF3C-43C5-93C2-4D224FDCF18F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58F64D08-1159-4A19-9EC4-DDD5ED056946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58F64D08-1159-4A19-9EC4-DDD5ED056946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58F64D08-1159-4A19-9EC4-DDD5ED056946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58F64D08-1159-4A19-9EC4-DDD5ED056946}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AC502FD-4AAF-40CC-9974-8BD29EAB275A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AC502FD-4AAF-40CC-9974-8BD29EAB275A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AC502FD-4AAF-40CC-9974-8BD29EAB275A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AC502FD-4AAF-40CC-9974-8BD29EAB275A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5AF2109-59C3-4FA9-A2F8-F9F2F75F328B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5AF2109-59C3-4FA9-A2F8-F9F2F75F328B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5AF2109-59C3-4FA9-A2F8-F9F2F75F328B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5AF2109-59C3-4FA9-A2F8-F9F2F75F328B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5122F1B6-79AF-4CC1-9A24-2A86A269D7CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5122F1B6-79AF-4CC1-9A24-2A86A269D7CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5122F1B6-79AF-4CC1-9A24-2A86A269D7CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5122F1B6-79AF-4CC1-9A24-2A86A269D7CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0696F12A-B080-4568-9A4C-01A188D60E21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0696F12A-B080-4568-9A4C-01A188D60E21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0696F12A-B080-4568-9A4C-01A188D60E21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0696F12A-B080-4568-9A4C-01A188D60E21}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{22988754-B935-4D37-A8AD-A62C80FFD02B} = {8B670D6A-0F91-423B-AB87-C76999D1F36B}
+		{75525826-3BD9-4E22-A1C5-67CDF6AE0A25} = {DAAFC662-AEDC-41C3-B601-FF25664E5270}
+		{A289E6C0-A36E-4F03-B957-AFFD2275526B} = {F64F0E5E-C070-4442-8E80-B78B1493E4BB}
+		{B5E5347F-FF3C-43C5-93C2-4D224FDCF18F} = {54DB01D5-3C10-4E36-BC8E-0A54E7DE441B}
+		{58F64D08-1159-4A19-9EC4-DDD5ED056946} = {456AE703-20BC-4928-A5D0-5BE47CC6926D}
+		{8AC502FD-4AAF-40CC-9974-8BD29EAB275A} = {F056E894-016D-4F3C-BF22-816DE7E411C5}
+		{A5AF2109-59C3-4FA9-A2F8-F9F2F75F328B} = {F056E894-016D-4F3C-BF22-816DE7E411C5}
+		{5122F1B6-79AF-4CC1-9A24-2A86A269D7CA} = {DC6E5EEB-05F1-40A5-97F9-C927AF882A79}
+		{0696F12A-B080-4568-9A4C-01A188D60E21} = {DC6E5EEB-05F1-40A5-97F9-C927AF882A79}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 10
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://elbruno.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ElBruno.Rocket.Test\\ElBruno.Rocket.Test.csproj
+		SccProjectTopLevelParentUniqueName1 = ElBruno.Rocket.sln
+		SccProjectName1 = ElBruno.Rocket.Test
+		SccLocalPath1 = ElBruno.Rocket.Test
+		SccProjectUniqueName2 = ElBruno.Rocket.Ui\\ElBruno.Rocket.Ui.csproj
+		SccProjectTopLevelParentUniqueName2 = ElBruno.Rocket.sln
+		SccProjectName2 = ElBruno.Rocket.Ui
+		SccLocalPath2 = ElBruno.Rocket.Ui
+		SccProjectUniqueName3 = ElBruno.Rocket\\ElBruno.Rocket.csproj
+		SccProjectTopLevelParentUniqueName3 = ElBruno.Rocket.sln
+		SccProjectName3 = ElBruno.Rocket
+		SccLocalPath3 = ElBruno.Rocket
+		SccProjectUniqueName4 = UsbMissileConsoleTest02\\UsbMissileConsoleTest02.csproj
+		SccProjectTopLevelParentUniqueName4 = ElBruno.Rocket.sln
+		SccProjectName4 = UsbMissileConsoleTest02
+		SccLocalPath4 = UsbMissileConsoleTest02
+		SccProjectUniqueName5 = ..\\..\\01Usb\\UsbHID\\USBHIDDRIVER\\USBHIDDRIVER.csproj
+		SccProjectTopLevelParentUniqueName5 = ElBruno.Rocket.sln
+		SccProjectName5 = ../../01Usb/UsbHID/USBHIDDRIVER
+		SccLocalPath5 = ..\\..\\01Usb\\UsbHID\\USBHIDDRIVER
+		SccProjectUniqueName6 = ElBruno.Rocket.Leap.Test\\ElBruno.Rocket.Leap.Test.csproj
+		SccProjectTopLevelParentUniqueName6 = ElBruno.Rocket.sln
+		SccProjectName6 = ElBruno.Rocket.Leap.Test
+		SccLocalPath6 = ElBruno.Rocket.Leap.Test
+		SccProjectUniqueName7 = ElBruno.LeapWpfMotion\\LeapWpfMotion.csproj
+		SccProjectTopLevelParentUniqueName7 = ElBruno.Rocket.sln
+		SccProjectName7 = ElBruno.LeapWpfMotion
+		SccLocalPath7 = ElBruno.LeapWpfMotion
+		SccProjectUniqueName8 = LegoLeapWpf\\LegoLeapWpf.csproj
+		SccProjectTopLevelParentUniqueName8 = ElBruno.Rocket.sln
+		SccProjectName8 = LegoLeapWpf
+		SccLocalPath8 = LegoLeapWpf
+		SccProjectUniqueName9 = ElBruno.LegoLeapWpf.Directions\\ElBruno.LegoLeapWpf.Directions.csproj
+		SccProjectTopLevelParentUniqueName9 = ElBruno.Rocket.sln
+		SccProjectName9 = ElBruno.LegoLeapWpf.Directions
+		SccLocalPath9 = ElBruno.LegoLeapWpf.Directions
+	EndGlobalSection
+EndGlobal
