@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{FDE14103-1879-8E98-FF5F-9103D929029B}") = "Holo25", "Assembly-CSharp.csproj", "{AF897AA0-14DA-C171-312D-56E4467ED23C}"
+EndProject
+Project("{FDE14103-1879-8E98-FF5F-9103D929029B}") = "Holo25", "Assembly-CSharp-Editor.csproj", "{0B83008F-E6E5-2EEF-A2EA-3B8C17A5022F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF897AA0-14DA-C171-312D-56E4467ED23C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF897AA0-14DA-C171-312D-56E4467ED23C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF897AA0-14DA-C171-312D-56E4467ED23C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF897AA0-14DA-C171-312D-56E4467ED23C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B83008F-E6E5-2EEF-A2EA-3B8C17A5022F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B83008F-E6E5-2EEF-A2EA-3B8C17A5022F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B83008F-E6E5-2EEF-A2EA-3B8C17A5022F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B83008F-E6E5-2EEF-A2EA-3B8C17A5022F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
