@@ -1,7 +1,7 @@
 # events
-source code for events collaboration
+This is part of the source code I used in some events
 
-You can get more information about the events [I participated here](https://elbruno.com/category/event+englishpost/)
+You can get more information about the events **[I participated here](https://elbruno.com/category/event+englishpost/)**
 
 Or in my **[MVP Profile](https://mvp.microsoft.com/en-us/PublicProfile/4014166)**
 
