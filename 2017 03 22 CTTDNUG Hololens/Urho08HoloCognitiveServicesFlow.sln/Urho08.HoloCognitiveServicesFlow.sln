@@ -1,0 +1,126 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Urho08.Model", "Urho08.Model\Urho08.Model.csproj", "{85852689-7822-4684-B80A-D76751788B79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Urho08.MsFlow", "Urho08.MsFlow\Urho08.MsFlow.csproj", "{70838E31-AADA-4D67-9F70-36FADC9542DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Urho08.HoloCognitiveServicesFlow", "Urho08.CSFlow\Urho08.HoloCognitiveServicesFlow.csproj", "{8FC7C2DD-78C9-4F51-B7E9-A10ADA359BFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Urho08.AzureBlob", "Urho08.AzureBlob\Urho08.AzureBlob.csproj", "{6361B2C4-D811-4C32-90A9-CD2BFED6DBB9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 Common", "0 Common", "{EC03F2F4-C74E-4C77-B4A9-717CD672143C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Services", "1 Services", "{727B389E-1513-4A7D-A2AF-CCCD40ED4138}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 App", "2 App", "{923DD4DF-011B-49F6-AD9D-FB5883FCF166}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 Tests", "3 Tests", "{8776524B-912C-4E67-8761-805B53527E1A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85852689-7822-4684-B80A-D76751788B79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85852689-7822-4684-B80A-D76751788B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85852689-7822-4684-B80A-D76751788B79}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{85852689-7822-4684-B80A-D76751788B79}.Debug|ARM.Build.0 = Debug|Any CPU
+		{85852689-7822-4684-B80A-D76751788B79}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{85852689-7822-4684-B80A-D76751788B79}.Debug|x64.Build.0 = Debug|Any CPU
+		{85852689-7822-4684-B80A-D76751788B79}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{85852689-7822-4684-B80A-D76751788B79}.Debug|x86.Build.0 = Debug|Any CPU
+		{85852689-7822-4684-B80A-D76751788B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85852689-7822-4684-B80A-D76751788B79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85852689-7822-4684-B80A-D76751788B79}.Release|ARM.ActiveCfg = Release|Any CPU
+		{85852689-7822-4684-B80A-D76751788B79}.Release|ARM.Build.0 = Release|Any CPU
+		{85852689-7822-4684-B80A-D76751788B79}.Release|x64.ActiveCfg = Release|Any CPU
+		{85852689-7822-4684-B80A-D76751788B79}.Release|x64.Build.0 = Release|Any CPU
+		{85852689-7822-4684-B80A-D76751788B79}.Release|x86.ActiveCfg = Release|Any CPU
+		{85852689-7822-4684-B80A-D76751788B79}.Release|x86.Build.0 = Release|Any CPU
+		{70838E31-AADA-4D67-9F70-36FADC9542DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70838E31-AADA-4D67-9F70-36FADC9542DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70838E31-AADA-4D67-9F70-36FADC9542DD}.Debug|ARM.ActiveCfg = Debug|ARM
+		{70838E31-AADA-4D67-9F70-36FADC9542DD}.Debug|ARM.Build.0 = Debug|ARM
+		{70838E31-AADA-4D67-9F70-36FADC9542DD}.Debug|x64.ActiveCfg = Debug|x64
+		{70838E31-AADA-4D67-9F70-36FADC9542DD}.Debug|x64.Build.0 = Debug|x64
+		{70838E31-AADA-4D67-9F70-36FADC9542DD}.Debug|x86.ActiveCfg = Debug|x86
+		{70838E31-AADA-4D67-9F70-36FADC9542DD}.Debug|x86.Build.0 = Debug|x86
+		{70838E31-AADA-4D67-9F70-36FADC9542DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70838E31-AADA-4D67-9F70-36FADC9542DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70838E31-AADA-4D67-9F70-36FADC9542DD}.Release|ARM.ActiveCfg = Release|ARM
+		{70838E31-AADA-4D67-9F70-36FADC9542DD}.Release|ARM.Build.0 = Release|ARM
+		{70838E31-AADA-4D67-9F70-36FADC9542DD}.Release|x64.ActiveCfg = Release|x64
+		{70838E31-AADA-4D67-9F70-36FADC9542DD}.Release|x64.Build.0 = Release|x64
+		{70838E31-AADA-4D67-9F70-36FADC9542DD}.Release|x86.ActiveCfg = Release|x86
+		{70838E31-AADA-4D67-9F70-36FADC9542DD}.Release|x86.Build.0 = Release|x86
+		{8FC7C2DD-78C9-4F51-B7E9-A10ADA359BFC}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{8FC7C2DD-78C9-4F51-B7E9-A10ADA359BFC}.Debug|ARM.ActiveCfg = Debug|x86
+		{8FC7C2DD-78C9-4F51-B7E9-A10ADA359BFC}.Debug|x64.ActiveCfg = Debug|x86
+		{8FC7C2DD-78C9-4F51-B7E9-A10ADA359BFC}.Debug|x86.ActiveCfg = Debug|x86
+		{8FC7C2DD-78C9-4F51-B7E9-A10ADA359BFC}.Debug|x86.Build.0 = Debug|x86
+		{8FC7C2DD-78C9-4F51-B7E9-A10ADA359BFC}.Debug|x86.Deploy.0 = Debug|x86
+		{8FC7C2DD-78C9-4F51-B7E9-A10ADA359BFC}.Release|Any CPU.ActiveCfg = Release|x86
+		{8FC7C2DD-78C9-4F51-B7E9-A10ADA359BFC}.Release|ARM.ActiveCfg = Release|x86
+		{8FC7C2DD-78C9-4F51-B7E9-A10ADA359BFC}.Release|x64.ActiveCfg = Release|x86
+		{8FC7C2DD-78C9-4F51-B7E9-A10ADA359BFC}.Release|x86.ActiveCfg = Release|x86
+		{8FC7C2DD-78C9-4F51-B7E9-A10ADA359BFC}.Release|x86.Build.0 = Release|x86
+		{8FC7C2DD-78C9-4F51-B7E9-A10ADA359BFC}.Release|x86.Deploy.0 = Release|x86
+		{6361B2C4-D811-4C32-90A9-CD2BFED6DBB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6361B2C4-D811-4C32-90A9-CD2BFED6DBB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6361B2C4-D811-4C32-90A9-CD2BFED6DBB9}.Debug|ARM.ActiveCfg = Debug|ARM
+		{6361B2C4-D811-4C32-90A9-CD2BFED6DBB9}.Debug|ARM.Build.0 = Debug|ARM
+		{6361B2C4-D811-4C32-90A9-CD2BFED6DBB9}.Debug|x64.ActiveCfg = Debug|x64
+		{6361B2C4-D811-4C32-90A9-CD2BFED6DBB9}.Debug|x64.Build.0 = Debug|x64
+		{6361B2C4-D811-4C32-90A9-CD2BFED6DBB9}.Debug|x86.ActiveCfg = Debug|x86
+		{6361B2C4-D811-4C32-90A9-CD2BFED6DBB9}.Debug|x86.Build.0 = Debug|x86
+		{6361B2C4-D811-4C32-90A9-CD2BFED6DBB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6361B2C4-D811-4C32-90A9-CD2BFED6DBB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6361B2C4-D811-4C32-90A9-CD2BFED6DBB9}.Release|ARM.ActiveCfg = Release|ARM
+		{6361B2C4-D811-4C32-90A9-CD2BFED6DBB9}.Release|ARM.Build.0 = Release|ARM
+		{6361B2C4-D811-4C32-90A9-CD2BFED6DBB9}.Release|x64.ActiveCfg = Release|x64
+		{6361B2C4-D811-4C32-90A9-CD2BFED6DBB9}.Release|x64.Build.0 = Release|x64
+		{6361B2C4-D811-4C32-90A9-CD2BFED6DBB9}.Release|x86.ActiveCfg = Release|x86
+		{6361B2C4-D811-4C32-90A9-CD2BFED6DBB9}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{85852689-7822-4684-B80A-D76751788B79} = {EC03F2F4-C74E-4C77-B4A9-717CD672143C}
+		{70838E31-AADA-4D67-9F70-36FADC9542DD} = {727B389E-1513-4A7D-A2AF-CCCD40ED4138}
+		{8FC7C2DD-78C9-4F51-B7E9-A10ADA359BFC} = {923DD4DF-011B-49F6-AD9D-FB5883FCF166}
+		{6361B2C4-D811-4C32-90A9-CD2BFED6DBB9} = {727B389E-1513-4A7D-A2AF-CCCD40ED4138}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://elbruno.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Urho08.Model\\Urho08.Model.csproj
+		SccProjectTopLevelParentUniqueName1 = Urho08.HoloCognitiveServicesFlow.sln
+		SccProjectName1 = Urho08.Model
+		SccLocalPath1 = Urho08.Model
+		SccProjectUniqueName2 = Urho08.MsFlow\\Urho08.MsFlow.csproj
+		SccProjectTopLevelParentUniqueName2 = Urho08.HoloCognitiveServicesFlow.sln
+		SccProjectName2 = Urho08.MsFlow
+		SccLocalPath2 = Urho08.MsFlow
+		SccProjectUniqueName3 = Urho08.CSFlow\\Urho08.HoloCognitiveServicesFlow.csproj
+		SccProjectTopLevelParentUniqueName3 = Urho08.HoloCognitiveServicesFlow.sln
+		SccProjectName3 = Urho08.CSFlow
+		SccLocalPath3 = Urho08.CSFlow
+		SccProjectUniqueName4 = Urho08.AzureBlob\\Urho08.AzureBlob.csproj
+		SccProjectTopLevelParentUniqueName4 = Urho08.HoloCognitiveServicesFlow.sln
+		SccProjectName4 = Urho08.AzureBlob
+		SccLocalPath4 = Urho08.AzureBlob
+	EndGlobalSection
+EndGlobal

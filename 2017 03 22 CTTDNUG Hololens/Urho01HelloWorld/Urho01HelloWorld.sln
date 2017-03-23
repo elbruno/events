@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Urho01HelloWorld", "Urho01HelloWorld.csproj", "{CB6C6931-42F8-4962-9355-05970F06C84F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB6C6931-42F8-4962-9355-05970F06C84F}.Debug|x86.ActiveCfg = Debug|x86
+		{CB6C6931-42F8-4962-9355-05970F06C84F}.Debug|x86.Build.0 = Debug|x86
+		{CB6C6931-42F8-4962-9355-05970F06C84F}.Debug|x86.Deploy.0 = Debug|x86
+		{CB6C6931-42F8-4962-9355-05970F06C84F}.Release|x86.ActiveCfg = Release|x86
+		{CB6C6931-42F8-4962-9355-05970F06C84F}.Release|x86.Build.0 = Release|x86
+		{CB6C6931-42F8-4962-9355-05970F06C84F}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://elbruno.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Urho01HelloWorld.csproj
+		SccLocalPath1 = .
+	EndGlobalSection
+EndGlobal

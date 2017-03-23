@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<SampleMetadata>
+        <ID>4e8271fe-e4bf-4f4e-af6a-2671b358e7bd</ID>
+        <IsFullApplication>false</IsFullApplication>
+        <HideZip>true</HideZip>
+		<Level>Intermediate</Level>
+        <Tags>HoloLens, Graphics, Games, UrhoSharp</Tags>
+        <SupportedPlatforms>HoloLens</SupportedPlatforms>
+        <LicenseRequirement>Indie</LicenseRequirement>
+        <Gallery>true</Gallery>
+        <Brief>Microsoft Cognitive Services + HoloLens Camera for environment understanding.</Brief>
+</SampleMetadata>
+
