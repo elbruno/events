@@ -1,0 +1,291 @@
+﻿<Window x:Class="ElBruno.LegoEv3.Controller.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ElBruno.LegoEv3.Controller"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="350"
+        Width="525">
+    <Window.Resources>
+        <SolidColorBrush x:Key="MediumGreyBrush"
+                         Color="#ff6e6e6e" />
+        <SolidColorBrush x:Key="KinectWhite"
+                         Color="#ffffffff" />
+        <SolidColorBrush x:Key="KinectPurpleBrush"
+                         Color="#ff52318f" />
+        <SolidColorBrush x:Key="KinectBlueBrush"
+                         Color="#ff00BCF2" />
+        <Style TargetType="{x:Type Button}"
+               x:Key="ConnectToLegoButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal"
+                                        Background="Transparent">
+                                <TextBlock x:Name="ConnectToLegoText"
+                                           Text="{TemplateBinding Content}"
+                                           TextAlignment="Left"
+                                           VerticalAlignment="Center"
+                                           Foreground="{StaticResource KinectPurpleBrush}"
+                                           FontSize="22" />
+                                <Grid Margin="9,0,0,0">
+                                    <Image x:Name="ConnectToLegoNormal"
+                                           Source="Images\Robot-Normal.png"
+                                           Stretch="Uniform"
+                                           HorizontalAlignment="Center" />
+                                    <Image x:Name="ConnectToLegoHover"
+                                           Source="Images\Robot-Hover.png"
+                                           Stretch="Uniform"
+                                           HorizontalAlignment="Center"
+                                           Visibility="Collapsed" />
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="true">
+                                <Setter Property="Visibility"
+                                        Value="Collapsed"
+                                        TargetName="ConnectToLegoNormal" />
+                                <Setter Property="Visibility"
+                                        Value="Visible"
+                                        TargetName="ConnectToLegoHover" />
+                                <Setter Property="Foreground"
+                                        Value="{StaticResource KinectBlueBrush}"
+                                        TargetName="ConnectToLegoText" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}"
+               x:Key="StopLegoButton">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Grid>
+                            <StackPanel Orientation="Horizontal"
+                                        Background="Transparent">
+                                <TextBlock x:Name="StopLegoText"
+                                           Text="{TemplateBinding Content}"
+                                           TextAlignment="Left"
+                                           VerticalAlignment="Center"
+                                           Foreground="{StaticResource KinectPurpleBrush}"
+                                           FontSize="22" />
+                                <Grid Margin="9,0,0,0">
+                                    <Image x:Name="StopLegoNormal"
+                                           Source="Images\StopNormal.png"
+                                           Stretch="Uniform"
+                                           HorizontalAlignment="Center" />
+                                    <Image x:Name="StopLegoHover"
+                                           Source="Images\StopHover.png"
+                                           Stretch="Uniform"
+                                           HorizontalAlignment="Center"
+                                           Visibility="Collapsed" />
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="true">
+                                <Setter Property="Visibility"
+                                        Value="Collapsed"
+                                        TargetName="StopLegoNormal" />
+                                <Setter Property="Visibility"
+                                        Value="Visible"
+                                        TargetName="StopLegoHover" />
+                                <Setter Property="Foreground"
+                                        Value="{StaticResource KinectBlueBrush}"
+                                        TargetName="StopLegoText" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="100" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="420" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   Background="#FF002E4F">
+            <Image DockPanel.Dock="Left"
+                   Source="Images\Robot-WF.png"
+                   Stretch="Fill"
+                   Height="68"
+                   Width="67"
+                   Margin="5" />
+            <TextBlock DockPanel.Dock="Right"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Right"
+                       Foreground="White"
+                       Margin="10"
+                       FontFamily="Segoe UI"
+                       FontSize="22">EL BRUNO - Lego EV3 controller</TextBlock>
+        </DockPanel>
+
+        <Image Grid.Column="0"
+               Grid.Row="2"
+               Grid.RowSpan="5"
+               DockPanel.Dock="Left"
+               Source="Images\LegoEV3.jpg"
+               Stretch="Fill"
+               Margin="5" />
+
+        <UniformGrid x:Name="GridLegoActions"
+                     Grid.Column="1"
+                     Grid.Row="2"
+                     Columns="2"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center">
+
+            <Button x:Name="ButtonConnect"
+                    Click="ButtonConnect_OnClick"
+                    MouseEnter="LegoControlButtonOnMouseEnter"
+                    MouseLeave="LegoControlButtonOnMouseLeave">
+                <Grid>
+                    <Image x:Name="ImageButtonConnect"
+                           Source="Images\ButtonConnect.png" />
+                    <TextBlock x:Name="TextBlockButtonConnect"
+                               Foreground="White"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Bottom">Connect</TextBlock>
+                </Grid>
+            </Button>
+            <Button x:Name="ButtonDisconnect"
+                    Click="ButtonConnect_OnClick"
+                    MouseEnter="LegoControlButtonOnMouseEnter"
+                    MouseLeave="LegoControlButtonOnMouseLeave"
+                    Visibility="Collapsed">
+                <Grid>
+                    <Image x:Name="ImageButtonDisconnect"
+                           Source="Images\ButtonConnect.png" />
+                    <TextBlock x:Name="TextBlockButtonDisconnect"
+                               Foreground="White"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Bottom">Disconnect</TextBlock>
+                </Grid>
+            </Button>
+
+            <Button x:Name="ButtonFire"
+                    Click="LegoControlButtonOnClick"
+                    MouseEnter="LegoControlButtonOnMouseEnter"
+                    MouseLeave="LegoControlButtonOnMouseLeave">
+                <Grid>
+                    <Image x:Name="ImageButtonFire"
+                           Source="Images\ButtonFire.png" />
+                    <TextBlock Foreground="White"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Bottom">Fire</TextBlock>
+                </Grid>
+            </Button>
+
+        </UniformGrid>
+        <UniformGrid x:Name="GridLegoControl"
+                     Grid.Column="1"
+                     Grid.Row="3"
+                     Grid.RowSpan="3"
+                     Columns="3"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center">
+            <Button x:Name="ButtonTopLeft"
+                    Click="LegoControlButtonOnClick"
+                    MouseEnter="LegoControlButtonOnMouseEnter"
+                    MouseLeave="LegoControlButtonOnMouseLeave">
+                <Image x:Name="ImageButtonTopLeft" />
+            </Button>
+
+            <Button x:Name="ButtonTop"
+                    Click="LegoControlButtonOnClick"
+                    MouseEnter="LegoControlButtonOnMouseEnter"
+                    MouseLeave="LegoControlButtonOnMouseLeave">
+                <Image x:Name="ImageButtonTop" />
+            </Button>
+            <Button x:Name="ButtonTopRight"
+                    Click="LegoControlButtonOnClick"
+                    MouseEnter="LegoControlButtonOnMouseEnter"
+                    MouseLeave="LegoControlButtonOnMouseLeave">
+                <Image x:Name="ImageButtonTopRight" />
+            </Button>
+            <Button x:Name="ButtonCenterLeft"
+                    Click="LegoControlButtonOnClick"
+                    MouseEnter="LegoControlButtonOnMouseEnter"
+                    MouseLeave="LegoControlButtonOnMouseLeave">
+                <Image x:Name="ImageButtonCenterLeft" />
+            </Button>
+            <Button x:Name="ButtonCenter"
+                    Click="LegoControlButtonOnClick"
+                    MouseEnter="LegoControlButtonOnMouseEnter"
+                    MouseLeave="LegoControlButtonOnMouseLeave">
+                <Image x:Name="ImageButtonCenter" />
+            </Button>
+            <Button x:Name="ButtonCenterRight"
+                    Click="LegoControlButtonOnClick"
+                    MouseEnter="LegoControlButtonOnMouseEnter"
+                    MouseLeave="LegoControlButtonOnMouseLeave">
+                <Image x:Name="ImageButtonCenterRight" />
+            </Button>
+            <Button x:Name="ButtonDownLeft"
+                    Click="LegoControlButtonOnClick"
+                    MouseEnter="LegoControlButtonOnMouseEnter"
+                    MouseLeave="LegoControlButtonOnMouseLeave">
+                <Image x:Name="ImageButtonDownLeft" />
+            </Button>
+            <Button x:Name="ButtonDown"
+                    Click="LegoControlButtonOnClick"
+                    MouseEnter="LegoControlButtonOnMouseEnter"
+                    MouseLeave="LegoControlButtonOnMouseLeave">
+                <Image x:Name="ImageButtonDown" />
+            </Button>
+            <Button x:Name="ButtonDownRight"
+                    Click="LegoControlButtonOnClick"
+                    MouseEnter="LegoControlButtonOnMouseEnter"
+                    MouseLeave="LegoControlButtonOnMouseLeave">
+                <Image x:Name="ImageButtonDownRight" />
+            </Button>
+        </UniformGrid>
+
+        <TextBlock Grid.Row="6"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Stretch"
+                   Foreground="Black"
+                   Margin="10"
+                   FontFamily="Segoe UI"
+                   FontSize="12"
+                   Text="{Binding HandMoveVector}" />
+
+        <StatusBar Grid.Row="7"
+                   Grid.ColumnSpan="2"
+                   Grid.Column="0"
+                   HorizontalAlignment="Stretch"
+                   Name="StatusBar"
+                   VerticalAlignment="Bottom"
+                   Background="White"
+                   Foreground="{StaticResource MediumGreyBrush}">
+            <StatusBarItem Content="{Binding StatusText}" />
+            <StatusBarItem Content="{Binding LegoStatus}" />
+            <StatusBarItem Content="{Binding LegoMovementInformation}" />
+        </StatusBar>
+
+    </Grid>
+</Window>

@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{75B41D38-3983-48DA-88C4-0214139F9896}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ElBruno.LegoEv3.Controller</RootNamespace>
+    <AssemblyName>ElBruno.LegoEv3.Controller</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Lego.Ev3.Desktop, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lego.Ev3.1.0.0\lib\net45\Lego.Ev3.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="docs\LEGO Mindstorms EV3 - Desktop.chm" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Robot-WF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ButtonCenter.png" />
+    <Resource Include="Images\ButtonCenterHover.png" />
+    <Resource Include="Images\ButtonCenterLeap.png" />
+    <Resource Include="Images\ButtonCenterLeft.png" />
+    <Resource Include="Images\ButtonCenterLeftHover.png" />
+    <Resource Include="Images\ButtonCenterLeftLeap.png" />
+    <Resource Include="Images\ButtonCenterLeftLeapFar.png" />
+    <Resource Include="Images\ButtonCenterRight.png" />
+    <Resource Include="Images\ButtonCenterRightHover.png" />
+    <Resource Include="Images\ButtonCenterRightLeap.png" />
+    <Resource Include="Images\ButtonCenterRightLeapFar.png" />
+    <Resource Include="Images\ButtonConnect.png" />
+    <Resource Include="Images\ButtonConnectHover.png" />
+    <Resource Include="Images\ButtonConnectLeap.png" />
+    <Resource Include="Images\ButtonDisconnect.png" />
+    <Resource Include="Images\ButtonDisconnectHover.png" />
+    <Resource Include="Images\ButtonDisconnectLeap.png" />
+    <Resource Include="Images\ButtonDown.png" />
+    <Resource Include="Images\ButtonDownFarLeap.png" />
+    <Resource Include="Images\ButtonDownHover.png" />
+    <Resource Include="Images\ButtonDownLeap.png" />
+    <Resource Include="Images\ButtonDownLeapFar.png" />
+    <Resource Include="Images\ButtonDownLeft.png" />
+    <Resource Include="Images\ButtonDownLeftHover.png" />
+    <Resource Include="Images\ButtonDownLeftLeap.png" />
+    <Resource Include="Images\ButtonDownLeftLeapFar.png" />
+    <Resource Include="Images\ButtonDownRight.png" />
+    <Resource Include="Images\ButtonDownRightHover.png" />
+    <Resource Include="Images\ButtonDownRightLeap.png" />
+    <Resource Include="Images\ButtonDownRightLeapFar.png" />
+    <Resource Include="Images\ButtonFire.png" />
+    <Resource Include="Images\ButtonFireHover.png" />
+    <Resource Include="Images\ButtonFireLeap.png" />
+    <Resource Include="Images\ButtonRightHover.png" />
+    <Resource Include="Images\ButtonTop.png" />
+    <Resource Include="Images\ButtonTopHover.png" />
+    <Resource Include="Images\ButtonTopLeap.png" />
+    <Resource Include="Images\ButtonTopLeapFar.png" />
+    <Resource Include="Images\ButtonTopLeft.png" />
+    <Resource Include="Images\ButtonTopLeftHover.png" />
+    <Resource Include="Images\ButtonTopLeftLeap.png" />
+    <Resource Include="Images\ButtonTopLeftLeapFar.png" />
+    <Resource Include="Images\ButtonTopRight.png" />
+    <Resource Include="Images\ButtonTopRightHover.png" />
+    <Resource Include="Images\ButtonTopRightLeap.png" />
+    <Resource Include="Images\ButtonTopRightLeapFar.png" />
+    <Resource Include="Images\LegoEV3.jpg" />
+    <Resource Include="Images\Robot-Hover.png" />
+    <Resource Include="Images\Robot-Normal.png" />
+    <Resource Include="Images\rpsls.png" />
+    <Resource Include="Images\rpsls3.png" />
+    <Resource Include="Images\rpsls4.png" />
+    <Resource Include="Images\StopHover.png" />
+    <Resource Include="Images\StopNormal.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

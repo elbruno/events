@@ -1,0 +1,107 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lego.Ev3.Desktop", "Lego.Ev3.Desktop\Lego.Ev3.Desktop.csproj", "{79C444DE-86F1-4AFF-903A-4B6ED31655EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lego.Ev3.Tester.Wpf", "Testers\Lego.Ev3.Tester.Wpf\Lego.Ev3.Tester.Wpf.csproj", "{8E0D716B-9553-46AF-9DC0-40D28451D2C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lego.Ev3.Tester.Console", "Testers\Lego.Ev3.Tester.Console\Lego.Ev3.Tester.Console.csproj", "{BF89EB20-E0FE-4816-9680-15270E736252}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp (WPF)", "SampleApps\SampleApp (WPF)\SampleApp (WPF).csproj", "{0B140421-4421-4673-972F-7FFB6268F0DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Lego EV3", "01 Lego EV3", "{02A15EF0-EC64-4429-8CF4-58FEE57FFB4B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Apps", "02 Apps", "{8637411A-BA7E-4D4B-81F6-9A2FE12AA8E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 Tests", "03 Tests", "{806C5527-C89A-424F-B65D-E88F97C81AEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElBruno.LegoEv3.Demo", "ElBruno.LegoEv3.Demo\ElBruno.LegoEv3.Demo.csproj", "{8AC502FD-4AAF-40CC-9974-8BD29EAB275A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ElBruno.LegoLeapWpf.Directions", "ElBruno.LegoLeapWpf.Directions\ElBruno.LegoLeapWpf.Directions.csproj", "{5122F1B6-79AF-4CC1-9A24-2A86A269D7CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lego.Ev3.CleanConsole", "Lego.Ev3.CleanConsole\Lego.Ev3.CleanConsole.csproj", "{3BC48113-D178-41E9-B649-EAC17DFF5C9E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79C444DE-86F1-4AFF-903A-4B6ED31655EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79C444DE-86F1-4AFF-903A-4B6ED31655EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79C444DE-86F1-4AFF-903A-4B6ED31655EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79C444DE-86F1-4AFF-903A-4B6ED31655EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E0D716B-9553-46AF-9DC0-40D28451D2C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E0D716B-9553-46AF-9DC0-40D28451D2C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E0D716B-9553-46AF-9DC0-40D28451D2C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E0D716B-9553-46AF-9DC0-40D28451D2C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF89EB20-E0FE-4816-9680-15270E736252}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF89EB20-E0FE-4816-9680-15270E736252}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF89EB20-E0FE-4816-9680-15270E736252}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF89EB20-E0FE-4816-9680-15270E736252}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B140421-4421-4673-972F-7FFB6268F0DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B140421-4421-4673-972F-7FFB6268F0DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B140421-4421-4673-972F-7FFB6268F0DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B140421-4421-4673-972F-7FFB6268F0DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AC502FD-4AAF-40CC-9974-8BD29EAB275A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AC502FD-4AAF-40CC-9974-8BD29EAB275A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AC502FD-4AAF-40CC-9974-8BD29EAB275A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AC502FD-4AAF-40CC-9974-8BD29EAB275A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5122F1B6-79AF-4CC1-9A24-2A86A269D7CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5122F1B6-79AF-4CC1-9A24-2A86A269D7CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5122F1B6-79AF-4CC1-9A24-2A86A269D7CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5122F1B6-79AF-4CC1-9A24-2A86A269D7CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BC48113-D178-41E9-B649-EAC17DFF5C9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BC48113-D178-41E9-B649-EAC17DFF5C9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BC48113-D178-41E9-B649-EAC17DFF5C9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BC48113-D178-41E9-B649-EAC17DFF5C9E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{79C444DE-86F1-4AFF-903A-4B6ED31655EA} = {02A15EF0-EC64-4429-8CF4-58FEE57FFB4B}
+		{8E0D716B-9553-46AF-9DC0-40D28451D2C9} = {806C5527-C89A-424F-B65D-E88F97C81AEE}
+		{BF89EB20-E0FE-4816-9680-15270E736252} = {806C5527-C89A-424F-B65D-E88F97C81AEE}
+		{0B140421-4421-4673-972F-7FFB6268F0DC} = {8637411A-BA7E-4D4B-81F6-9A2FE12AA8E5}
+		{8AC502FD-4AAF-40CC-9974-8BD29EAB275A} = {8637411A-BA7E-4D4B-81F6-9A2FE12AA8E5}
+		{5122F1B6-79AF-4CC1-9A24-2A86A269D7CA} = {8637411A-BA7E-4D4B-81F6-9A2FE12AA8E5}
+		{3BC48113-D178-41E9-B649-EAC17DFF5C9E} = {806C5527-C89A-424F-B65D-E88F97C81AEE}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://elbruno.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Lego.Ev3.Desktop\\Lego.Ev3.Desktop.csproj
+		SccProjectTopLevelParentUniqueName1 = MSFT\u0020Hacks\u0020Lego.sln
+		SccProjectName1 = Lego.Ev3.Desktop
+		SccLocalPath1 = Lego.Ev3.Desktop
+		SccProjectUniqueName2 = SampleApps\\SampleApp\u0020(WPF)\\SampleApp\u0020(WPF).csproj
+		SccProjectTopLevelParentUniqueName2 = MSFT\u0020Hacks\u0020Lego.sln
+		SccProjectName2 = SampleApps/SampleApp\u0020(WPF)
+		SccLocalPath2 = SampleApps\\SampleApp\u0020(WPF)
+		SccProjectUniqueName3 = Testers\\Lego.Ev3.Tester.Console\\Lego.Ev3.Tester.Console.csproj
+		SccProjectTopLevelParentUniqueName3 = MSFT\u0020Hacks\u0020Lego.sln
+		SccProjectName3 = Testers/Lego.Ev3.Tester.Console
+		SccLocalPath3 = Testers\\Lego.Ev3.Tester.Console
+		SccProjectUniqueName4 = Testers\\Lego.Ev3.Tester.Wpf\\Lego.Ev3.Tester.Wpf.csproj
+		SccProjectTopLevelParentUniqueName4 = MSFT\u0020Hacks\u0020Lego.sln
+		SccProjectName4 = Testers/Lego.Ev3.Tester.Wpf
+		SccLocalPath4 = Testers\\Lego.Ev3.Tester.Wpf
+		SccProjectUniqueName5 = ElBruno.LegoEv3.Demo\\ElBruno.LegoEv3.Demo.csproj
+		SccProjectTopLevelParentUniqueName5 = MSFT\u0020Hacks\u0020Lego.sln
+		SccProjectName5 = ElBruno.LegoEv3.Demo
+		SccLocalPath5 = ElBruno.LegoEv3.Demo
+		SccProjectUniqueName6 = ElBruno.LegoLeapWpf.Directions\\ElBruno.LegoLeapWpf.Directions.csproj
+		SccProjectTopLevelParentUniqueName6 = MSFT\u0020Hacks\u0020Lego.sln
+		SccProjectName6 = ElBruno.LegoLeapWpf.Directions
+		SccLocalPath6 = ElBruno.LegoLeapWpf.Directions
+		SccProjectUniqueName7 = Lego.Ev3.CleanConsole\\Lego.Ev3.CleanConsole.csproj
+		SccProjectTopLevelParentUniqueName7 = MSFT\u0020Hacks\u0020Lego.sln
+		SccProjectName7 = Lego.Ev3.CleanConsole
+		SccLocalPath7 = Lego.Ev3.CleanConsole
+	EndGlobalSection
+EndGlobal
