@@ -1,0 +1,14 @@
+﻿{
+  "dependencies": {
+    "Microsoft.NETCore.UniversalWindowsPlatform": "6.0.1",
+    "Microsoft.ProjectOxford.Vision": "1.0.393",
+    "UrhoSharp.HoloLens": "1.4.4"
+  },
+  "frameworks": {
+    "uap10.0.10240": {}
+  },
+  "runtimes": {
+    "win10-x86": {},
+    "win10-x86-aot": {}
+  }
+}
