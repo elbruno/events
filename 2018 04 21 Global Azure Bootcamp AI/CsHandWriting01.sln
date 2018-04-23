@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2011
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsHandWriting01", "CsHandWriting01\CsHandWriting01.csproj", "{B21E5F8A-1E64-4C00-AAE8-0FA3F931B9AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsHandWriting02", "CsHandWriting02\CsHandWriting02.csproj", "{887957EA-5523-4579-A871-BB68463328FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalAzureBootCampHw01", "GlobalAzureBootCampHw01\GlobalAzureBootCampHw01.csproj", "{4B657B15-E493-4DAF-A77B-A55015180CCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalAzureBootCamp02", "GlobalAzureBootCamp02\GlobalAzureBootCamp02.csproj", "{04B64E30-1317-4BDB-98F5-E0E4D779E54A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlobalAzureBootCamp03", "GlobalAzureBootCamp03\GlobalAzureBootCamp03.csproj", "{C60E4373-BA99-47BB-BF1A-C8D6FC1B3E53}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B21E5F8A-1E64-4C00-AAE8-0FA3F931B9AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B21E5F8A-1E64-4C00-AAE8-0FA3F931B9AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B21E5F8A-1E64-4C00-AAE8-0FA3F931B9AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B21E5F8A-1E64-4C00-AAE8-0FA3F931B9AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{887957EA-5523-4579-A871-BB68463328FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{887957EA-5523-4579-A871-BB68463328FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{887957EA-5523-4579-A871-BB68463328FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{887957EA-5523-4579-A871-BB68463328FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B657B15-E493-4DAF-A77B-A55015180CCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B657B15-E493-4DAF-A77B-A55015180CCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B657B15-E493-4DAF-A77B-A55015180CCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B657B15-E493-4DAF-A77B-A55015180CCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04B64E30-1317-4BDB-98F5-E0E4D779E54A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04B64E30-1317-4BDB-98F5-E0E4D779E54A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04B64E30-1317-4BDB-98F5-E0E4D779E54A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04B64E30-1317-4BDB-98F5-E0E4D779E54A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C60E4373-BA99-47BB-BF1A-C8D6FC1B3E53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C60E4373-BA99-47BB-BF1A-C8D6FC1B3E53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C60E4373-BA99-47BB-BF1A-C8D6FC1B3E53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C60E4373-BA99-47BB-BF1A-C8D6FC1B3E53}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C6F8F9F9-3628-4FC4-A353-9156AE04F59F}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://elbruno.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CsHandWriting01\\CsHandWriting01.csproj
+		SccProjectName1 = CsHandWriting01
+		SccLocalPath1 = CsHandWriting01
+		SccProjectUniqueName2 = CsHandWriting02\\CsHandWriting02.csproj
+		SccProjectName2 = CsHandWriting02
+		SccLocalPath2 = CsHandWriting02
+		SccProjectUniqueName3 = GlobalAzureBootCampHw01\\GlobalAzureBootCampHw01.csproj
+		SccProjectName3 = GlobalAzureBootCampHw01
+		SccLocalPath3 = GlobalAzureBootCampHw01
+		SccProjectUniqueName4 = GlobalAzureBootCamp02\\GlobalAzureBootCamp02.csproj
+		SccProjectName4 = GlobalAzureBootCamp02
+		SccLocalPath4 = GlobalAzureBootCamp02
+		SccProjectUniqueName5 = GlobalAzureBootCamp03\\GlobalAzureBootCamp03.csproj
+		SccProjectName5 = GlobalAzureBootCamp03
+		SccLocalPath5 = GlobalAzureBootCamp03
+	EndGlobalSection
+EndGlobal
