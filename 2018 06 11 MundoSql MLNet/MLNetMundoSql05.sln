@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLNetMundoSql05", "MLNetMundoSql05\MLNetMundoSql05.csproj", "{15D0F9A8-72B4-4F45-9D72-008688397BF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLNetMundoSql05Import", "MLNetMundoSql05Import\MLNetMundoSql05Import.csproj", "{AC0D66F9-BD28-4557-A3AC-7773722A17BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15D0F9A8-72B4-4F45-9D72-008688397BF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15D0F9A8-72B4-4F45-9D72-008688397BF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15D0F9A8-72B4-4F45-9D72-008688397BF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15D0F9A8-72B4-4F45-9D72-008688397BF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC0D66F9-BD28-4557-A3AC-7773722A17BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC0D66F9-BD28-4557-A3AC-7773722A17BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC0D66F9-BD28-4557-A3AC-7773722A17BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC0D66F9-BD28-4557-A3AC-7773722A17BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59E9481F-AA55-4FCC-947C-6448CB5BA10D}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://elbruno.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MLNetMundoSql05\\MLNetMundoSql05.csproj
+		SccProjectName1 = MLNetMundoSql05
+		SccLocalPath1 = MLNetMundoSql05
+		SccProjectUniqueName2 = MLNetMundoSql05Import\\MLNetMundoSql05Import.csproj
+		SccProjectName2 = MLNetMundoSql05Import
+		SccLocalPath2 = MLNetMundoSql05Import
+	EndGlobalSection
+EndGlobal
