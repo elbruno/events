@@ -1,0 +1,19 @@
+mlnetdemo01
+single project with items class embedded
+train model for Label and Age
+
+mlnetdemo02
+single project with items class embedded
+train model for Label and Age and Gender
+
+mlnetdemo03 export
+train and axport save the trained model
+
+mlnetdemo03 import
+import and use a trained model
+
+mlnetdemo04
+export model to ONNX format
+
+mlnetdemo05
+train model for text sentiment detection in standard mode and train model using WordEmbeddings

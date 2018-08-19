@@ -1,0 +1,111 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLNetDemos01", "MLNetDemos01\MLNetDemos01.csproj", "{5C2CC316-72AF-4170-BC79-B251AB290187}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLNetDemos02", "MLNetDemos02\MLNetDemos02.csproj", "{CBB8C75D-24B6-4FB3-A71C-AA03D490F4FC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLNetDemos03ExportModel", "MLNetDemos03ExportModel\MLNetDemos03ExportModel.csproj", "{7EF1D65A-8C74-4EFB-A55D-0FDD1298C269}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLNetDemos03ImportModel", "MLNetDemos03ImportModel\MLNetDemos03ImportModel.csproj", "{DDCDB5AB-5610-4B2E-8A9D-E5539AA8F32D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLNetDemos04", "MLNetDemos04\MLNetDemos04.csproj", "{EDCE3334-BB43-40B9-A054-CADA85B3B8DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CBB1D067-C601-461E-9A5E-CA0B581AED38}"
+	ProjectSection(SolutionItems) = preProject
+		MLNetDemosDesc.txt = MLNetDemosDesc.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLNetCSharpComm01", "..\..\20180801 CSharpComm MLNet\MLNetCSharpComm01\MLNetCSharpComm01.csproj", "{A68F2DF0-CD21-49BE-8EEF-6E3120E65031}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLNetCSharpComm02", "..\..\20180801 CSharpComm MLNet\MLNetCSharpComm02\MLNetCSharpComm02.csproj", "{96E29A74-48F0-45E3-833E-C2F5CEEED6E3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLNetDemos05", "MLNetDemos05\MLNetDemos05.csproj", "{5B2117DB-F76E-4620-84CD-24D9CA24C989}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLNetMex01", "MLNetMex01\MLNetMex01.csproj", "{DFAF387A-870B-475B-85E7-E87CFF9A812A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C2CC316-72AF-4170-BC79-B251AB290187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C2CC316-72AF-4170-BC79-B251AB290187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C2CC316-72AF-4170-BC79-B251AB290187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C2CC316-72AF-4170-BC79-B251AB290187}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBB8C75D-24B6-4FB3-A71C-AA03D490F4FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBB8C75D-24B6-4FB3-A71C-AA03D490F4FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBB8C75D-24B6-4FB3-A71C-AA03D490F4FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBB8C75D-24B6-4FB3-A71C-AA03D490F4FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EF1D65A-8C74-4EFB-A55D-0FDD1298C269}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EF1D65A-8C74-4EFB-A55D-0FDD1298C269}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EF1D65A-8C74-4EFB-A55D-0FDD1298C269}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EF1D65A-8C74-4EFB-A55D-0FDD1298C269}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDCDB5AB-5610-4B2E-8A9D-E5539AA8F32D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDCDB5AB-5610-4B2E-8A9D-E5539AA8F32D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDCDB5AB-5610-4B2E-8A9D-E5539AA8F32D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDCDB5AB-5610-4B2E-8A9D-E5539AA8F32D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDCE3334-BB43-40B9-A054-CADA85B3B8DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDCE3334-BB43-40B9-A054-CADA85B3B8DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDCE3334-BB43-40B9-A054-CADA85B3B8DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDCE3334-BB43-40B9-A054-CADA85B3B8DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A68F2DF0-CD21-49BE-8EEF-6E3120E65031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A68F2DF0-CD21-49BE-8EEF-6E3120E65031}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A68F2DF0-CD21-49BE-8EEF-6E3120E65031}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A68F2DF0-CD21-49BE-8EEF-6E3120E65031}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96E29A74-48F0-45E3-833E-C2F5CEEED6E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96E29A74-48F0-45E3-833E-C2F5CEEED6E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96E29A74-48F0-45E3-833E-C2F5CEEED6E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96E29A74-48F0-45E3-833E-C2F5CEEED6E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B2117DB-F76E-4620-84CD-24D9CA24C989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B2117DB-F76E-4620-84CD-24D9CA24C989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B2117DB-F76E-4620-84CD-24D9CA24C989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B2117DB-F76E-4620-84CD-24D9CA24C989}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFAF387A-870B-475B-85E7-E87CFF9A812A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFAF387A-870B-475B-85E7-E87CFF9A812A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFAF387A-870B-475B-85E7-E87CFF9A812A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFAF387A-870B-475B-85E7-E87CFF9A812A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D08EC6B6-746A-406E-8578-E638AAB0D50B}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 10
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://elbruno.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MLNetDemos01\\MLNetDemos01.csproj
+		SccProjectName1 = MLNetDemos01
+		SccLocalPath1 = MLNetDemos01
+		SccProjectUniqueName2 = MLNetDemos02\\MLNetDemos02.csproj
+		SccProjectName2 = MLNetDemos02
+		SccLocalPath2 = MLNetDemos02
+		SccProjectUniqueName3 = MLNetDemos03ExportModel\\MLNetDemos03ExportModel.csproj
+		SccProjectName3 = MLNetDemos03ExportModel
+		SccLocalPath3 = MLNetDemos03ExportModel
+		SccProjectUniqueName4 = MLNetDemos03ImportModel\\MLNetDemos03ImportModel.csproj
+		SccProjectName4 = MLNetDemos03ImportModel
+		SccLocalPath4 = MLNetDemos03ImportModel
+		SccProjectUniqueName5 = MLNetDemos04\\MLNetDemos04.csproj
+		SccProjectName5 = MLNetDemos04
+		SccLocalPath5 = MLNetDemos04
+		SccProjectUniqueName6 = ..\\..\\20180801\u0020CSharpComm\u0020MLNet\\MLNetCSharpComm01\\MLNetCSharpComm01.csproj
+		SccProjectName6 = ../../20180801\u0020CSharpComm\u0020MLNet/MLNetCSharpComm01
+		SccLocalPath6 = ..\\..\\20180801\u0020CSharpComm\u0020MLNet\\MLNetCSharpComm01
+		SccProjectUniqueName7 = ..\\..\\20180801\u0020CSharpComm\u0020MLNet\\MLNetCSharpComm02\\MLNetCSharpComm02.csproj
+		SccProjectName7 = ../../20180801\u0020CSharpComm\u0020MLNet/MLNetCSharpComm02
+		SccLocalPath7 = ..\\..\\20180801\u0020CSharpComm\u0020MLNet\\MLNetCSharpComm02
+		SccProjectUniqueName8 = MLNetDemos05\\MLNetDemos05.csproj
+		SccProjectName8 = MLNetDemos05
+		SccLocalPath8 = MLNetDemos05
+		SccProjectUniqueName9 = MLNetMex01\\MLNetMex01.csproj
+		SccProjectName9 = MLNetMex01
+		SccLocalPath9 = MLNetMex01
+	EndGlobalSection
+EndGlobal
