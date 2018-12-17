@@ -1,0 +1,55 @@
+=========================================
+	ML.Net v 0.7.0
+=========================================
+
+MLNetDemo07001
+	single project with items class embedded
+	train model for Label and Age
+
+MLNetDemo07002
+	train and save model
+
+MLNetDemo07003
+	load model and perform predictions
+
+MLNetDemo07004
+	train model for Label, Age and Gender
+	add teenagers and change kid for boy or girl
+
+MLNetDemo07005
+	split data into 80/20 for train and test
+	use peek to view sample data
+	big duplicate name data to get split working fine
+
+MLNetDemo07006
+	use peek to view sample data
+
+MLNetDemo07007
+	display model's accuracy metrics
+
+=========================================
+	ML.Net v0.6.0
+=========================================
+
+mlnetdemo01
+single project with items class embedded
+train model for Label and Age
+
+mlnetdemo02
+single project with items class embedded
+train model for Label and Age and Gender
+
+mlnetdemo03 export
+train and export save the trained model
+
+mlnetdemo03 import
+import and use a trained model
+
+mlnetdemo04
+export model to ONNX format
+
+mlnetdemo05
+train model for text sentiment detection in standard mode and train model using WordEmbeddings
+
+mlnetdemo06
+train model for text sentiment detection in standard mode and train model using WordEmbeddings
