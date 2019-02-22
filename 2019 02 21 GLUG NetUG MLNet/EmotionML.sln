@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmotionML", "EmotionML\EmotionML.csproj", "{3631FE9E-EBFE-4454-A71B-0A5E62A07886}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3631FE9E-EBFE-4454-A71B-0A5E62A07886}.Debug|ARM.ActiveCfg = Debug|ARM
+		{3631FE9E-EBFE-4454-A71B-0A5E62A07886}.Debug|ARM.Build.0 = Debug|ARM
+		{3631FE9E-EBFE-4454-A71B-0A5E62A07886}.Debug|ARM.Deploy.0 = Debug|ARM
+		{3631FE9E-EBFE-4454-A71B-0A5E62A07886}.Debug|x64.ActiveCfg = Debug|x64
+		{3631FE9E-EBFE-4454-A71B-0A5E62A07886}.Debug|x64.Build.0 = Debug|x64
+		{3631FE9E-EBFE-4454-A71B-0A5E62A07886}.Debug|x64.Deploy.0 = Debug|x64
+		{3631FE9E-EBFE-4454-A71B-0A5E62A07886}.Debug|x86.ActiveCfg = Debug|x86
+		{3631FE9E-EBFE-4454-A71B-0A5E62A07886}.Debug|x86.Build.0 = Debug|x86
+		{3631FE9E-EBFE-4454-A71B-0A5E62A07886}.Debug|x86.Deploy.0 = Debug|x86
+		{3631FE9E-EBFE-4454-A71B-0A5E62A07886}.Release|ARM.ActiveCfg = Release|ARM
+		{3631FE9E-EBFE-4454-A71B-0A5E62A07886}.Release|ARM.Build.0 = Release|ARM
+		{3631FE9E-EBFE-4454-A71B-0A5E62A07886}.Release|ARM.Deploy.0 = Release|ARM
+		{3631FE9E-EBFE-4454-A71B-0A5E62A07886}.Release|x64.ActiveCfg = Release|x64
+		{3631FE9E-EBFE-4454-A71B-0A5E62A07886}.Release|x64.Build.0 = Release|x64
+		{3631FE9E-EBFE-4454-A71B-0A5E62A07886}.Release|x64.Deploy.0 = Release|x64
+		{3631FE9E-EBFE-4454-A71B-0A5E62A07886}.Release|x86.ActiveCfg = Release|x86
+		{3631FE9E-EBFE-4454-A71B-0A5E62A07886}.Release|x86.Build.0 = Release|x86
+		{3631FE9E-EBFE-4454-A71B-0A5E62A07886}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D362B98-C8D9-4DCB-A253-D314453E4263}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://elbruno.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = EmotionML\\EmotionML.csproj
+		SccProjectName1 = EmotionML
+		SccLocalPath1 = EmotionML
+	EndGlobalSection
+EndGlobal

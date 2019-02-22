@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeMashConsole01", "CodeMa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeMashMarvelUwp01", "CodeMashMarvelUwp01\CodeMashMarvelUwp01.csproj", "{1E4D3716-AF98-42E4-B3BF-4F7D7EF38DA5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomVisionMarvelConsoleDocker01", "CustomVisionMarvelConsoleDocker01\CustomVisionMarvelConsoleDocker01.csproj", "{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -199,6 +201,26 @@ Global
 		{1E4D3716-AF98-42E4-B3BF-4F7D7EF38DA5}.Release|x86.ActiveCfg = Release|x86
 		{1E4D3716-AF98-42E4-B3BF-4F7D7EF38DA5}.Release|x86.Build.0 = Release|x86
 		{1E4D3716-AF98-42E4-B3BF-4F7D7EF38DA5}.Release|x86.Deploy.0 = Release|x86
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}.Debug|ARM.Build.0 = Debug|Any CPU
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}.Debug|x64.Build.0 = Debug|Any CPU
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}.Debug|x86.Build.0 = Debug|Any CPU
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}.Release|ARM.ActiveCfg = Release|Any CPU
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}.Release|ARM.Build.0 = Release|Any CPU
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}.Release|ARM64.Build.0 = Release|Any CPU
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}.Release|x64.ActiveCfg = Release|Any CPU
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}.Release|x64.Build.0 = Release|Any CPU
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}.Release|x86.ActiveCfg = Release|Any CPU
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -209,40 +231,9 @@ Global
 		{66705E1F-24E1-4C16-8533-CB0EFA063275} = {ACF690AC-595E-436C-839B-7B9C3844016B}
 		{13FF0199-F8A4-48FF-959A-CF365D2DF200} = {79D1A9EB-FC9E-4FC5-A3E3-AF1907DFA02D}
 		{28349A3E-1DEF-4774-A34E-FAA775D1F54B} = {79D1A9EB-FC9E-4FC5-A3E3-AF1907DFA02D}
+		{51F6645F-AC78-4B36-8E5D-E4EA334EF7A0} = {79D1A9EB-FC9E-4FC5-A3E3-AF1907DFA02D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9703929A-908D-4422-B95C-508A06A0862F}
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 8
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://elbruno.visualstudio.com/defaultcollection
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = OfficeWatcher00\\OfficeWatcher00.csproj
-		SccProjectTopLevelParentUniqueName1 = Custom\u0020Vision\u0020Office\u0020Watcher.sln
-		SccProjectName1 = OfficeWatcher00
-		SccLocalPath1 = OfficeWatcher00
-		SccProjectUniqueName2 = OfficeWatcher04\\OfficeWatcher04.csproj
-		SccProjectTopLevelParentUniqueName2 = Custom\u0020Vision\u0020Office\u0020Watcher.sln
-		SccProjectName2 = OfficeWatcher04
-		SccLocalPath2 = OfficeWatcher04
-		SccProjectUniqueName3 = OfficeWatcher01\\OfficeWatcher01.csproj
-		SccProjectTopLevelParentUniqueName3 = Custom\u0020Vision\u0020Office\u0020Watcher.sln
-		SccProjectName3 = OfficeWatcher01
-		SccLocalPath3 = OfficeWatcher01
-		SccProjectUniqueName4 = CustomVisionMarvel01\\CustomVisionMarvel01.csproj
-		SccProjectTopLevelParentUniqueName4 = Custom\u0020Vision\u0020Office\u0020Watcher.sln
-		SccProjectName4 = CustomVisionMarvel01
-		SccLocalPath4 = CustomVisionMarvel01
-		SccProjectUniqueName5 = CustomVisionMarvelConsole01\\CustomVisionMarvelConsole01.csproj
-		SccProjectTopLevelParentUniqueName5 = Custom\u0020Vision\u0020Office\u0020Watcher.sln
-		SccProjectName5 = CustomVisionMarvelConsole01
-		SccLocalPath5 = CustomVisionMarvelConsole01
-		SccProjectUniqueName6 = CodeMashConsole01\\CodeMashConsole01.csproj
-		SccProjectName6 = CodeMashConsole01
-		SccLocalPath6 = CodeMashConsole01
-		SccProjectUniqueName7 = CodeMashMarvelUwp01\\CodeMashMarvelUwp01.csproj
-		SccProjectName7 = CodeMashMarvelUwp01
-		SccLocalPath7 = CodeMashMarvelUwp01
 	EndGlobalSection
 EndGlobal
