@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Shared\V010\AgeRange.cs" Link="Data\AgeRange.cs" />
+    <Compile Include="..\Shared\V010\AgeRangePrediction.cs" Link="Data\AgeRangePrediction.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Shared\V010\AgeRangeData01.csv" Link="Data\AgeRangeData01.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="0.10.0" />
+  </ItemGroup>
+
+</Project>

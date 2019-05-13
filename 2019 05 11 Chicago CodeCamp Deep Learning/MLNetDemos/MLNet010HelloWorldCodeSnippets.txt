@@ -1,0 +1,83 @@
+[ MLNet01 Pipeline usings ]
+
+using System;
+using System.IO;
+using Microsoft.ML;
+using Microsoft.ML.Data;
+using MLNetDemo010.Shared;
+
+[MLNet02 Age Classes ]
+
+public class AgeRange
+{
+    [LoadColumn(0)]
+    public string Name;
+
+    [LoadColumn(1)]
+    public float Age;
+
+    [LoadColumn(2)]
+    public string Gender;
+
+    [LoadColumn(3), ColumnName("Label")]
+    public string Label;
+}
+public class AgeRangePrediction
+{
+    [ColumnName("PredictedLabel")]
+    public string PredictedLabel;
+}
+
+[MLNet03 Load Data ]
+var ml = new MLContext(seed: 1, conc: 1);
+// Read the data into a data view.
+var data = ml.Data.ReadFromTextFile<AgeRange>(TrainDataPath, hasHeader: true, separatorChar: ',');
+
+[ MLNet 04 static vars ]
+
+static readonly string TrainDataPath = Path.Combine(Environment.CurrentDirectory, "Data", "AgeRangeData03.csv");
+
+[ MLNet 05 Train ]
+// Train
+var pipeline = ml.Transforms.Conversion.MapValueToKey("Label")
+    .Append(ml.Transforms.Concatenate("Features", "Age"))
+    .AppendCacheCheckpoint(ml)
+    .Append(ml.MulticlassClassification.Trainers.StochasticDualCoordinateAscent(labelColumn: "Label", featureColumn: "Features"))
+    .Append(ml.Transforms.Conversion.MapKeyToValue("PredictedLabel"));
+
+var model = pipeline.Fit(data);
+Console.WriteLine("Model trained");
+
+
+[ MLNet 06 Predict ]
+
+// Predict
+var engine = model.CreatePredictionEngine<AgeRange, AgeRangePrediction>(ml);
+PredictSimple("Jeff", 2, "M", engine);
+PredictSimple("Shelley", 9, "F", engine);
+PredictSimple("Jackie", 3, "F", engine);
+PredictSimple("Jim", 5, "M", engine);
+
+[ MLNet 07 Predict Function ]
+
+private static void PredictSimple(string name, float age, string gender, PredictionEngine<AgeRange, AgeRangePrediction> predictionFunction)
+{
+    var example = new AgeRange()
+    {
+        Age = age,
+        Name = name,
+        Gender = gender
+    };
+    var prediction = predictionFunction.Predict(example);
+    Console.WriteLine($"Name: {example.Name}\t Age: {example.Age:00}\t Gender: {example.Gender}\t >> Predicted Label: {prediction.PredictedLabel}");
+}
+
+[ MLNet 08 Train AGE GENDER ]
+
+// Train
+var pipeline = ml.Transforms.Conversion.MapValueToKey("Label")
+    .Append(ml.Transforms.Text.FeaturizeText("GenderFeat", "Gender"))
+    .Append(ml.Transforms.Concatenate("Features", "Age", "GenderFeat"))
+    .AppendCacheCheckpoint(ml)
+    .Append(ml.MulticlassClassification.Trainers.StochasticDualCoordinateAscent(labelColumn: "Label", featureColumn: "Features"))
+    .Append(ml.Transforms.Conversion.MapKeyToValue("PredictedLabel"));

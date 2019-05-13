@@ -1,0 +1,21 @@
+## OfficeWatcher00
+Base project from 
+	https://docs.microsoft.com/en-us/azure/cognitive-services/custom-vision-service/custom-vision-onnx-windows-ml
+	https://github.com/Azure-Samples/cognitive-services-onnx12-customvision-sample
+
+## OfficeWatcher01
+## OfficeWatcher04
+	Working demo for office camera browsing for a image
+
+## CustomVisionMarvelConsole01
+	marvel cv analysis from local file in a console app
+
+## CustomVisionMarvel01
+	live camera analysis using onnx model and display simple text with results
+
+## CustomVisionMarvel02
+
+
+## Custom Vision Marvel Project
+
+https://southcentralus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/8e062004-8f3b-4108-b838-ba3ae840314c/detect/iterations/Iteration2/image

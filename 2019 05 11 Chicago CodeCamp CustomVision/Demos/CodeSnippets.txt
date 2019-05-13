@@ -1,0 +1,40 @@
+## Console Make Pred Request
+
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Prediction-Key", "0b30992ecaa3487f92819e3028436848");
+var url =
+    "https://southcentralus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/8e062004-8f3b-4108-b838-ba3ae840314c/detect/iterations/Iteration7/image";
+
+var byteData = GetImageAsByteArray("IMG02.jpg");
+
+using (var content = new ByteArrayContent(byteData))
+{
+    content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+    var response = await client.PostAsync(url, content);
+    var jsonResponse = await response.Content.ReadAsStringAsync();
+    var prettyJson = JToken.Parse(jsonResponse).ToString(Formatting.Indented);
+    Console.WriteLine(prettyJson);
+}
+
+## UWP Camera Code
+
+private ObjectDetection _objectDetection;
+
+private async void InitModel()
+{
+    _objectDetection = new ObjectDetection();
+    var modelFile = await StorageFile.GetFileFromApplicationUriAsync(new Uri($"ms-appx:///Assets/model.onnx"));
+    await _objectDetection.Init(modelFile);
+}
+
+private async Task LoadAndEvaluateModelAsync(VideoFrame videoFrame)
+{
+    var result = await _objectDetection.PredictImageAsync(videoFrame);
+    var message = $"{DateTime.Now.ToLongTimeString()}{Environment.NewLine}============================={Environment.NewLine}";
+    foreach (var predictionModel in result)
+    {
+        message += $" {predictionModel.TagName} {(predictionModel.Probability * 100.0f):#0.00}% {Environment.NewLine}";
+    }
+    Debug.WriteLine(message);
+    await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => TextBlockResults.Text = $"{message}");
+}
