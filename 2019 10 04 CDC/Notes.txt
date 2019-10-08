@@ -1,0 +1,36 @@
+Distracted Driver Detection
+=======================================
+
+DistractedDriverDetectionConsoleTest01
+Console project using CV Url
+
+DistractedDriverDetectionConsoleTest02
+Console project using local docker Url
+
+DistractedDriverDetectionConsoleTest03
+Console project using local docker Url
+Convert json to object, sort by predictions
+
+DistractedDriverDetectionConsoleTest04
+take times between measurements to check the feasibility
+
+Model Classes
+c0 - safe driving
+c1 - texting - right
+c2 - talking on the phone - right
+c3 - texting - left
+c4 - talking on the phone - left
+c5 - operating the radio
+c6 - drinking
+c7 - reaching behind
+c8 - hair and makeup
+c9 - talking to passenger
+
+Parking Lot Detector
+=======================================
+
+CustomVisionParkingLot01
+UWP Uses onnx and display results in list mode with camera preview
+
+CustomVisionParkingLot02
+UWP Uses onnx and display results with bounding boxes with camera preview

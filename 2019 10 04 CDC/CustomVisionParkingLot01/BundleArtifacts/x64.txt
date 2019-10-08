@@ -1,0 +1,2 @@
+MainPackage=D:\src\eb\tests\20191002 CDC CV\CustomVisionParkingLot01\bin\x64\Debug\CustomVisionParkingLot01_1.0.0.0_x64_Debug.msix
+SymbolPackage=D:\src\eb\tests\20191002 CDC CV\CustomVisionParkingLot01\obj\x64\Debug\Symbols\CustomVisionParkingLot01_1.0.0.0_x64_Debug.appxsym

@@ -1,0 +1,19 @@
+CVDriver 1
+var fileStream = new FileStream(imageFilePath, FileMode.Open, FileAccess.Read);
+var binaryReader = new BinaryReader(fileStream);
+var byteData = binaryReader.ReadBytes((int)fileStream.Length);
+
+var client = new HttpClient();
+client.DefaultRequestHeaders.Add("Prediction-Key", CVKey);
+
+using var content = new ByteArrayContent(byteData);
+content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
+var response = await client.PostAsync(CVUrl, content);
+var jsonResponse = await response.Content.ReadAsStringAsync();
+
+var prettyJson = JToken.Parse(jsonResponse).ToString(Formatting.Indented);
+Console.WriteLine(prettyJson);
+
+CVDriver 2
+const string CVUrl = "[ .. you CV Url goes here ... >";
+const string CVKey = "[ .. you CV Key goes here ... >";

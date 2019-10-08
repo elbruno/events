@@ -1,0 +1,81 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Shared\CustomVisionEstimation.cs" Link="CustomVisionEstimation.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\CustomVisionParkingLot Test Images\01 EOE.jpg" Link="Images\01 EOE.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\CustomVisionParkingLot Test Images\02 EEO.jpg" Link="Images\02 EEO.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\CustomVisionParkingLot Test Images\03 OEE.png" Link="Images\03 OEE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\CustomVisionParkingLot Test Images\04 OEE.png" Link="Images\04 OEE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\CustomVisionParkingLot Test Images\05 EEO.png" Link="Images\05 EEO.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\CustomVisionParkingLot Test Images\06 EOE.jpg" Link="Images\06 EOE.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\CustomVisionParkingLot Test Images\07 EEE.jpg" Link="Images\07 EEE.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\CustomVisionParkingLot Test Images\08 OEO.jpg" Link="Images\08 OEO.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\CustomVisionParkingLot Test Images\09 OEE.png" Link="Images\09 OEE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\CustomVisionParkingLot Test Images\10 EEO.png" Link="Images\10 EEO.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\CustomVisionParkingLot Test Images\11 EEE.jpg" Link="Images\11 EEE.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\CustomVisionParkingLot Test Images\12 OEE.jpg" Link="Images\12 OEE.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\CustomVisionParkingLot Test Images\13 EEE.jpg" Link="Images\13 EEE.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\CustomVisionParkingLot Test Images\14 EEE.png" Link="Images\14 EEE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\CustomVisionParkingLot Test Images\15 EEE.png" Link="Images\15 EEE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\CustomVisionParkingLot Test Images\16 EOO.png" Link="Images\16 EOO.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\CustomVisionParkingLot Test Images\17 OOO.png" Link="Images\17 OOO.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Images\" />
+  </ItemGroup>
+
+</Project>

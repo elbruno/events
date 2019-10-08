@@ -1,0 +1,62 @@
+{
+  "created": "2019-09-16T17:29:52.888016", 
+  "id": "", 
+  "iteration": "", 
+  "predictions": [
+    {
+      "boundingBox": null, 
+      "probability": 0.0006624300149269402, 
+      "tagId": "", 
+      "tagName": "c0 - safe driving"
+    }, 
+    {
+      "boundingBox": null, 
+      "probability": 9.50699977693148e-05, 
+      "tagId": "", 
+      "tagName": "c1 - texting - right"
+    }, 
+    {
+      "boundingBox": null, 
+      "probability": 6.999999868639861e-08, 
+      "tagId": "", 
+      "tagName": "c2 - talking on the phone - right"
+    }, 
+    {
+      "boundingBox": null, 
+      "probability": 0.6977981328964233, 
+      "tagId": "", 
+      "tagName": "c3 - texting - left"
+    }, 
+    {
+      "boundingBox": null, 
+      "probability": 3.152999852318317e-05, 
+      "tagId": "", 
+      "tagName": "c4 - talking on the phone - left"
+    }, 
+    {
+      "boundingBox": null, 
+      "probability": 0.3012973368167877, 
+      "tagId": "", 
+      "tagName": "c5 - operating the radio"
+    }, 
+    {
+      "boundingBox": null, 
+      "probability": 1.3000000080864993e-06, 
+      "tagId": "", 
+      "tagName": "c6 - drinking"
+    }, 
+    {
+      "boundingBox": null, 
+      "probability": 6.800000278417428e-07, 
+      "tagId": "", 
+      "tagName": "c8 - hair and makeup"
+    }, 
+    {
+      "boundingBox": null, 
+      "probability": 0.00011346999963279814, 
+      "tagId": "", 
+      "tagName": "c9 - talking to passenger"
+    }
+  ], 
+  "project": ""
+}

@@ -1,0 +1,1 @@
+MainPackage=D:\src\eb\tests\20191002 CDC CV\CustomVisionParkingLot02\bin\x64\Debug\CustomVisionParkingLot02_1.0.0.0_x64_Debug.msix
