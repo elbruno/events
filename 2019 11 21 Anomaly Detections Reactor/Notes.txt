@@ -1,0 +1,57 @@
+------------------------------------
+Data Samples
+------------------------------------
+
+Unsupervised Anomaly Detection
+https://github.com/Vicam/Unsupervised_Anomaly_Detection
+
+Anomaly detection EECS 498 project 2
+https://www.kaggle.com/c/eecs498/data>
+
+------------------------------------
+Machine Learning.Net
+------------------------------------
+
+ML.NET
+https://dotnet.microsoft.com/apps/machinelearning-ai/ml-dotnet
+
+ML.NET Samples
+https://github.com/dotnet/machinelearning-samples/blob/master/README.md
+
+Power Consumption Anomaly Detection
+https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/AnomalyDetection_PowerMeterReadings 
+
+Spike Detection and Change Point Detection of Product sales
+https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/AnomalyDetection_Sales 
+
+------------------------------------
+Cognitive Services Anomaly Detector
+------------------------------------
+
+Anomaly Detector 
+https://azure.microsoft.com/en-us/services/cognitive-services/anomaly-detector 
+
+Best practices for using the Anomaly Detector API 
+https://docs.microsoft.com/en-us/azure/cognitive-services/anomaly-detector/concepts/anomaly-detection-best-practices  
+
+Quickstart: Anomaly Detector client library for .NET 
+https://docs.microsoft.com/en-us/azure/cognitive-services/anomaly-detector/quickstarts/detect-data-anomalies-csharp-sdk?tabs=windows
+
+Anomaly Detector on-premise with container support 
+https://channel9.msdn.com/Shows/AI-Show/Bring-Anomaly-Detector-on-premise-with-containers-support 
+
+------------------------------------
+Azure Machine Learning
+------------------------------------
+
+What is Azure Machine Learning? 
+https://docs.microsoft.com/en-us/azure/machine-learning/service/overview-what-is-azure-ml 
+
+Azure Machine Learning documentation 
+https://docs.microsoft.com/en-us/azure/machine-learning/ 
+
+Start building machine learning models faster than you think 
+https://myignite.techcommunity.microsoft.com/sessions/82993 
+
+Machine learning operations: Applying DevOps to data science 
+https://myignite.techcommunity.microsoft.com/sessions/83003 

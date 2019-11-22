@@ -1,0 +1,25 @@
+------------------------------------
+Data Samples
+------------------------------------
+
+Unsupervised Anomaly Detection
+https://github.com/Vicam/Unsupervised_Anomaly_Detection
+
+Anomaly detection EECS 498 project 2
+https://www.kaggle.com/c/eecs498/data>
+
+------------------------------------
+Machine Learning.Net
+------------------------------------
+
+ML.NET
+https://dotnet.microsoft.com/apps/machinelearning-ai/ml-dotnet
+
+ML.NET Samples
+https://github.com/dotnet/machinelearning-samples/blob/master/README.md
+
+Power Consumption Anomaly Detection
+https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/AnomalyDetection_PowerMeterReadings 
+
+Spike Detection and Change Point Detection of Product sales
+https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/AnomalyDetection_Sales 
