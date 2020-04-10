@@ -1,0 +1,214 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 MLNet", "1 MLNet", "{4E4EB661-D15E-49E1-BD71-A4C56A045B6D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpikeDetection", "AnomalyDetection_Sales\SpikeDetection\SpikeDetectionConsoleApp\SpikeDetection.csproj", "{7BC8A3E4-E928-4ADB-A983-655824997997}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PowerAnomalyDetection", "AnomalyDetection_PowerMeterReadings\PowerAnomalyDetection\PowerAnomalyDetection.csproj", "{ECCD8550-3A0B-47EE-BD1C-C92C3FC08425}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditCardFraudDetection.Common", "AnomalyDetection_CreditCardFraudDetection\CreditCardFraudDetection.Common\CreditCardFraudDetection.Common.csproj", "{3A797CAC-DF7C-4F40-AC12-7A04F104BAB4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditCardFraudDetection.Predictor", "AnomalyDetection_CreditCardFraudDetection\CreditCardFraudDetection.Predictor\CreditCardFraudDetection.Predictor.csproj", "{6B85466F-A7FE-406D-AF6E-9FA5C22E5208}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreditCardFraudDetection.Trainer", "AnomalyDetection_CreditCardFraudDetection\CreditCardFraudDetection.Trainer\CreditCardFraudDetection.Trainer.csproj", "{2424F58C-60D2-429B-9D31-7D8931768C00}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 Cognitive Services", "3 Cognitive Services", "{52C14939-6BC3-4E18-9454-205B06AF92DA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSAnomalyDetector01", "CSAnomalyDetector01\CSAnomalyDetector01.csproj", "{9C0E94B9-A0B0-4A15-8346-A583766E7792}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSAnomalyDetector02", "CSAnomalyDetector02\CSAnomalyDetector02.csproj", "{8949D6C9-1660-4CD8-9500-105A706DC169}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleMLNetSalesSpike01", "ConsoleMLNetSalesSpike01\ConsoleMLNetSalesSpike01.csproj", "{D44A45FD-E971-4DB5-864C-221116CCD50B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 Event", "5 Event", "{E31E636E-FD79-4BE2-9EDA-4108CA8B9CA2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0C78DA0F-EBD2-45AD-AC90-10909A260D4D}"
+	ProjectSection(SolutionItems) = preProject
+		Notes.txt = Notes.txt
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventConsoleApp01", "EventConsoleApp01\EventConsoleApp01.csproj", "{24FF5664-994C-449E-854E-20BCD8080857}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 MLNet Custom", "2 MLNet Custom", "{A71CB21D-1CAB-4A0B-9289-BD9AE743F978}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleMLNetAmbientTemp", "ConsoleMLNetAmbientTemp\ConsoleMLNetAmbientTemp.csproj", "{84665B0C-6084-4B26-BD22-D07799ECFF1F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleMLNetEc2", "ConsoleMLNetEc2\ConsoleMLNetEc2.csproj", "{50ADEF4F-F944-4EAF-A09A-E8463434F101}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppAutoML", "ConsoleAppAutoML\ConsoleAppAutoML.csproj", "{9F8D2545-692D-4065-ADF1-C0753096F38B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSAnomalyDetector03", "CSAnomalyDetector03\CSAnomalyDetector03.csproj", "{CFE42449-8937-45D6-B224-242A992A7004}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventConsoleApp02CS", "EventConsoleApp02CS\EventConsoleApp02CS.csproj", "{DA49DF8F-4837-44A2-8A2A-9C627A34134E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleAppMlNetKaggleDataSet", "ConsoleAppMlNetKaggleDataSet\ConsoleAppMlNetKaggleDataSet.csproj", "{A614CD41-98AC-4B63-9BAF-CA90D2B6D57C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MLNet NetCoreConf 03", "MLNet NetCoreConf 03\MLNet NetCoreConf 03.csproj", "{E907DE9F-3E1C-49A6-B275-55701B7A6FD9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BC8A3E4-E928-4ADB-A983-655824997997}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BC8A3E4-E928-4ADB-A983-655824997997}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BC8A3E4-E928-4ADB-A983-655824997997}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BC8A3E4-E928-4ADB-A983-655824997997}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECCD8550-3A0B-47EE-BD1C-C92C3FC08425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECCD8550-3A0B-47EE-BD1C-C92C3FC08425}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECCD8550-3A0B-47EE-BD1C-C92C3FC08425}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECCD8550-3A0B-47EE-BD1C-C92C3FC08425}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A797CAC-DF7C-4F40-AC12-7A04F104BAB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A797CAC-DF7C-4F40-AC12-7A04F104BAB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A797CAC-DF7C-4F40-AC12-7A04F104BAB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A797CAC-DF7C-4F40-AC12-7A04F104BAB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B85466F-A7FE-406D-AF6E-9FA5C22E5208}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B85466F-A7FE-406D-AF6E-9FA5C22E5208}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B85466F-A7FE-406D-AF6E-9FA5C22E5208}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B85466F-A7FE-406D-AF6E-9FA5C22E5208}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2424F58C-60D2-429B-9D31-7D8931768C00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2424F58C-60D2-429B-9D31-7D8931768C00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2424F58C-60D2-429B-9D31-7D8931768C00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2424F58C-60D2-429B-9D31-7D8931768C00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C0E94B9-A0B0-4A15-8346-A583766E7792}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C0E94B9-A0B0-4A15-8346-A583766E7792}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C0E94B9-A0B0-4A15-8346-A583766E7792}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C0E94B9-A0B0-4A15-8346-A583766E7792}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8949D6C9-1660-4CD8-9500-105A706DC169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8949D6C9-1660-4CD8-9500-105A706DC169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8949D6C9-1660-4CD8-9500-105A706DC169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8949D6C9-1660-4CD8-9500-105A706DC169}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D44A45FD-E971-4DB5-864C-221116CCD50B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D44A45FD-E971-4DB5-864C-221116CCD50B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D44A45FD-E971-4DB5-864C-221116CCD50B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D44A45FD-E971-4DB5-864C-221116CCD50B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24FF5664-994C-449E-854E-20BCD8080857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24FF5664-994C-449E-854E-20BCD8080857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24FF5664-994C-449E-854E-20BCD8080857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24FF5664-994C-449E-854E-20BCD8080857}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84665B0C-6084-4B26-BD22-D07799ECFF1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84665B0C-6084-4B26-BD22-D07799ECFF1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84665B0C-6084-4B26-BD22-D07799ECFF1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84665B0C-6084-4B26-BD22-D07799ECFF1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50ADEF4F-F944-4EAF-A09A-E8463434F101}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50ADEF4F-F944-4EAF-A09A-E8463434F101}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50ADEF4F-F944-4EAF-A09A-E8463434F101}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50ADEF4F-F944-4EAF-A09A-E8463434F101}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F8D2545-692D-4065-ADF1-C0753096F38B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F8D2545-692D-4065-ADF1-C0753096F38B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F8D2545-692D-4065-ADF1-C0753096F38B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F8D2545-692D-4065-ADF1-C0753096F38B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFE42449-8937-45D6-B224-242A992A7004}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFE42449-8937-45D6-B224-242A992A7004}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFE42449-8937-45D6-B224-242A992A7004}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFE42449-8937-45D6-B224-242A992A7004}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA49DF8F-4837-44A2-8A2A-9C627A34134E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA49DF8F-4837-44A2-8A2A-9C627A34134E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA49DF8F-4837-44A2-8A2A-9C627A34134E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA49DF8F-4837-44A2-8A2A-9C627A34134E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A614CD41-98AC-4B63-9BAF-CA90D2B6D57C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A614CD41-98AC-4B63-9BAF-CA90D2B6D57C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A614CD41-98AC-4B63-9BAF-CA90D2B6D57C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A614CD41-98AC-4B63-9BAF-CA90D2B6D57C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E907DE9F-3E1C-49A6-B275-55701B7A6FD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E907DE9F-3E1C-49A6-B275-55701B7A6FD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E907DE9F-3E1C-49A6-B275-55701B7A6FD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E907DE9F-3E1C-49A6-B275-55701B7A6FD9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7BC8A3E4-E928-4ADB-A983-655824997997} = {4E4EB661-D15E-49E1-BD71-A4C56A045B6D}
+		{ECCD8550-3A0B-47EE-BD1C-C92C3FC08425} = {4E4EB661-D15E-49E1-BD71-A4C56A045B6D}
+		{3A797CAC-DF7C-4F40-AC12-7A04F104BAB4} = {4E4EB661-D15E-49E1-BD71-A4C56A045B6D}
+		{6B85466F-A7FE-406D-AF6E-9FA5C22E5208} = {4E4EB661-D15E-49E1-BD71-A4C56A045B6D}
+		{2424F58C-60D2-429B-9D31-7D8931768C00} = {4E4EB661-D15E-49E1-BD71-A4C56A045B6D}
+		{9C0E94B9-A0B0-4A15-8346-A583766E7792} = {52C14939-6BC3-4E18-9454-205B06AF92DA}
+		{8949D6C9-1660-4CD8-9500-105A706DC169} = {52C14939-6BC3-4E18-9454-205B06AF92DA}
+		{D44A45FD-E971-4DB5-864C-221116CCD50B} = {A71CB21D-1CAB-4A0B-9289-BD9AE743F978}
+		{24FF5664-994C-449E-854E-20BCD8080857} = {E31E636E-FD79-4BE2-9EDA-4108CA8B9CA2}
+		{84665B0C-6084-4B26-BD22-D07799ECFF1F} = {A71CB21D-1CAB-4A0B-9289-BD9AE743F978}
+		{50ADEF4F-F944-4EAF-A09A-E8463434F101} = {A71CB21D-1CAB-4A0B-9289-BD9AE743F978}
+		{9F8D2545-692D-4065-ADF1-C0753096F38B} = {A71CB21D-1CAB-4A0B-9289-BD9AE743F978}
+		{CFE42449-8937-45D6-B224-242A992A7004} = {52C14939-6BC3-4E18-9454-205B06AF92DA}
+		{DA49DF8F-4837-44A2-8A2A-9C627A34134E} = {E31E636E-FD79-4BE2-9EDA-4108CA8B9CA2}
+		{A614CD41-98AC-4B63-9BAF-CA90D2B6D57C} = {A71CB21D-1CAB-4A0B-9289-BD9AE743F978}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EF2CA2DE-A93B-4272-9E50-2B67087DCCA8}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 17
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://elbruno.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AnomalyDetection_CreditCardFraudDetection\\CreditCardFraudDetection.Common\\CreditCardFraudDetection.Common.csproj
+		SccProjectTopLevelParentUniqueName1 = AnomalyDetection.sln
+		SccProjectName1 = AnomalyDetection_CreditCardFraudDetection/CreditCardFraudDetection.Common
+		SccLocalPath1 = AnomalyDetection_CreditCardFraudDetection\\CreditCardFraudDetection.Common
+		SccProjectUniqueName2 = AnomalyDetection_CreditCardFraudDetection\\CreditCardFraudDetection.Predictor\\CreditCardFraudDetection.Predictor.csproj
+		SccProjectTopLevelParentUniqueName2 = AnomalyDetection.sln
+		SccProjectName2 = AnomalyDetection_CreditCardFraudDetection/CreditCardFraudDetection.Predictor
+		SccLocalPath2 = AnomalyDetection_CreditCardFraudDetection\\CreditCardFraudDetection.Predictor
+		SccProjectUniqueName3 = AnomalyDetection_CreditCardFraudDetection\\CreditCardFraudDetection.Trainer\\CreditCardFraudDetection.Trainer.csproj
+		SccProjectTopLevelParentUniqueName3 = AnomalyDetection.sln
+		SccProjectName3 = AnomalyDetection_CreditCardFraudDetection/CreditCardFraudDetection.Trainer
+		SccLocalPath3 = AnomalyDetection_CreditCardFraudDetection\\CreditCardFraudDetection.Trainer
+		SccProjectUniqueName4 = AnomalyDetection_PowerMeterReadings\\PowerAnomalyDetection\\PowerAnomalyDetection.csproj
+		SccProjectTopLevelParentUniqueName4 = AnomalyDetection.sln
+		SccProjectName4 = AnomalyDetection_PowerMeterReadings/PowerAnomalyDetection
+		SccLocalPath4 = AnomalyDetection_PowerMeterReadings\\PowerAnomalyDetection
+		SccProjectUniqueName5 = AnomalyDetection_Sales\\SpikeDetection\\SpikeDetectionConsoleApp\\SpikeDetection.csproj
+		SccProjectTopLevelParentUniqueName5 = AnomalyDetection.sln
+		SccProjectName5 = AnomalyDetection_Sales/SpikeDetection/SpikeDetectionConsoleApp
+		SccLocalPath5 = AnomalyDetection_Sales\\SpikeDetection\\SpikeDetectionConsoleApp
+		SccProjectUniqueName6 = ConsoleAppAutoML\\ConsoleAppAutoML.csproj
+		SccProjectTopLevelParentUniqueName6 = AnomalyDetection.sln
+		SccProjectName6 = ConsoleAppAutoML
+		SccLocalPath6 = ConsoleAppAutoML
+		SccProjectUniqueName7 = ConsoleAppMlNetKaggleDataSet\\ConsoleAppMlNetKaggleDataSet.csproj
+		SccProjectTopLevelParentUniqueName7 = AnomalyDetection.sln
+		SccProjectName7 = ConsoleAppMlNetKaggleDataSet
+		SccLocalPath7 = ConsoleAppMlNetKaggleDataSet
+		SccProjectUniqueName8 = ConsoleMLNetAmbientTemp\\ConsoleMLNetAmbientTemp.csproj
+		SccProjectTopLevelParentUniqueName8 = AnomalyDetection.sln
+		SccProjectName8 = ConsoleMLNetAmbientTemp
+		SccLocalPath8 = ConsoleMLNetAmbientTemp
+		SccProjectUniqueName9 = ConsoleMLNetEc2\\ConsoleMLNetEc2.csproj
+		SccProjectTopLevelParentUniqueName9 = AnomalyDetection.sln
+		SccProjectName9 = ConsoleMLNetEc2
+		SccLocalPath9 = ConsoleMLNetEc2
+		SccProjectUniqueName10 = ConsoleMLNetSalesSpike01\\ConsoleMLNetSalesSpike01.csproj
+		SccProjectTopLevelParentUniqueName10 = AnomalyDetection.sln
+		SccProjectName10 = ConsoleMLNetSalesSpike01
+		SccLocalPath10 = ConsoleMLNetSalesSpike01
+		SccProjectUniqueName11 = CSAnomalyDetector01\\CSAnomalyDetector01.csproj
+		SccProjectTopLevelParentUniqueName11 = AnomalyDetection.sln
+		SccProjectName11 = CSAnomalyDetector01
+		SccLocalPath11 = CSAnomalyDetector01
+		SccProjectUniqueName12 = CSAnomalyDetector02\\CSAnomalyDetector02.csproj
+		SccProjectTopLevelParentUniqueName12 = AnomalyDetection.sln
+		SccProjectName12 = CSAnomalyDetector02
+		SccLocalPath12 = CSAnomalyDetector02
+		SccProjectUniqueName13 = CSAnomalyDetector03\\CSAnomalyDetector03.csproj
+		SccProjectTopLevelParentUniqueName13 = AnomalyDetection.sln
+		SccProjectName13 = CSAnomalyDetector03
+		SccLocalPath13 = CSAnomalyDetector03
+		SccProjectUniqueName14 = EventConsoleApp01\\EventConsoleApp01.csproj
+		SccProjectTopLevelParentUniqueName14 = AnomalyDetection.sln
+		SccProjectName14 = EventConsoleApp01
+		SccLocalPath14 = EventConsoleApp01
+		SccProjectUniqueName15 = EventConsoleApp02CS\\EventConsoleApp02CS.csproj
+		SccProjectTopLevelParentUniqueName15 = AnomalyDetection.sln
+		SccProjectName15 = EventConsoleApp02CS
+		SccLocalPath15 = EventConsoleApp02CS
+		SccProjectUniqueName16 = MLNet\u0020NetCoreConf\u002003\\MLNet\u0020NetCoreConf\u002003.csproj
+		SccProjectName16 = MLNet\u0020NetCoreConf\u002003
+		SccLocalPath16 = MLNet\u0020NetCoreConf\u002003
+	EndGlobalSection
+EndGlobal

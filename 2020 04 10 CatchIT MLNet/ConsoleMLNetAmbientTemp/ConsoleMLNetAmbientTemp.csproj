@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\DataSamples\MLNet\AmbientTempData.cs" Link="AmbientTempData.cs" />
+    <Compile Include="..\DataSamples\MLNet\AmbientTempPrediction.cs" Link="AmbientTempPrediction.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\DataSamples\MLNet\ambient_temperature_system_failure.csv" Link="ambient_temperature_system_failure.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="1.4.0" />
+    <PackageReference Include="Microsoft.ML.TimeSeries" Version="1.4.0" />
+  </ItemGroup>
+
+</Project>
