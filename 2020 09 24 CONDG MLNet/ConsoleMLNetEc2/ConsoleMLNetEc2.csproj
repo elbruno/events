@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\DataSamples\MLNet\Ec2Data.cs" Link="Ec2Data.cs" />
+    <Compile Include="..\DataSamples\MLNet\Ec2Prediction.cs" Link="Ec2Prediction.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\DataSamples\MLNet\ec2_request_latency_system_failure.csv" Link="ec2_request_latency_system_failure.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="1.4.0" />
+    <PackageReference Include="Microsoft.ML.TimeSeries" Version="1.4.0" />
+  </ItemGroup>
+
+</Project>

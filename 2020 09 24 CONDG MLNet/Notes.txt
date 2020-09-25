@@ -1,0 +1,85 @@
+------------------------------------
+- Code Snippets
+------------------------------------
+
+
+SALES
+------------------------------------
+* mlnetsales01
+// define vars
+var mlContext = new MLContext();
+const int size = 36;
+
+* mlnetsales02
+// load data
+var dataView = mlContext.Data.LoadFromTextFile<ProductSalesData>(path: "product-sales.csv", hasHeader: true, separatorChar: ',');
+var productSalesList = new List<ProductSalesData>();
+var emptyDataView = mlContext.Data.LoadFromEnumerable(productSalesList);
+
+* mlnetsales03
+// Create Estimator and build model
+var estimator = mlContext.Transforms.DetectIidSpike(outputColumnName: nameof(ProductSalesPrediction.Prediction), inputColumnName: nameof(ProductSalesData.numSales), confidence: 95, pvalueHistoryLength: size / 4);
+var transformedModel = estimator.Fit(emptyDataView);
+
+* mlnetsales04
+// Prediction
+var transformedData = transformedModel.Transform(dataView);
+var predictions = mlContext.Data.CreateEnumerable<ProductSalesPrediction>(transformedData, reuseRowObject: false);
+
+* mlnetsales05
+// analyze predictions
+Console.WriteLine("Alert\tScore\tP-Value");
+foreach (var p in predictions)
+{
+    if (p.Prediction[0] == 1)
+    {
+        Console.BackgroundColor = ConsoleColor.DarkYellow;
+        Console.ForegroundColor = ConsoleColor.Black;
+    }
+    Console.WriteLine("{0}\t{1:0.00}\t{2:0.00}", p.Prediction[0], p.Prediction[1], p.Prediction[2]);
+    Console.ResetColor();
+}
+
+
+CS SALES
+------------------------------------
+
+// Detect Anomalies Batch
+Console.WriteLine("Detecting anomalies as a batch");
+
+var result = Request(
+    endpoint,
+    batchDetectionUrl,
+    subscriptionKey,
+    requestData).Result;
+dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(result);
+Console.WriteLine(jsonObj);
+
+if (jsonObj["code"] != null)
+{
+    Console.WriteLine($"Detection failed. ErrorCode:{jsonObj["code"]}, ErrorMessage:{jsonObj["message"]}");
+}
+else
+{
+    //Find and display the positions of anomalies in the data set
+    bool[] anomalies = jsonObj["isAnomaly"].ToObject<bool[]>();
+    Console.WriteLine("\nAnomalies detected in the following data positions:");
+    for (var i = 0; i < anomalies.Length; i++)
+    {
+        if (anomalies[i])
+        {
+            Console.Write(i + ", ");
+        }
+    }
+}
+
+
+// Detect Anomalies Last Point
+Console.WriteLine("\n\nDetermining if latest data point is an anomaly");
+var result = Request(
+    endpoint,
+    latestPointDetectionUrl,
+    subscriptionKey,
+    requestData).Result;
+dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(result);
+Console.WriteLine(jsonObj);
