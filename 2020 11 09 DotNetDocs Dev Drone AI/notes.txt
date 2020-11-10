@@ -1,0 +1,31 @@
+// 1st working demo
+Console.WriteLine("Hello Drone");
+
+*** drone ip
+string droneIp = "192.168.10.1";
+int commandUdpPort = 8889;
+int stateUdpPort = 8890;
+
+** command connection
+var commandUdpClient = new UdpClient();
+var commandEndPoint = new IPEndPoint(IPAddress.Parse(droneIp), commandUdpPort);
+commandUdpClient.Connect(commandEndPoint);
+
+** start sdk mode
+var datagram = Encoding.ASCII.GetBytes("command");
+commandUdpClient.Send(datagram, datagram.Length);
+
+** state connection
+var stateUdpClient = new UdpClient(stateUdpPort);
+var stateEndPoint = new IPEndPoint(IPAddress.Parse(droneIp), stateUdpPort);
+stateUdpClient.Connect(droneIp, stateUdpPort);
+
+** get states
+byte[] bytes = stateUdpClient.Receive(ref stateEndPoint);
+var responseState = Encoding.ASCII.GetString(bytes, 0, bytes.Length);
+Console.WriteLine(responseState);
+
+** get battery
+var list = responseState.Replace(';', ':').Split(':');
+var battery = list[21];
+Console.WriteLine($"Battery: {battery}");
