@@ -1,0 +1,106 @@
+------------------------------------
+- Code Snippets
+------------------------------------
+
+
+SALES
+------------------------------------
+* mlnetsales01
+// define vars
+var mlContext = new MLContext();
+const int size = 36;
+
+* mlnetsales02
+// load data
+var dataView = mlContext.Data.LoadFromTextFile<ProductSalesData>(path: "product-sales.csv", hasHeader: true, separatorChar: ',');
+var productSalesList = new List<ProductSalesData>();
+var emptyDataView = mlContext.Data.LoadFromEnumerable(productSalesList);
+
+* mlnetsales03
+// Create Estimator and build model
+var estimator = mlContext.Transforms.DetectIidSpike(outputColumnName: nameof(ProductSalesPrediction.Prediction), inputColumnName: nameof(ProductSalesData.numSales), confidence: 95, pvalueHistoryLength: size / 4);
+var transformedModel = estimator.Fit(emptyDataView);
+
+* mlnetsales04
+// Prediction
+var transformedData = transformedModel.Transform(dataView);
+var predictions = mlContext.Data.CreateEnumerable<ProductSalesPrediction>(transformedData, reuseRowObject: false);
+
+* mlnetsales05
+// analyze predictions
+Console.WriteLine("Alert\tScore\tP-Value");
+foreach (var p in predictions)
+{
+    if (p.Prediction[0] == 1)
+    {
+        Console.BackgroundColor = ConsoleColor.DarkYellow;
+        Console.ForegroundColor = ConsoleColor.Black;
+    }
+    Console.WriteLine("{0}\t{1:0.00}\t{2:0.00}", p.Prediction[0], p.Prediction[1], p.Prediction[2]);
+    Console.ResetColor();
+}
+
+
+CS SALES
+------------------------------------
+
+*** BATCH *** 
+Console.WriteLine("Detecting anomalies as a batch");
+
+dynamic jsonObjSource = Newtonsoft.Json.JsonConvert.DeserializeObject(requestData);
+var series = jsonObjSource["series"];
+
+//construct the request
+var result = Request(
+    endpoint,
+    batchDetectionUrl,
+    subscriptionKey,
+    requestData).Result;
+
+//deserialize the JSON object, and display it
+dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(result);
+Console.WriteLine(jsonObj);
+
+if (jsonObj["code"] != null)
+{
+    Console.WriteLine(
+        $"Detection failed. ErrorCode:{jsonObj["code"]}, ErrorMessage:{jsonObj["message"]}");
+}
+else
+{
+
+
+    string output = $"index\tcurrentValue\tisAnomaly\tisNegativeAnomaly\tisPositiveAnomaly\texpectedValues\tlowerMargins\tupperMargins\tcalcLowerMargin\tcalcUpperMargin\r\n";
+    Console.WriteLine(output);
+    bool[] anomalies = jsonObj["isAnomaly"].ToObject<bool[]>();
+    bool[] negativeAnomalies = jsonObj["isNegativeAnomaly"].ToObject<bool[]>();
+    bool[] positiveAnomalies = jsonObj["isPositiveAnomaly"].ToObject<bool[]>();
+    long[] expectedValues = jsonObj["expectedValues"].ToObject<long[]>();
+    long[] lowerMargins = jsonObj["lowerMargins"].ToObject<long[]>();
+    long[] upperMargins = jsonObj["upperMargins"].ToObject<long[]>();
+    for (var i = 0; i < anomalies.Length; i++)
+    {
+        var currentValue = series[i]["value"];
+        var lMar = expectedValues[i] - lowerMargins[i];
+        var uMar = expectedValues[i] + upperMargins[i];
+        string line = $"{i}\t{currentValue}\t{anomalies[i]}\t{negativeAnomalies[i]}\t{positiveAnomalies[i]}\t{expectedValues[i]}\t{lowerMargins[i]}\t{upperMargins[i]}\t{lMar}\t{uMar}\r\n";
+        Console.WriteLine(line);
+        output += line;
+
+    }
+    File.WriteAllText("output.tsv", output);
+}
+
+
+*** LAST POINT *** 
+Console.WriteLine("\n\nDetermining if latest data point is an anomaly");
+//construct the request
+var result = Request(
+    endpoint,
+    latestPointDetectionUrl,
+    subscriptionKey,
+    requestData).Result;
+
+//deserialize the JSON object, and display it
+dynamic jsonObj = Newtonsoft.Json.JsonConvert.DeserializeObject(result);
+Console.WriteLine(jsonObj);
