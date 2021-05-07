@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\DataSamples\Drone\DroneData.cs" Link="DroneData.cs" />
+    <Compile Include="..\DataSamples\Drone\DronePrediction.cs" Link="DronePrediction.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\DataSamples\Drone\dronedata02.csv" Link="dronedata02.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\DataSamples\Drone\dronedata03.csv" Link="dronedata03.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\DataSamples\Drone\dronedatamlnet.csv" Link="dronedatamlnet.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="1.5.5" />
+    <PackageReference Include="Microsoft.ML.TimeSeries" Version="1.5.5" />
+  </ItemGroup>
+
+</Project>

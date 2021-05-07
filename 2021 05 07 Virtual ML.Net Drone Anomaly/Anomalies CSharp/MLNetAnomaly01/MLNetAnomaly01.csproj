@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\DataSamples\AnomalyDetection\ProductSalesData.cs" Link="ProductSalesData.cs" />
+    <Compile Include="..\DataSamples\AnomalyDetection\ProductSalesPrediction.cs" Link="ProductSalesPrediction.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\DataSamples\AnomalyDetection\product-sales.csv" Link="product-sales.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="1.5.1" />
+    <PackageReference Include="Microsoft.ML.TimeSeries" Version="1.5.1" />
+  </ItemGroup>
+
+</Project>
