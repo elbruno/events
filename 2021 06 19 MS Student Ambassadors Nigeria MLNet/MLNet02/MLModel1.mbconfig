@@ -1,0 +1,88 @@
+﻿{
+  "TrainingConfigurationVersion": 0,
+  "TrainingTime": 120,
+  "Scenario": {
+    "ScenarioType": "Classification"
+  },
+  "DataSource": {
+    "DataSourceType": "TabularFile",
+    "FilePath": "D:\\src\\eb\\tests\\20210619 MS Student Ambassadors Nigeria MLNet\\DataSamples\\SentimentAnalysis\\wikiDetoxAnnotated40kRows.tsv",
+    "Delimiter": "\t",
+    "DecimalMarker": ".",
+    "HasHeader": true,
+    "ColumnProperties": [
+      {
+        "ColumnName": "Label",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true
+      },
+      {
+        "ColumnName": "rev_id",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false
+      },
+      {
+        "ColumnName": "comment",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false
+      },
+      {
+        "ColumnName": "year",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false
+      },
+      {
+        "ColumnName": "logged_in",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "Boolean",
+        "IsCategorical": false
+      },
+      {
+        "ColumnName": "ns",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false
+      },
+      {
+        "ColumnName": "sample",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false
+      },
+      {
+        "ColumnName": "split",
+        "ColumnPurpose": "Ignore",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false
+      }
+    ]
+  },
+  "Environment": {
+    "EnvironmentType": "LocalCPU"
+  },
+  "RunHistory": {
+    "Trials": [
+      {
+        "TrainerName": "FastForestOva",
+        "Score": 0.94031311154598829,
+        "RuntimeInSeconds": 56.221000671386719
+      },
+      {
+        "TrainerName": "SdcaMaximumEntropyMulti",
+        "Score": 0.89456947162426614,
+        "RuntimeInSeconds": 24.134000778198242
+      },
+      {
+        "TrainerName": "SdcaLogisticRegressionOva",
+        "Score": 0.89456947162426614,
+        "RuntimeInSeconds": 43.613998413085938
+      }
+    ],
+    "Pipeline": "[{\"EstimatorType\":\"FeaturizeText\",\"Inputs\":[\"comment\"],\"Outputs\":[\"comment\"]},{\"EstimatorType\":\"Concatenate\",\"Inputs\":[\"comment\"],\"Outputs\":[\"Features\"]},{\"EstimatorType\":\"MapValueToKey\",\"Inputs\":[\"Label\"],\"Outputs\":[\"Label\"]},{\"LabelColumnName\":\"Label\",\"FeatureColumnName\":\"Features\",\"NumberOfTrees\":\"6\",\"FeatureFraction\":\"1\",\"EstimatorType\":\"FastForestOva\",\"Inputs\":[\"Label\"],\"Outputs\":[\"Features\"]},{\"EstimatorType\":\"MapKeyToValue\",\"Inputs\":[\"PredictedLabel\"],\"Outputs\":[\"PredictedLabel\"]}]",
+    "MetricName": "MicroAccuracy"
+  }
+}

@@ -1,0 +1,46 @@
+﻿{
+  "TrainingConfigurationVersion": 0,
+  "TrainingTime": 2147482,
+  "Scenario": {
+    "ScenarioType": "ImageClassification"
+  },
+  "DataSource": {
+    "DataSourceType": "Folder",
+    "FolderPath": "C:\\ML\\Simple Drawings"
+  },
+  "Environment": {
+    "EnvironmentType": "Azure",
+    "SubscriptionID": "16c17c2b-c786-4b64-b14d-c142a461eb9d",
+    "ResourceGroupName": "rg-mlnet",
+    "WorkspaceName": "ws-mlnet",
+    "Compute": {
+      "Properties": {
+        "CreatedOn": "2021-06-19T10:50:08.8732551-04:00",
+        "ComputeType": "AmlCompute",
+        "ProvisioningState": "Succeeded",
+        "Properties": {
+          "VmSize": "STANDARD_NC6",
+          "VmPriority": "Dedicated"
+        }
+      },
+      "Id": "/subscriptions/16c17c2b-c786-4b64-b14d-c142a461eb9d/resourceGroups/rg-mlnet/providers/Microsoft.MachineLearningServices/workspaces/ws-mlnet/computes/mlnetcompute",
+      "Name": "mlnetcompute",
+      "Type": "Microsoft.MachineLearningServices/workspaces/computes",
+      "Location": "westus2",
+      "Tags": {}
+    },
+    "ComputeName": "mlnetcompute",
+    "ExperimentName": "Imageclassification"
+  },
+  "RunHistory": {
+    "Trials": [
+      {
+        "TrainerName": "Azure AutoML Algorithm",
+        "Score": 1.0,
+        "RuntimeInSeconds": 424.4435575
+      }
+    ],
+    "Pipeline": "[{\"EstimatorType\":\"LoadImages\",\"Inputs\":[\"ImageSource\"],\"Outputs\":[\"input1\"]},{\"OutputColumnName\":\"input1\",\"InputColumnName\":\"input1\",\"ImageWidth\":\"224\",\"ImageHeight\":\"224\",\"CropAnchor\":\"Center\",\"Resizing\":\"IsoCrop\",\"EstimatorType\":\"ResizeImages\",\"Inputs\":[\"input1\"],\"Outputs\":[\"input1\"]},{\"OutputColumnName\":\"input1\",\"InputColumnName\":\"input1\",\"ColorsToExtract\":\"Rgb\",\"OrderOfExtraction\":\"ARGB\",\"EstimatorType\":\"ExtractPixels\",\"Inputs\":[\"input1\"],\"Outputs\":[\"input1\"]},{\"ModelFile\":\"d:\\\\src\\\\eb\\\\tests\\\\20210619 MS Student Ambassadors Nigeria MLNet\\\\MLNet02\\\\MLModel2.onnx\",\"EstimatorType\":\"ApplyOnnxModel\",\"Inputs\":null,\"Outputs\":null}]",
+    "MetricName": "accuracy"
+  }
+}
