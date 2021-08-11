@@ -12,15 +12,14 @@ import asyncio
 import json
 import datetime
 
-from azure.iot.device.aio import IoTHubDeviceClient
-from azure.iot.device import MethodResponse
+from drone_device import Drone_Device
 
 # -----------------------------------------------
 # RECEIVE DATA FUNCTIONS
 # -----------------------------------------------
 
 def receiveData():
-    global response, response_state, clientSocket, stateSocket, address
+    global response, clientSocket
     while True:
         try:
             response, _ = clientSocket.recvfrom(1024)
@@ -37,22 +36,31 @@ def readStates():
             if response_state != 'ok':
                 response_state = response_state.decode('ASCII')
                 list = response_state.replace(';', ':').split(':')
-                print(list)
-                battery = int(list[21])                
-                agx     = int(list[24])
-                agy     = int(list[25])
-                agz     = int(list[26])
-                temph   = int(list[18])
-                templ   = int(list[17])                
-        except:
-            break
+                # print(list)
+                # print(battery)            
+                # print(f'agx: {list[27]} ')
+                # print(f'agy: {list[29]} ')
+                # print(f'agz: {list[31]} ')
+                # print(f'temph: {list[15]} ')
+                # print(f'templ: {list[13]} ')
+                battery = int(list[21])
+                agx     = float(list[27])
+                agy     = float(list[29])
+                agz     = float(list[31])
+                temph   = int(list[15])
+                templ   = int(list[13])                
+        # except:
+        #     break
+        except Exception as e:
+            print(f'exc: {e}')
+            pass
 
 # -----------------------------------------------
 # SEND COMMAND  FUNCTIONS
 # -----------------------------------------------
 
 def sendCommand(command):
-    global response, response_state, clientSocket, stateSocket, address
+    global response, clientSocket, address
     timestamp = int(time.time() * 1000)
 
     clientSocket.sendto(command.encode('utf-8'), address)
@@ -65,7 +73,7 @@ def sendCommand(command):
 
 
 def sendReadCommand(command):
-    global response, response_state, clientSocket, stateSocket, address
+    global response
     response = sendCommand(command)
     try:
         response = str(response)
@@ -86,50 +94,16 @@ def sendControlCommand(command):
 # -----------------------------------------------
 # AZURE IOT CENTRAL
 # -----------------------------------------------
-async def send_telemetry(agx, agy, agz, bat, temph, templ):
-    global device, device_client
-    global scope, device_id, key, iothub
 
-    # Define behavior for sending telemetry
-    try:
-        payload:str = ""
-        data = {
-            "agx": agx,
-            "agy": agy,
-            "agz": agz
-        }
-        payload = json.dumps(data)
-        print(f"{datetime.datetime.now()}: telemetry: {payload}")
-        await device_client.send_message(payload)                
-
-        data = {
-            'bat': bat,
-            'templ': templ,
-            'temph': temph
-        }
-        propertiesToUpdate = data
-        print(f"{datetime.datetime.now()}: properties: {propertiesToUpdate}")
-
-        await device_client.patch_twin_reported_properties(propertiesToUpdate)
-
-    except Exception as e:
-        print(f"{datetime.datetime.now()}: Exception during sending metrics: {e}")
-    # finally:
-    #     await asyncio.sleep(sampleRateInSeconds)
-
-async def init_azureIOT():
-    global device, device_client
-    global scope, device_id, key, iothub
+async def init_drone_AzureIoT():
+    global drone
 
     iothub    = ""
     scope     = ""
     device_id = ""
     key       = ""
-
-    device = provision_service.Device(scope, device_id, key, iothub)
-    connectionString = await device.connection_string
-    device_client = IoTHubDeviceClient.create_from_connection_string(connectionString)
-    await device_client.connect()
+    drone = Drone_Device(scope, device_id, key)
+    await drone.init_azureIoT()
 
 # -----------------------------------------------
 # 35 CAMERA
@@ -139,11 +113,12 @@ async def init_azureIOT():
 async def main():
     global battery, agx, agy, agz, temph, templ
     global response, response_state, clientSocket, stateSocket, address
-    
-    await init_azureIOT()
+    global drone
+
+    await init_drone_AzureIoT()
 
     # CONNECTION TO THE DRONE
-
+    
     # connection info
     UDP_IP = '192.168.10.1'
     UDP_PORT = 8889
@@ -185,7 +160,9 @@ async def main():
     videoUDP = 'udp://192.168.10.1:11111'
     cap = cv2.VideoCapture(videoUDP)
     time.sleep(2)
-
+    background = cv2.imread('MLNetVirtualSponsor.jpg')
+    img = cv2.resize(background, (640, 360))
+    
     # drone information
     battery = 0
     agx     = 0
@@ -201,18 +178,21 @@ async def main():
         start_time = time.time()
 
         sendReadCommand('battery?')
-        print(f'i: {i} - battery: {battery} % - agx: {agx} - agy: {agy} - agz: {agz} - temph: {temph} - templ: {templ}')
+        print(f'i: {i} - bat: {battery} % - accelerometer: {agx} - {agy} - {agz} - temp: {templ} / {temph}')
 
-        await send_telemetry(agx, agy, agz, battery, temph, templ)
+        await drone.send_telemetry(agx, agy, agz)
 
-        try:
-            ret, frame = cap.read()
-            img = cv2.resize(frame, (320, 240))
+        if (i % 5) == 0:
+            await drone.send_properties(battery, temph, templ, f"{datetime.datetime.now()}")
 
+        img = cv2.resize(background, (640, 360))
+
+        try:    
             if (time.time() - start_time ) > 0:
                 fpsInfo = "FPS: " + str(1.0 / (time.time() - start_time)) # FPS = 1 / time to process loop
+                print(fpsInfo)
                 font = cv2.FONT_HERSHEY_DUPLEX
-                cv2.putText(img, fpsInfo, (10, 40), font, 0.4, (255, 255, 255), 1)
+                cv2.putText(img, fpsInfo, (10, 20), font, 0.4, (0, 0, 0), 1)
 
             cv2.imshow('@elbruno - DJI Tello Azure IoT', img)
         except Exception as e:
@@ -221,6 +201,8 @@ async def main():
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
+
+        time.sleep(5)
 
     # -----------------------------------------------
     # 34 CAMERA

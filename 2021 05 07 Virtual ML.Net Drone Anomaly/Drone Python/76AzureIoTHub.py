@@ -99,9 +99,9 @@ async def init_drone_AzureIoT():
     global drone
 
     iothub    = ""
-    scope     = "0ne002AED94"
-    device_id = "drone01"
-    key       = "vfEHBRc1xwfmjUbn2Hw/TGyrBPUABnVbSNxDkNK6LwM="
+    scope     = ""
+    device_id = ""
+    key       = ""
     drone = Drone_Device(scope, device_id, key)
     await drone.init_azureIoT()
 

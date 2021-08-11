@@ -5,13 +5,11 @@
 import socket
 import time
 import threading
-import iotc
-import provision_service
+import cv2
 import asyncio
 import json
 import datetime
-
-from drone_device import Drone_Device
+import csv
 
 # -----------------------------------------------
 # RECEIVE DATA FUNCTIONS
@@ -35,12 +33,19 @@ def readStates():
             if response_state != 'ok':
                 response_state = response_state.decode('ASCII')
                 list = response_state.replace(';', ':').split(':')
+                # print(list)
+                # print(battery)            
+                # print(f'agx: {list[27]} ')
+                # print(f'agy: {list[29]} ')
+                # print(f'agz: {list[31]} ')
+                # print(f'temph: {list[15]} ')
+                # print(f'templ: {list[13]} ')
                 battery = int(list[21])
                 agx     = float(list[27])
                 agy     = float(list[29])
                 agz     = float(list[31])
                 temph   = int(list[15])
-                templ   = int(list[13])                
+                templ   = int(list[13])
         # except:
         #     break
         except Exception as e:
@@ -87,16 +92,6 @@ def sendControlCommand(command):
 # AZURE IOT CENTRAL
 # -----------------------------------------------
 
-async def init_drone_AzureIoT():
-    global drone
-
-    iothub    = ""
-    scope     = ""
-    device_id = ""
-    key       = ""
-    drone = Drone_Device(scope, device_id, key)
-    await drone.init_azureIoT()
-
 # -----------------------------------------------
 # 35 CAMERA
 # APP DISPLAY CAMERA WITH OPENCV and FPS
@@ -106,8 +101,6 @@ async def main():
     global battery, agx, agy, agz, temph, templ
     global response, response_state, clientSocket, stateSocket, address
     global drone
-
-    await init_drone_AzureIoT()
 
     # CONNECTION TO THE DRONE
     
@@ -145,27 +138,83 @@ async def main():
     response = sendControlCommand("streamon")
     print(f'streamon response: {response}')
 
-# MAIN APP
+    # START DRONE CAMERA
 
-# drone information
-battery = 0
-agx     = 0
-agy     = 0
-agz     = 0
-temph   = 0
-templ   = 0
+    # open UDP
+    print(f'opening UDP video feed, wait 2 seconds ')
+    videoUDP = 'udp://192.168.10.1:11111'
+    cap = cv2.VideoCapture(videoUDP)
+    time.sleep(2)
+    background = cv2.imread('MLNetVirtualSponsor.jpg')
+    img = cv2.resize(background, (1024, 640))
+    
+    # drone information
+    battery = 0
+    agx     = 0
+    agy     = 0
+    agz     = 0
+    temph   = 0
+    templ   = 0
 
-i = 0
-while i < 300:
-    i = i + 1
-    sendReadCommand('battery?')
+    telemetry_arr = [] 
+    telemetry_arr.append(["date","agx","agy","agz"])
 
-    await drone.send_telemetry(agx, agy, agz)
+    # open
+    i = 0
+    while True:
+        i = i + 1
+        start_time = time.time()
 
-    if (i % 10) == 0:
-        await drone.send_properties(temph, templ, battery)
+        sendReadCommand('battery?')
+        print(f'i: {i} - bat: {battery} % - accelerometer: {agx} - {agy} - {agz} - temp: {templ} / {temph}')
 
-    time.sleep(1)
+        telemetry_arr.append([datetime.datetime.now(),agx,agy,agz]) 
+        img = cv2.resize(background, (706, 332))
+
+        try:    
+            if (time.time() - start_time ) > 0:
+                fpsInfo = "FPS: " + str(1.0 / (time.time() - start_time)) # FPS = 1 / time to process loop
+                print(fpsInfo)
+                font = cv2.FONT_HERSHEY_DUPLEX
+                cv2.putText(img, fpsInfo, (10, 20), font, 0.4, (0, 0, 0), 1)
+
+            cv2.imshow('@elbruno - Save to CSV', img)
+        except Exception as e:
+            print(f'exc: {e}')
+            pass
+
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
+        if cv2.waitKey(1) & 0xFF == ord('t'):
+            drone_flying = True
+            msg = "takeoff"
+            sendCommand(msg)
+
+        if cv2.waitKey(1) & 0xFF == ord('l'):
+            msg = "land"
+            sendCommand(msg)
+            time.sleep(5)
+
+        if cv2.waitKey(1) & 0xFF == ord('f'):
+            msg = "flip"
+            sendCommand(msg)
+            time.sleep(5)
+
+        #time.sleep(0.5)
+
+    # -----------------------------------------------
+    # 34 CAMERA
+    # END STREAM AND CLOSE
+    # -----------------------------------------------
+
+    with open('dronedatamlnet.csv', 'w') as csv_file:
+        csv_writer = csv.writer(csv_file, delimiter=',')
+        for row in telemetry_arr:
+            csv_writer.writerow(row)
+
+    response = sendControlCommand("streamoff")
+    print(f'streamon response: {response}')    
 
 if __name__ == "__main__":
     asyncio.run(main())
