@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31717.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLNetAnomaly01", "MLNetAnomaly01\MLNetAnomaly01.csproj", "{8AB47FE0-7ADD-4DDA-82C4-A7AC1A426B8A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLNetAnomalyDrone01", "MLNetAnomalyDrone01\MLNetAnomalyDrone01.csproj", "{AFD4ECA3-B57A-4829-B611-7E6402F02B5F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLNetAnomalyDrone02", "MLNetAnomalyDrone02\MLNetAnomalyDrone02.csproj", "{024A2DF8-3A35-4A03-BD75-4198598834D8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MLNetAnomalyDrone03", "MLNetAnomalyDrone03\MLNetAnomalyDrone03.csproj", "{5B0414BB-40C8-4F0D-8804-3B2078B9AA67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AB47FE0-7ADD-4DDA-82C4-A7AC1A426B8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AB47FE0-7ADD-4DDA-82C4-A7AC1A426B8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AB47FE0-7ADD-4DDA-82C4-A7AC1A426B8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AB47FE0-7ADD-4DDA-82C4-A7AC1A426B8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFD4ECA3-B57A-4829-B611-7E6402F02B5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFD4ECA3-B57A-4829-B611-7E6402F02B5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFD4ECA3-B57A-4829-B611-7E6402F02B5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFD4ECA3-B57A-4829-B611-7E6402F02B5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{024A2DF8-3A35-4A03-BD75-4198598834D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{024A2DF8-3A35-4A03-BD75-4198598834D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{024A2DF8-3A35-4A03-BD75-4198598834D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{024A2DF8-3A35-4A03-BD75-4198598834D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B0414BB-40C8-4F0D-8804-3B2078B9AA67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B0414BB-40C8-4F0D-8804-3B2078B9AA67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B0414BB-40C8-4F0D-8804-3B2078B9AA67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B0414BB-40C8-4F0D-8804-3B2078B9AA67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EF2CA2DE-A93B-4272-9E50-2B67087DCCA8}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://elbruno.visualstudio.com/DefaultCollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MLNetAnomaly01\\MLNetAnomaly01.csproj
+		SccProjectName1 = MLNetAnomaly01
+		SccLocalPath1 = MLNetAnomaly01
+		SccProjectUniqueName2 = MLNetAnomalyDrone01\\MLNetAnomalyDrone01.csproj
+		SccProjectName2 = MLNetAnomalyDrone01
+		SccLocalPath2 = MLNetAnomalyDrone01
+		SccProjectUniqueName3 = MLNetAnomalyDrone02\\MLNetAnomalyDrone02.csproj
+		SccProjectName3 = MLNetAnomalyDrone02
+		SccLocalPath3 = MLNetAnomalyDrone02
+		SccProjectUniqueName4 = MLNetAnomalyDrone03\\MLNetAnomalyDrone03.csproj
+		SccProjectName4 = MLNetAnomalyDrone03
+		SccLocalPath4 = MLNetAnomalyDrone03
+	EndGlobalSection
+EndGlobal
