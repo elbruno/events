@@ -1,0 +1,17 @@
+{
+    // Raspberry Pi config to build ARM32 modules
+    "azure-iot-edge.defaultPlatform": {
+        "platform": "arm32v7",
+        "alias": null
+    }    ,
+    "azure-iot-edge.executor.env": {
+        "DOCKER_HOST": "ssh://pi@rpiDev06"
+    }
+    // ,    "python.pythonPath": "C:\\Users\\bruno\\.conda\\envs\\p37\\python.exe"
+    
+    // // local w10 docker config to build x64 x32 amd64 modules
+    // "azure-iot-edge.defaultPlatform": {
+    //     "platform": "amd64",
+    //     "alias": null
+    // }
+}
