@@ -1,0 +1,203 @@
+{
+	"wio01Setup": {
+		"prefix": "wio01setup",
+		"body": [
+			"Serial.begin(9600);\r",
+			"\r",
+			"// init buttons\r",
+			"Serial.println(\"Init buttons\");\r",
+			"pinMode(WIO_KEY_A, INPUT_PULLUP);\r",
+			"pinMode(WIO_KEY_B, INPUT_PULLUP);\r",
+			"pinMode(WIO_KEY_C, INPUT_PULLUP);\r",
+			"\r",
+			"delay(1000);"
+		],
+		"description": "description for squirrel01Setup"
+	},
+	"wio02Loop": {
+		"prefix": "wio02Loop",
+		"body": [
+			"// validate buttons\r",
+			"if (digitalRead(WIO_KEY_A) == LOW)\r",
+			"  Serial.println(\"BUTTON [A]\");\r",
+			"if (digitalRead(WIO_KEY_B) == LOW)\r",
+			"  Serial.println(\"BUTTON [B]\");\r",
+			"if (digitalRead(WIO_KEY_C) == LOW)\r",
+			"  Serial.println(\"BUTTON [C]\");\r",
+			"\r",
+			"delay(1000);"
+		],
+		"description": "description for squirrel02Loop"
+	},
+	"wio10Include": {
+		"prefix": "wio10Include",
+		"body": [
+			"#include <Arduino.h>\r",
+			"#include \"TFT_eSPI.h\"\r",
+			"TFT_eSPI tft;"
+		],
+		"description": "description for wio10Include"
+	},
+	"wio11Setup": {
+		"prefix": "wio11Setup",
+		"body": [
+			"Serial.begin(9600);\r",
+			"\r",
+			"// init buttons\r",
+			"Serial.println(\"Init buttons\");\r",
+			"pinMode(WIO_KEY_A, INPUT_PULLUP);\r",
+			"pinMode(WIO_KEY_B, INPUT_PULLUP);\r",
+			"pinMode(WIO_KEY_C, INPUT_PULLUP);\r",
+			"\r",
+			"delay(1000);\r",
+			"\r",
+			"// TFT Init\r",
+			"tft.begin();\r",
+			"tft.setRotation(3);\r",
+			"tft.fillScreen(TFT_BLACK);\r",
+			"tft.setTextSize(4);"
+		],
+		"description": "description for wio11Setup"
+	},
+	"wio12Loop": {
+		"prefix": "wio12Loop",
+		"body": [
+			"String message = \"\";\r",
+			"tft.setCursor(20, 20);\r",
+			"tft.print(\"                         \");\r",
+			"\r",
+			"// validate buttons\r",
+			"if (digitalRead(WIO_KEY_A) == LOW)\r",
+			"  message = \"BUTTON [A]\";\r",
+			"if (digitalRead(WIO_KEY_B) == LOW)\r",
+			"  message = \"BUTTON [B]\";\r",
+			"if (digitalRead(WIO_KEY_C) == LOW)\r",
+			"  message = \"BUTTON [C]\";\r",
+			"\r",
+			"tft.setCursor(20, 20);\r",
+			"tft.print(message);\r",
+			"\r",
+			"Serial.println(message);\r",
+			"\r",
+			"delay(1000);"
+		],
+		"description": "description for wio12Loop"
+	},
+	"wio20Include": {
+		"prefix": "wio20Include",
+		"body": [
+			"#include <Arduino.h>\r",
+			"#include \"demoicons.h\"\r",
+			"#include \"TFT_eSPI.h\"\r",
+			"TFT_eSPI tft;"
+		],
+		"description": "description for wio20Include"
+	},
+	"wio21Setup": {
+		"prefix": "wio21Setup",
+		"body": [
+			"Serial.begin(9600);\r",
+			"\r",
+			"// init buttons\r",
+			"Serial.println(\"Init buttons\");\r",
+			"pinMode(WIO_KEY_A, INPUT_PULLUP);\r",
+			"pinMode(WIO_KEY_B, INPUT_PULLUP);\r",
+			"pinMode(WIO_KEY_C, INPUT_PULLUP);\r",
+			"\r",
+			"delay(1000);\r",
+			"\r",
+			"// TFT Init\r",
+			"tft.begin();\r",
+			"tft.setRotation(3);\r",
+			"tft.fillScreen(TFT_BLACK);\r",
+			"tft.setTextSize(4);"
+		],
+		"description": "description for wio21Setup"
+	},
+	"wio22Loop": {
+		"prefix": "wio22Loop",
+		"body": [
+			"bool buttonPressed = false;\r",
+			"String message = \"\";\r",
+			"tft.setCursor(20, 20);\r",
+			"tft.print(\"                         \");\r",
+			"\r",
+			"// validate buttons\r",
+			"if (digitalRead(WIO_KEY_A) == LOW)\r",
+			"{\r",
+			"  message = \"BUTTON [A]\";\r",
+			"  buttonPressed = true;\r",
+			"}\r",
+			"if (digitalRead(WIO_KEY_B) == LOW)\r",
+			"{\r",
+			"  message = \"BUTTON [B]\";\r",
+			"  buttonPressed = true;\r",
+			"}\r",
+			"if (digitalRead(WIO_KEY_C) == LOW)\r",
+			"{\r",
+			"  message = \"BUTTON [C]\";\r",
+			"  buttonPressed = true;\r",
+			"}\r",
+			"\r",
+			"tft.setCursor(20, 20);\r",
+			"tft.print(message);\r",
+			"\r",
+			"if (buttonPressed)\r",
+			"  tft.drawXBitmap(left_pos_x, left_pos_y, checked_bits, xbm_width, xbm_height, TFT_GREEN, TFT_BLACK);\r",
+			"else\r",
+			"  tft.drawXBitmap(left_pos_x, left_pos_y, unchecked_bits, xbm_width, xbm_height, TFT_RED, TFT_BLACK);\r",
+			"\r",
+			"Serial.println(message);\r",
+			"\r",
+			"delay(1000);"
+		],
+		"description": "description for wio22Loop"
+	},
+	"wio30Include": {
+		"prefix": "wio30Include",
+		"body": [
+			"#include <Arduino.h>\r",
+			"#include \"demoicons.h\"\r",
+			"#include \"Ultrasonic.h\"\r",
+			"#include \"TFT_eSPI.h\"\r",
+			"\r",
+			"TFT_eSPI tft;\r",
+			"Ultrasonic ultrasonic(PIN_WIRE_SCL); // sensor connected on left grove port"
+		],
+		"description": "description for wio30Include"
+	},
+	"wio31Setup": {
+		"prefix": "wio31Setup",
+		"body": [
+			"Serial.begin(9600);\r",
+			"\r",
+			"// TFT Init\r",
+			"tft.begin();\r",
+			"tft.setRotation(3);\r",
+			"tft.fillScreen(TFT_BLACK);\r",
+			"tft.setTextSize(4);"
+		],
+		"description": "description for wio31Setup"
+	},
+	"wio32Loop": {
+		"prefix": "wio32Loop",
+		"body": [
+			"long RangeInCentimeters;\r",
+			"RangeInCentimeters = ultrasonic.MeasureInCentimeters();\r",
+			"Serial.println(RangeInCentimeters);\r",
+			"\r",
+			"tft.setCursor(20, 20);\r",
+			"tft.print(\"                         \");\r",
+			"tft.setCursor(20, 20);\r",
+			"tft.print(String(RangeInCentimeters));\r",
+			"\r",
+			"if (RangeInCentimeters < 5)\r",
+			"  tft.drawXBitmap(left_pos_x, left_pos_y, unchecked_bits, xbm_width, xbm_height, TFT_RED, TFT_BLACK);\r",
+			"else\r",
+			"  tft.drawXBitmap(left_pos_x, left_pos_y, checked_bits, xbm_width, xbm_height, TFT_GREEN, TFT_BLACK);\r",
+			"\r",
+			"delay(1000);"
+		],
+		"description": "description for wio32Loop"
+	}
+}
